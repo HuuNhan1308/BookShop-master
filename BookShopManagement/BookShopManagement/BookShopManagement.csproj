@@ -36,9 +36,6 @@
     <Reference Include="BunifuDataViz 1.0.1">
       <HintPath>..\..\..\Setups\Bunifu DataViz\BunifuDataViz 1.0.1.dll</HintPath>
     </Reference>
-    <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\..\..\Setups\Project Files\ePOSOne_Project\ePOSOne.WinForms\bin\Debug\Bunifu_UI_v1.52.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
