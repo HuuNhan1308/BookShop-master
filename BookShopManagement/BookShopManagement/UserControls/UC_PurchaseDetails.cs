@@ -13,6 +13,8 @@ namespace BookShopManagement.UserControls
 {
     public partial class UC_PurchaseDetails : UserControl
     {
+        private BL_Book BookDB = new BL_Book();
+
         public UC_PurchaseDetails()
         {
             InitializeComponent();
@@ -32,6 +34,11 @@ namespace BookShopManagement.UserControls
             {
                 ads.ShowDialog();
             }
+        }
+
+        private void UC_PurchaseDetails_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = this.BookDB.GetAllProducts();
         }
     }
 }

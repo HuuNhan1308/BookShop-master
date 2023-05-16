@@ -113,3 +113,7 @@ D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\ob
 D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.CopyComplete
 D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.exe
 D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.pdb
+C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.dll
+C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.xml
+C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.xml
