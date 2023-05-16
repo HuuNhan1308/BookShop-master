@@ -65,7 +65,7 @@
             // 
             // panelLeft
             // 
-            this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.panelLeft.BackColor = System.Drawing.Color.Navy;
             this.panelLeft.Controls.Add(this.panelSide);
             this.panelLeft.Controls.Add(this.btnSettings);
             this.panelLeft.Controls.Add(this.btnViewSales);
@@ -229,7 +229,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 18);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Gilgit Pakistan";
+            this.label3.Text = "From Group Vjp";
             // 
             // button8
             // 
@@ -257,7 +257,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 18);
             this.label2.TabIndex = 0;
-            this.label2.Text = "North Books Shop";
+            this.label2.Text = "HUHU Shop";
             // 
             // pictureBox1
             // 
@@ -283,12 +283,12 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.label4.ForeColor = System.Drawing.Color.Navy;
             this.label4.Location = new System.Drawing.Point(18, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(273, 19);
             this.label4.TabIndex = 0;
-            this.label4.Text = "North Books Shop, NLI Market Gilgit";
+            this.label4.Text = "HUHU Shop, From Group Vjp";
             // 
             // button9
             // 
@@ -310,7 +310,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.panel2.BackColor = System.Drawing.Color.Navy;
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.labelTime);
@@ -365,7 +365,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(120, 19);
             this.label5.TabIndex = 0;
-            this.label5.Text = "SaLaaR HuSyN";
+            this.label5.Text = "GOD";
             // 
             // label1
             // 
