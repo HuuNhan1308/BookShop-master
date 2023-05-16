@@ -4,24 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="09a9102270c3466f9fcde3dc4d659004" Name="Diagram1" ZoomLevel="65">
+      <Diagram DiagramId="096af1a4b59f4ee3b56068a9308e179c" Name="Diagram1">
         <EntityTypeShape EntityType="BookStoreModel.Author" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="BookStoreModel.Authors_Publishers" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="BookStoreModel.Book" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="BookStoreModel.Books_Orders" Width="1.5" PointX="7.5" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookStoreModel.CustomerLevel" Width="1.5" PointX="0.5" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookStoreModel.Customer" Width="1.5" PointX="2.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.CustomerLevel" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.Customer" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BookStoreModel.Genre" Width="1.5" PointX="7.5" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookStoreModel.Order" Width="1.5" PointX="5" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.Order" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
         <EntityTypeShape EntityType="BookStoreModel.Publisher" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BookStoreModel.SaleOff" Width="1.5" PointX="9.75" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookStoreModel.Shipping" Width="1.5" PointX="2.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.Shipping" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
         <EntityTypeShape EntityType="BookStoreModel.sysdiagram" Width="1.5" PointX="9.75" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="BookStoreModel.Warehouse" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BookStoreModel.Warehouse_Books" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BookStoreModel.v_AllProducts" Width="1.5" PointX="9.75" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookStoreModel.v_Top3Authors" Width="1.5" PointX="11.625" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BookStoreModel.v_Top5Books" Width="1.5" PointX="11.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.v_Top3Authors" Width="1.5" PointX="7.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BookStoreModel.v_Top5Books" Width="1.5" PointX="9.75" PointY="10.625" IsExpanded="true" />
         <EntityTypeShape EntityType="BookStoreModel.v_TopAuthors" Width="1.5" PointX="11.75" PointY="1.625" IsExpanded="true" />
         <AssociationConnector Association="BookStoreModel.FK_Authors_Publishers_Authors" ManuallyRouted="false" />
         <AssociationConnector Association="BookStoreModel.FK_Authors_Publishers_Publishers" ManuallyRouted="false" />
