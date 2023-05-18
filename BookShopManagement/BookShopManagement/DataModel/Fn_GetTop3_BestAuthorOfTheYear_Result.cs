@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BookShopManagement
+namespace BookShopManagement.DataModel
 {
     using System;
     

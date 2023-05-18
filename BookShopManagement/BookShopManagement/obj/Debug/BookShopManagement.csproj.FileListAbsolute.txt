@@ -117,3 +117,32 @@ C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.xml
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.AssemblyReference.cache
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.SuggestedBindingRedirects.cache
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Form1.resources
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddCategory.resources
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddExpense.resources
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddNewBook.resources
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddStock.resources
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_Dashboard.resources
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_FinishOrder.resources
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Properties.Resources.resources
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Home.resources
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageExpense.resources
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageUser.resources
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_PurchaseDetails.resources
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Sales.resources
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ViewSales.resources
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.GenerateResource.cache
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.CoreCompileInputs.cache
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.exe
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.pdb
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe.config
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.pdb
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.dll
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.xml
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.CopyComplete
+C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Products.resources

@@ -7,14 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BookShopManagement
+namespace BookShopManagement.DataModel
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class v_Top3Authors
+    public partial class Fn_GetUser_Result
     {
+        public Nullable<int> ID { get; set; }
         public string Name { get; set; }
-        public Nullable<int> Amount_of_books { get; set; }
+        public string Address { get; set; }
+        public string Country { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public Nullable<int> Level { get; set; }
     }
 }

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BookShopManagement
+namespace BookShopManagement.DataModel
 {
     using System;
     using System.Data.Entity;
@@ -39,12 +39,9 @@ namespace BookShopManagement
         public virtual DbSet<SaleOff> SaleOffs { get; set; }
         public virtual DbSet<Shipping> Shippings { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<Warehouse> Warehouses { get; set; }
         public virtual DbSet<Warehouse_Books> Warehouse_Books { get; set; }
         public virtual DbSet<v_AllProducts> v_AllProducts { get; set; }
-        public virtual DbSet<v_Top3Authors> v_Top3Authors { get; set; }
-        public virtual DbSet<v_Top5Books> v_Top5Books { get; set; }
-        public virtual DbSet<v_TopAuthors> v_TopAuthors { get; set; }
+        public virtual DbSet<Warehouse> Warehouses { get; set; }
     
         [DbFunction("BookStoreEntities", "Fn_GetOrder_ByCustomer")]
         public virtual IQueryable<Fn_GetOrder_ByCustomer_Result> Fn_GetOrder_ByCustomer(Nullable<int> cUSTOMER_ID)
@@ -88,6 +85,20 @@ namespace BookShopManagement
                 new ObjectParameter("Year", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Fn_GetTop5BestSellerOfTheYear_Result>("[BookStoreEntities].[Fn_GetTop5BestSellerOfTheYear](@Year)", yearParameter);
+        }
+    
+        [DbFunction("BookStoreEntities", "Fn_GetUser")]
+        public virtual IQueryable<Fn_GetUser_Result> Fn_GetUser(string username, string password)
+        {
+            var usernameParameter = username != null ?
+                new ObjectParameter("Username", username) :
+                new ObjectParameter("Username", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("Password", password) :
+                new ObjectParameter("Password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Fn_GetUser_Result>("[BookStoreEntities].[Fn_GetUser](@Username, @Password)", usernameParameter, passwordParameter);
         }
     
         public virtual int Pr_Add_Author_Publisher(Nullable<int> publisher_id, Nullable<int> author_id, Nullable<System.DateTime> apply_date, Nullable<System.DateTime> severance_date)

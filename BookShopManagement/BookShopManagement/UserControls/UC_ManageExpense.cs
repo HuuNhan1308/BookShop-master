@@ -25,5 +25,10 @@ namespace BookShopManagement.UserControls
                 ae.ShowDialog();
             }
         }
+
+        private void UC_ManageExpense_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

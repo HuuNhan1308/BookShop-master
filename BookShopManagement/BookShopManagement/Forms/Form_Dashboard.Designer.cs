@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Dashboard));
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.btnHome = new System.Windows.Forms.Button();
             this.panelSide = new System.Windows.Forms.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnViewSales = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.btnExpense = new System.Windows.Forms.Button();
             this.btnPurchase = new System.Windows.Forms.Button();
             this.btnSaleBooks = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
@@ -48,10 +48,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.userRole = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.userName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timerTime = new System.Windows.Forms.Timer(this.components);
@@ -80,6 +80,23 @@
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(215, 720);
             this.panelLeft.TabIndex = 0;
+            // 
+            // btnHome
+            // 
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.Color.White;
+            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHome.Location = new System.Drawing.Point(14, 142);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(203, 60);
+            this.btnHome.TabIndex = 2;
+            this.btnHome.Text = "     Home";
+            this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // panelSide
             // 
@@ -191,23 +208,6 @@
             this.btnSaleBooks.UseVisualStyleBackColor = true;
             this.btnSaleBooks.Click += new System.EventHandler(this.btnSaleBooks_Click);
             // 
-            // btnHome
-            // 
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
-            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(14, 142);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(203, 60);
-            this.btnHome.TabIndex = 2;
-            this.btnHome.Text = "     Home";
-            this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label3);
@@ -311,10 +311,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Navy;
-            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.userRole);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.labelTime);
-            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.userName);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(215, 48);
@@ -322,16 +322,16 @@
             this.panel2.Size = new System.Drawing.Size(985, 92);
             this.panel2.TabIndex = 1;
             // 
-            // label7
+            // userRole
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(166, 50);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 20);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Admin";
+            this.userRole.AutoSize = true;
+            this.userRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userRole.ForeColor = System.Drawing.Color.White;
+            this.userRole.Location = new System.Drawing.Point(166, 50);
+            this.userRole.Name = "userRole";
+            this.userRole.Size = new System.Drawing.Size(81, 20);
+            this.userRole.TabIndex = 0;
+            this.userRole.Text = "userRole";
             // 
             // label6
             // 
@@ -356,16 +356,16 @@
             this.labelTime.TabIndex = 0;
             this.labelTime.Text = "HH:MM:SS";
             // 
-            // label5
+            // userName
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(165, 19);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 20);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "GOD";
+            this.userName.AutoSize = true;
+            this.userName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userName.ForeColor = System.Drawing.Color.White;
+            this.userName.Location = new System.Drawing.Point(165, 19);
+            this.userName.Name = "userName";
+            this.userName.Size = new System.Drawing.Size(90, 20);
+            this.userName.TabIndex = 0;
+            this.userName.Text = "userName";
             // 
             // label1
             // 
@@ -442,9 +442,9 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label userRole;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label userName;
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timerTime;

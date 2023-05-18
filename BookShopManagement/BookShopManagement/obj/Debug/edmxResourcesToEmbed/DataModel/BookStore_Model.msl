@@ -124,14 +124,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Warehouses">
-      <EntityTypeMapping TypeName="BookStoreModel.Warehouse">
-        <MappingFragment StoreEntitySet="Warehouse">
-          <ScalarProperty Name="Seri" ColumnName="Seri" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Warehouse_Books">
       <EntityTypeMapping TypeName="BookStoreModel.Warehouse_Books">
         <MappingFragment StoreEntitySet="Warehouse_Books">
@@ -149,30 +141,6 @@
           <ScalarProperty Name="Author" ColumnName="Author" />
           <ScalarProperty Name="Publisher" ColumnName="Publisher" />
           <ScalarProperty Name="Release_date" ColumnName="Release date" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="v_Top3Authors">
-      <EntityTypeMapping TypeName="BookStoreModel.v_Top3Authors">
-        <MappingFragment StoreEntitySet="v_Top3Authors">
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Amount_of_books" ColumnName="Amount of books" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="v_Top5Books">
-      <EntityTypeMapping TypeName="BookStoreModel.v_Top5Books">
-        <MappingFragment StoreEntitySet="v_Top5Books">
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Amount_of_books" ColumnName="Amount of books" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="v_TopAuthors">
-      <EntityTypeMapping TypeName="BookStoreModel.v_TopAuthors">
-        <MappingFragment StoreEntitySet="v_TopAuthors">
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Amount_of_books" ColumnName="Amount of books" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -217,6 +185,21 @@
         <ComplexTypeMapping TypeName="BookStoreModel.Fn_GetTop5BestSellerOfTheYear_Result">
           <ScalarProperty Name="BookName" ColumnName="BookName" />
           <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="BookStoreModel.Store.Fn_GetUser" FunctionImportName="Fn_GetUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BookStoreModel.Fn_GetUser_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
@@ -274,5 +257,13 @@
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="BookStoreModel.Store.sp_renamediagram" />
     <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="BookStoreModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="Warehouses">
+      <EntityTypeMapping TypeName="BookStoreModel.Warehouse">
+        <MappingFragment StoreEntitySet="Warehouse">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Seri" ColumnName="Seri" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

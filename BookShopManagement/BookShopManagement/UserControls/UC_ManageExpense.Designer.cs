@@ -165,10 +165,9 @@
             // panel6
             // 
             this.panel6.Controls.Add(this.dataGridView1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(10, 77);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(965, 479);
+            this.panel6.Size = new System.Drawing.Size(652, 479);
             this.panel6.TabIndex = 10;
             // 
             // dataGridView1
@@ -188,7 +187,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(965, 479);
+            this.dataGridView1.Size = new System.Drawing.Size(652, 479);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column1
@@ -225,6 +224,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UC_ManageExpense";
             this.Size = new System.Drawing.Size(985, 580);
+            this.Load += new System.EventHandler(this.UC_ManageExpense_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);

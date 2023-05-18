@@ -7,14 +7,23 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using BookShopManagement.DataModel;
 
 namespace BookShopManagement.Forms
 {
     public partial class Form_Dashboard : Form
     {
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool AllocConsole();
+
+       //-------------------
+
         int PanelWidth;
         bool isCollapsed;
+        private Customer customer;
 
         public Form_Dashboard()
         {
@@ -26,6 +35,17 @@ namespace BookShopManagement.Forms
             AddControlsToPanel(uch);
         }
 
+        public Form_Dashboard(Customer customer)
+        {
+            InitializeComponent();
+            timerTime.Start();
+            PanelWidth = panelLeft.Width;
+            isCollapsed = false;
+            UC_Home uch = new UC_Home();
+            AddControlsToPanel(uch);
+            this.customer = customer;
+        }
+
         private void button9_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -33,7 +53,9 @@ namespace BookShopManagement.Forms
 
         private void Form_Dashboard_Load(object sender, EventArgs e)
         {
-
+            AllocConsole();
+            //lam chuc nang dap nhap
+            this.userName.Text = customer.UserName.ToString();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -93,7 +115,7 @@ namespace BookShopManagement.Forms
         private void btnPurchase_Click(object sender, EventArgs e)
         {
             moveSidePanel(btnPurchase);
-            UC_PurchaseDetails up = new UC_PurchaseDetails();
+            UC_Products up = new UC_Products();
             AddControlsToPanel(up);
         }
 

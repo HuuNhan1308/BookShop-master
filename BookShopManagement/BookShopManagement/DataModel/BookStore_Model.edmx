@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BookStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BookStoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Authors">
           <Key>
             <PropertyRef Name="ID" />
@@ -156,33 +156,6 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
           <Property Name="Author" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Publisher" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Release date" Type="date" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'BookStore.dbo.v_Top3Authors' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="v_Top3Authors">
-          <Key>
-            <PropertyRef Name="Name" />
-          </Key>
-          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Amount of books" Type="int" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'BookStore.dbo.v_Top5Books' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="v_Top5Books">
-          <Key>
-            <PropertyRef Name="Name" />
-          </Key>
-          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Amount of books" Type="int" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="v_TopAuthors">
-          <Key>
-            <PropertyRef Name="Name" />
-          </Key>
-          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Amount of books" Type="int" />
         </EntityType>
         <Association Name="FK_Authors_Publishers_Authors">
           <End Role="Authors" Type="Self.Authors" Multiplicity="1" />
@@ -376,6 +349,25 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
               <RowType>
                 <Property Name="BookName" Type="nvarchar" MaxLength="100" />
                 <Property Name="Amount" Type="int" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="Fn_GetUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="nvarchar" Mode="In" />
+          <Parameter Name="Password" Type="nvarchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="ID" Type="int" />
+                <Property Name="Name" Type="nvarchar" MaxLength="50" />
+                <Property Name="Address" Type="nvarchar" MaxLength="50" />
+                <Property Name="Country" Type="nvarchar" MaxLength="50" />
+                <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+                <Property Name="Email" Type="nvarchar" MaxLength="50" />
+                <Property Name="UserName" Type="varchar" MaxLength="50" />
+                <Property Name="Password" Type="varchar" MaxLength="50" />
+                <Property Name="Level" Type="int" />
               </RowType>
             </CollectionType>
           </ReturnType>
@@ -585,24 +577,6 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
     [v_AllProducts].[Release date] AS [Release date]
     FROM [dbo].[v_AllProducts] AS [v_AllProducts]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="v_Top3Authors" EntityType="Self.v_Top3Authors" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [v_Top3Authors].[Name] AS [Name], 
-    [v_Top3Authors].[Amount of books] AS [Amount of books]
-    FROM [dbo].[v_Top3Authors] AS [v_Top3Authors]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="v_Top5Books" EntityType="Self.v_Top5Books" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [v_Top5Books].[Name] AS [Name], 
-    [v_Top5Books].[Amount of books] AS [Amount of books]
-    FROM [dbo].[v_Top5Books] AS [v_Top5Books]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="v_TopAuthors" EntityType="Self.v_TopAuthors" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [v_TopAuthors].[Name] AS [Name], 
-    [v_TopAuthors].[Amount of books] AS [Amount of books]
-    FROM [dbo].[v_TopAuthors] AS [v_TopAuthors]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_Authors_Publishers_Authors" Association="Self.FK_Authors_Publishers_Authors">
             <End Role="Authors" EntitySet="Authors" />
             <End Role="Authors_Publishers" EntitySet="Authors_Publishers" />
@@ -652,8 +626,7 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
             <End Role="Warehouse_Books" EntitySet="Warehouse_Books" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BookStoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -676,6 +649,17 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
         <ComplexType Name="Fn_GetTop5BestSellerOfTheYear_Result">
           <Property Name="BookName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Amount" Type="Int32" />
+        </ComplexType>
+        <ComplexType Name="Fn_GetUser_Result">
+          <Property Name="ID" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Level" Type="Int32" />
         </ComplexType>
         <EntityType Name="Author">
           <Key>
@@ -809,14 +793,6 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityType Name="Warehouse">
-          <Key>
-            <PropertyRef Name="Seri" />
-          </Key>
-          <Property Name="Seri" Type="Int32" Nullable="false" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Warehouse_Books" Relationship="Self.FK_Warehouse_Books_Warehouse" FromRole="Warehouse" ToRole="Warehouse_Books" />
-        </EntityType>
         <EntityType Name="Warehouse_Books">
           <Key>
             <PropertyRef Name="Seri" />
@@ -826,7 +802,7 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
           <Property Name="Book_ID" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Book" Relationship="Self.FK_Warehouse_Books_Books" FromRole="Warehouse_Books" ToRole="Books" />
-          <NavigationProperty Name="Warehouse" Relationship="Self.FK_Warehouse_Books_Warehouse" FromRole="Warehouse_Books" ToRole="Warehouse" />
+          <NavigationProperty Name="Warehouse" Relationship="BookStoreModel.FK_Warehouse_Books_Warehouse" FromRole="Warehouse_Books" ToRole="Warehouse" />
         </EntityType>
         <EntityType Name="v_AllProducts">
           <Key>
@@ -840,27 +816,6 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
           <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Publisher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Release_date" Type="DateTime" Precision="0" />
-        </EntityType>
-        <EntityType Name="v_Top3Authors">
-          <Key>
-            <PropertyRef Name="Name" />
-          </Key>
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Amount_of_books" Type="Int32" />
-        </EntityType>
-        <EntityType Name="v_Top5Books">
-          <Key>
-            <PropertyRef Name="Name" />
-          </Key>
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Amount_of_books" Type="Int32" />
-        </EntityType>
-        <EntityType Name="v_TopAuthors">
-          <Key>
-            <PropertyRef Name="Name" />
-          </Key>
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Amount_of_books" Type="Int32" />
         </EntityType>
         <Association Name="FK_Authors_Publishers_Authors">
           <End Role="Authors" Type="Self.Author" Multiplicity="1" />
@@ -972,18 +927,6 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Warehouse_Books_Warehouse">
-          <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1" />
-          <End Role="Warehouse_Books" Type="Self.Warehouse_Books" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Warehouse">
-              <PropertyRef Name="Seri" />
-            </Principal>
-            <Dependent Role="Warehouse_Books">
-              <PropertyRef Name="Seri" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="Books_Genres">
           <End Role="Books" Type="Self.Book" Multiplicity="*" />
           <End Role="Genres" Type="Self.Genre" Multiplicity="*" />
@@ -1001,12 +944,8 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
           <EntitySet Name="SaleOffs" EntityType="Self.SaleOff" />
           <EntitySet Name="Shippings" EntityType="Self.Shipping" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <EntitySet Name="Warehouses" EntityType="Self.Warehouse" />
           <EntitySet Name="Warehouse_Books" EntityType="Self.Warehouse_Books" />
           <EntitySet Name="v_AllProducts" EntityType="Self.v_AllProducts" />
-          <EntitySet Name="v_Top3Authors" EntityType="Self.v_Top3Authors" />
-          <EntitySet Name="v_Top5Books" EntityType="Self.v_Top5Books" />
-          <EntitySet Name="v_TopAuthors" EntityType="Self.v_TopAuthors" />
           <AssociationSet Name="FK_Authors_Publishers_Authors" Association="Self.FK_Authors_Publishers_Authors">
             <End Role="Authors" EntitySet="Authors" />
             <End Role="Authors_Publishers" EntitySet="Authors_Publishers" />
@@ -1043,26 +982,26 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
             <End Role="Shippings" EntitySet="Shippings" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
-          <AssociationSet Name="FK_Warehouse_Books_Warehouse" Association="Self.FK_Warehouse_Books_Warehouse">
-            <End Role="Warehouse" EntitySet="Warehouses" />
-            <End Role="Warehouse_Books" EntitySet="Warehouse_Books" />
-          </AssociationSet>
           <AssociationSet Name="Books_Genres" Association="Self.Books_Genres">
             <End Role="Books" EntitySet="Books" />
             <End Role="Genres" EntitySet="Genres" />
           </AssociationSet>
           <FunctionImport Name="Fn_GetOrder_ByCustomer" IsComposable="true" ReturnType="Collection(BookStoreModel.Fn_GetOrder_ByCustomer_Result)">
-            <Parameter Name="CUSTOMER_ID" Mode="In" Type="Int32" />
+          <Parameter Name="CUSTOMER_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Fn_GetRevenue_ByYearMonth" IsComposable="true" ReturnType="Collection(BookStoreModel.Fn_GetRevenue_ByYearMonth_Result)">
             <Parameter Name="Month" Mode="In" Type="Int32" />
             <Parameter Name="Year" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Fn_GetTop3_BestAuthorOfTheYear" IsComposable="true" ReturnType="Collection(BookStoreModel.Fn_GetTop3_BestAuthorOfTheYear_Result)">
-            <Parameter Name="Year" Mode="In" Type="String" />
+          <Parameter Name="Year" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Fn_GetTop5BestSellerOfTheYear" IsComposable="true" ReturnType="Collection(BookStoreModel.Fn_GetTop5BestSellerOfTheYear_Result)">
-            <Parameter Name="Year" Mode="In" Type="String" />
+          <Parameter Name="Year" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Fn_GetUser" IsComposable="true" ReturnType="Collection(BookStoreModel.Fn_GetUser_Result)">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Pr_Add_Author_Publisher">
             <Parameter Name="publisher_id" Mode="In" Type="Int32" />
@@ -1100,7 +1039,7 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
             <Parameter Name="password" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Pr_AddGenre">
-            <Parameter Name="name" Mode="In" Type="String" />
+          <Parameter Name="name" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Pr_AddOrder">
             <Parameter Name="customerID" Mode="In" Type="Int32" />
@@ -1110,7 +1049,7 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
             <Parameter Name="discountShip" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="Pr_AddPublisher">
-            <Parameter Name="Name" Mode="In" Type="String" />
+          <Parameter Name="Name" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Pr_AddShippingMethod">
             <Parameter Name="Method" Mode="In" Type="String" />
@@ -1129,25 +1068,25 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
             <Parameter Name="book_ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Pr_Delete_publisher">
-            <Parameter Name="publisher_id" Mode="In" Type="Int32" />
+          <Parameter Name="publisher_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Pr_DeleteAuthor">
-            <Parameter Name="author_id" Mode="In" Type="Int32" />
+          <Parameter Name="author_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Pr_DeleteBook">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Pr_DeleteCustomer">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Pr_DeleteGenre">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Pr_DeleteOrder">
-            <Parameter Name="orderID" Mode="In" Type="Int32" />
+          <Parameter Name="orderID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Pr_DeleteShipping">
-            <Parameter Name="ID" Mode="In" Type="Int32" />
+          <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Pr_Update_Author_Publisher">
             <Parameter Name="publisher_id" Mode="In" Type="Int32" />
@@ -1241,6 +1180,11 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="Warehouses" EntityType="BookStoreModel.Warehouse" />
+          <AssociationSet Name="FK_Warehouse_Books_Warehouse" Association="BookStoreModel.FK_Warehouse_Books_Warehouse">
+            <End Role="Warehouse" EntitySet="Warehouses" />
+            <End Role="Warehouse_Books" EntitySet="Warehouse_Books" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1253,6 +1197,26 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
+        <EntityType Name="Warehouse">
+          <Key>
+            <PropertyRef Name="Seri" />
+          </Key>
+          <Property Name="Seri" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Warehouse_Books" Relationship="BookStoreModel.FK_Warehouse_Books_Warehouse" FromRole="Warehouse" ToRole="Warehouse_Books" />
+        </EntityType>
+        <Association Name="FK_Warehouse_Books_Warehouse">
+          <End Type="BookStoreModel.Warehouse" Role="Warehouse" Multiplicity="1" />
+          <End Type="BookStoreModel.Warehouse_Books" Role="Warehouse_Books" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Warehouse">
+              <PropertyRef Name="Seri" />
+            </Principal>
+            <Dependent Role="Warehouse_Books">
+              <PropertyRef Name="Seri" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1382,14 +1346,6 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Warehouses">
-            <EntityTypeMapping TypeName="BookStoreModel.Warehouse">
-              <MappingFragment StoreEntitySet="Warehouse">
-                <ScalarProperty Name="Seri" ColumnName="Seri" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Warehouse_Books">
             <EntityTypeMapping TypeName="BookStoreModel.Warehouse_Books">
               <MappingFragment StoreEntitySet="Warehouse_Books">
@@ -1407,30 +1363,6 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
                 <ScalarProperty Name="Author" ColumnName="Author" />
                 <ScalarProperty Name="Publisher" ColumnName="Publisher" />
                 <ScalarProperty Name="Release_date" ColumnName="Release date" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="v_Top3Authors">
-            <EntityTypeMapping TypeName="BookStoreModel.v_Top3Authors">
-              <MappingFragment StoreEntitySet="v_Top3Authors">
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Amount_of_books" ColumnName="Amount of books" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="v_Top5Books">
-            <EntityTypeMapping TypeName="BookStoreModel.v_Top5Books">
-              <MappingFragment StoreEntitySet="v_Top5Books">
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Amount_of_books" ColumnName="Amount of books" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="v_TopAuthors">
-            <EntityTypeMapping TypeName="BookStoreModel.v_TopAuthors">
-              <MappingFragment StoreEntitySet="v_TopAuthors">
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Amount_of_books" ColumnName="Amount of books" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1475,6 +1407,21 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
               <ComplexTypeMapping TypeName="BookStoreModel.Fn_GetTop5BestSellerOfTheYear_Result">
                 <ScalarProperty Name="BookName" ColumnName="BookName" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionName="BookStoreModel.Store.Fn_GetUser" FunctionImportName="Fn_GetUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BookStoreModel.Fn_GetUser_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -1532,6 +1479,14 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="BookStoreModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="BookStoreModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="Warehouses">
+            <EntityTypeMapping TypeName="BookStoreModel.Warehouse">
+              <MappingFragment StoreEntitySet="Warehouse">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Seri" ColumnName="Seri" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

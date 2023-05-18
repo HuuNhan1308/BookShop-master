@@ -20,6 +20,17 @@
     <Property Name="BookName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Amount" Type="Int32" />
   </ComplexType>
+  <ComplexType Name="Fn_GetUser_Result">
+    <Property Name="ID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Level" Type="Int32" />
+  </ComplexType>
   <EntityType Name="Author">
     <Key>
       <PropertyRef Name="ID" />
@@ -152,14 +163,6 @@
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
-  <EntityType Name="Warehouse">
-    <Key>
-      <PropertyRef Name="Seri" />
-    </Key>
-    <Property Name="Seri" Type="Int32" Nullable="false" />
-    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
-    <NavigationProperty Name="Warehouse_Books" Relationship="Self.FK_Warehouse_Books_Warehouse" FromRole="Warehouse" ToRole="Warehouse_Books" />
-  </EntityType>
   <EntityType Name="Warehouse_Books">
     <Key>
       <PropertyRef Name="Seri" />
@@ -169,7 +172,7 @@
     <Property Name="Book_ID" Type="Int32" Nullable="false" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Book" Relationship="Self.FK_Warehouse_Books_Books" FromRole="Warehouse_Books" ToRole="Books" />
-    <NavigationProperty Name="Warehouse" Relationship="Self.FK_Warehouse_Books_Warehouse" FromRole="Warehouse_Books" ToRole="Warehouse" />
+    <NavigationProperty Name="Warehouse" Relationship="BookStoreModel.FK_Warehouse_Books_Warehouse" FromRole="Warehouse_Books" ToRole="Warehouse" />
   </EntityType>
   <EntityType Name="v_AllProducts">
     <Key>
@@ -183,27 +186,6 @@
     <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Publisher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Release_date" Type="DateTime" Precision="0" />
-  </EntityType>
-  <EntityType Name="v_Top3Authors">
-    <Key>
-      <PropertyRef Name="Name" />
-    </Key>
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Amount_of_books" Type="Int32" />
-  </EntityType>
-  <EntityType Name="v_Top5Books">
-    <Key>
-      <PropertyRef Name="Name" />
-    </Key>
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Amount_of_books" Type="Int32" />
-  </EntityType>
-  <EntityType Name="v_TopAuthors">
-    <Key>
-      <PropertyRef Name="Name" />
-    </Key>
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Amount_of_books" Type="Int32" />
   </EntityType>
   <Association Name="FK_Authors_Publishers_Authors">
     <End Role="Authors" Type="Self.Author" Multiplicity="1" />
@@ -315,18 +297,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Warehouse_Books_Warehouse">
-    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1" />
-    <End Role="Warehouse_Books" Type="Self.Warehouse_Books" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Warehouse">
-        <PropertyRef Name="Seri" />
-      </Principal>
-      <Dependent Role="Warehouse_Books">
-        <PropertyRef Name="Seri" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="Books_Genres">
     <End Role="Books" Type="Self.Book" Multiplicity="*" />
     <End Role="Genres" Type="Self.Genre" Multiplicity="*" />
@@ -344,12 +314,8 @@
     <EntitySet Name="SaleOffs" EntityType="Self.SaleOff" />
     <EntitySet Name="Shippings" EntityType="Self.Shipping" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-    <EntitySet Name="Warehouses" EntityType="Self.Warehouse" />
     <EntitySet Name="Warehouse_Books" EntityType="Self.Warehouse_Books" />
     <EntitySet Name="v_AllProducts" EntityType="Self.v_AllProducts" />
-    <EntitySet Name="v_Top3Authors" EntityType="Self.v_Top3Authors" />
-    <EntitySet Name="v_Top5Books" EntityType="Self.v_Top5Books" />
-    <EntitySet Name="v_TopAuthors" EntityType="Self.v_TopAuthors" />
     <AssociationSet Name="FK_Authors_Publishers_Authors" Association="Self.FK_Authors_Publishers_Authors">
       <End Role="Authors" EntitySet="Authors" />
       <End Role="Authors_Publishers" EntitySet="Authors_Publishers" />
@@ -386,10 +352,6 @@
       <End Role="Shippings" EntitySet="Shippings" />
       <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
-    <AssociationSet Name="FK_Warehouse_Books_Warehouse" Association="Self.FK_Warehouse_Books_Warehouse">
-      <End Role="Warehouse" EntitySet="Warehouses" />
-      <End Role="Warehouse_Books" EntitySet="Warehouse_Books" />
-    </AssociationSet>
     <AssociationSet Name="Books_Genres" Association="Self.Books_Genres">
       <End Role="Books" EntitySet="Books" />
       <End Role="Genres" EntitySet="Genres" />
@@ -406,6 +368,10 @@
     </FunctionImport>
     <FunctionImport Name="Fn_GetTop5BestSellerOfTheYear" IsComposable="true" ReturnType="Collection(BookStoreModel.Fn_GetTop5BestSellerOfTheYear_Result)">
       <Parameter Name="Year" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Fn_GetUser" IsComposable="true" ReturnType="Collection(BookStoreModel.Fn_GetUser_Result)">
+      <Parameter Name="Username" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="Pr_Add_Author_Publisher">
       <Parameter Name="publisher_id" Mode="In" Type="Int32" />
@@ -584,6 +550,11 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="Warehouses" EntityType="BookStoreModel.Warehouse" />
+    <AssociationSet Name="FK_Warehouse_Books_Warehouse" Association="BookStoreModel.FK_Warehouse_Books_Warehouse">
+      <End Role="Warehouse" EntitySet="Warehouses" />
+      <End Role="Warehouse_Books" EntitySet="Warehouse_Books" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -596,4 +567,24 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
+  <EntityType Name="Warehouse">
+    <Key>
+      <PropertyRef Name="Seri" />
+    </Key>
+    <Property Name="Seri" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Warehouse_Books" Relationship="BookStoreModel.FK_Warehouse_Books_Warehouse" FromRole="Warehouse" ToRole="Warehouse_Books" />
+  </EntityType>
+  <Association Name="FK_Warehouse_Books_Warehouse">
+    <End Type="BookStoreModel.Warehouse" Role="Warehouse" Multiplicity="1" />
+    <End Type="BookStoreModel.Warehouse_Books" Role="Warehouse_Books" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warehouse">
+        <PropertyRef Name="Seri" />
+      </Principal>
+      <Dependent Role="Warehouse_Books">
+        <PropertyRef Name="Seri" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

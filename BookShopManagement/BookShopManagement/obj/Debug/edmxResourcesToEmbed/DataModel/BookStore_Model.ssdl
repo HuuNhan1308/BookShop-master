@@ -152,33 +152,6 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
     <Property Name="Publisher" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Release date" Type="date" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'BookStore.dbo.v_Top3Authors' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="v_Top3Authors">
-    <Key>
-      <PropertyRef Name="Name" />
-    </Key>
-    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Amount of books" Type="int" />
-  </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'BookStore.dbo.v_Top5Books' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="v_Top5Books">
-    <Key>
-      <PropertyRef Name="Name" />
-    </Key>
-    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Amount of books" Type="int" />
-  </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="v_TopAuthors">
-    <Key>
-      <PropertyRef Name="Name" />
-    </Key>
-    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Amount of books" Type="int" />
-  </EntityType>
   <Association Name="FK_Authors_Publishers_Authors">
     <End Role="Authors" Type="Self.Authors" Multiplicity="1" />
     <End Role="Authors_Publishers" Type="Self.Authors_Publishers" Multiplicity="*" />
@@ -371,6 +344,25 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
         <RowType>
           <Property Name="BookName" Type="nvarchar" MaxLength="100" />
           <Property Name="Amount" Type="int" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="Fn_GetUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Username" Type="nvarchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="ID" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Level" Type="int" />
         </RowType>
       </CollectionType>
     </ReturnType>
@@ -579,24 +571,6 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
     [v_AllProducts].[Publisher] AS [Publisher], 
     [v_AllProducts].[Release date] AS [Release date]
     FROM [dbo].[v_AllProducts] AS [v_AllProducts]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="v_Top3Authors" EntityType="Self.v_Top3Authors" store:Type="Views" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [v_Top3Authors].[Name] AS [Name], 
-    [v_Top3Authors].[Amount of books] AS [Amount of books]
-    FROM [dbo].[v_Top3Authors] AS [v_Top3Authors]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="v_Top5Books" EntityType="Self.v_Top5Books" store:Type="Views" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [v_Top5Books].[Name] AS [Name], 
-    [v_Top5Books].[Amount of books] AS [Amount of books]
-    FROM [dbo].[v_Top5Books] AS [v_Top5Books]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="v_TopAuthors" EntityType="Self.v_TopAuthors" store:Type="Views" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [v_TopAuthors].[Name] AS [Name], 
-    [v_TopAuthors].[Amount of books] AS [Amount of books]
-    FROM [dbo].[v_TopAuthors] AS [v_TopAuthors]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK_Authors_Publishers_Authors" Association="Self.FK_Authors_Publishers_Authors">
       <End Role="Authors" EntitySet="Authors" />
