@@ -9,22 +9,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookShopManagement.DataModel;
+using BookShopManagement.UserControls;
+using System.Reflection.Emit;
 
 namespace BookShopManagement
 {
     public partial class Form1 : Form
     {
 
-        private BL_Customer customer = new BL_Customer();
 
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            //panel2.Anchor = AnchorStyles.None;
+            UC_Login ul = new UC_Login();
+            AddControlsToPanel(ul);
+            
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -32,33 +33,40 @@ namespace BookShopManagement
             this.Dispose();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        
+        private void AddControlsToPanel(Control c)
         {
-            string Username = this.Usertxt.Text.ToString();
-            string Password = this.Passwordtxt.Text.ToString();
+            c.Dock = DockStyle.Fill;
+            c.Left = panel2.Size.Width / 2 - c.Width / 2;
+            c.Top = panel2.Size.Height / 2 - c.Height / 2;
+            panel2.Controls.Clear();
+            panel2.Controls.Add(c);
+        }
 
-            Fn_GetUser_Result user = customer.GetUser("lynkdoll0122", "nhan1111");
-
-            if (user == null)
+        private void label7_Click(object sender, EventArgs e)
+        {
+            using (UC_Register ur = new UC_Register())
             {
-                MessageBox.Show("Incorrect username or password, try again!");
-                return;
+                AddControlsToPanel(ur);
             }
+        }
 
-            Customer cus = new Customer();
-            cus.ID = (int)user.ID;
-            cus.Name = user.Name;
-            cus.Address = user.Address;
-            cus.Phone = user.Phone;
-            cus.Email = user.Email;
-            cus.Country = user.Country;
-            cus.Level = user.Level;
-            cus.UserName = user.UserName;
-            cus.Password = user.Password;
-
-            using (Form_Dashboard fd = new Form_Dashboard(cus))
+        private bool log = true;
+        private void label7_Click_1(object sender, EventArgs e)
+        {
+            if (log)
             {
-                fd.ShowDialog();
+                log = false;
+                label7.Text = "Have account? Go login!";
+                UC_Register ul = new UC_Register();
+                AddControlsToPanel(ul);
+            }
+            else
+            {
+                log = true;
+                label7.Text = "Dont have account? Go register!";
+                UC_Login ul = new UC_Login();
+                AddControlsToPanel(ul);
             }
         }
     }

@@ -54,7 +54,7 @@ namespace BookShopManagement.Forms
 
         private void Form_Dashboard_Load(object sender, EventArgs e)
         {
-            AllocConsole();
+            //AllocConsole();
             //lam chuc nang dap nhap
             this.userName.Text = customer.UserName.ToString();
         }

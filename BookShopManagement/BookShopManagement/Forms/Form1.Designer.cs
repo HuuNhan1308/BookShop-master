@@ -33,19 +33,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Usertxt = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.Passwordtxt = new System.Windows.Forms.TextBox();
-            this.loginBtn = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -97,100 +89,6 @@
             this.label2.Size = new System.Drawing.Size(159, 32);
             this.label2.TabIndex = 1;
             this.label2.Text = "HUHU Shop";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(336, 342);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 23);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "User Name:";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(581, 192);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(80, 87);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Navy;
-            this.label3.Location = new System.Drawing.Point(513, 297);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(232, 32);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Please Login First";
-            this.label3.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // Usertxt
-            // 
-            this.Usertxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Usertxt.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Usertxt.Location = new System.Drawing.Point(340, 369);
-            this.Usertxt.Name = "Usertxt";
-            this.Usertxt.Size = new System.Drawing.Size(547, 37);
-            this.Usertxt.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Navy;
-            this.label4.Location = new System.Drawing.Point(336, 415);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 23);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Password:";
-            // 
-            // Passwordtxt
-            // 
-            this.Passwordtxt.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Passwordtxt.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Passwordtxt.Location = new System.Drawing.Point(340, 442);
-            this.Passwordtxt.Name = "Passwordtxt";
-            this.Passwordtxt.Size = new System.Drawing.Size(547, 37);
-            this.Passwordtxt.TabIndex = 3;
-            this.Passwordtxt.UseSystemPasswordChar = true;
-            // 
-            // loginBtn
-            // 
-            this.loginBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.loginBtn.BackColor = System.Drawing.Color.Navy;
-            this.loginBtn.FlatAppearance.BorderSize = 0;
-            this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loginBtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginBtn.ForeColor = System.Drawing.Color.White;
-            this.loginBtn.Location = new System.Drawing.Point(340, 532);
-            this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(547, 39);
-            this.loginBtn.TabIndex = 4;
-            this.loginBtn.Text = "Login";
-            this.loginBtn.UseVisualStyleBackColor = false;
-            this.loginBtn.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Navy;
-            this.label5.Location = new System.Drawing.Point(515, 492);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(178, 23);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Forgot Password?";
             // 
             // button3
             // 
@@ -207,17 +105,25 @@
             this.button3.TabIndex = 4;
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(0, 55);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1200, 720);
+            this.panel2.TabIndex = 5;
+            // 
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Navy;
-            this.label7.Location = new System.Drawing.Point(441, 590);
+            this.label7.Location = new System.Drawing.Point(467, 669);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(328, 23);
-            this.label7.TabIndex = 5;
+            this.label7.TabIndex = 15;
             this.label7.Text = "Dont have account? Go register!";
+            this.label7.Click += new System.EventHandler(this.label7_Click_1);
             // 
             // Form1
             // 
@@ -225,15 +131,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1200, 720);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.loginBtn);
-            this.Controls.Add(this.Passwordtxt);
-            this.Controls.Add(this.Usertxt);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -243,7 +142,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,16 +152,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox Usertxt;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox Passwordtxt;
-        private System.Windows.Forms.Button loginBtn;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label7;
     }
 }

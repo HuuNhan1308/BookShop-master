@@ -36,25 +36,7 @@ namespace BookShopManagement.UserControls
                 ads.ShowDialog();
             }
         }
-
-        private async void UC_PurchaseDetails_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                ShowLoadingSprite();
-
-                var data = await Task.Run(() => this.BookDB.GetAllProducts());
-
-                dataGridView1.DataSource = data;
-
-                HideLoadingSprite();
-            }
-            catch (Exception ex)
-            {
-                loadingTimer.Stop();
-                label1.Text = "Cannot load database! Check your connection!";
-            }
-        }
+         
 
         private async void UC_PurchaseDetails_Load(object sender, EventArgs e)
         {
