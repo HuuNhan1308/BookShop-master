@@ -40,6 +40,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnAddNewBooks = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -101,7 +102,7 @@
             this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox7.Location = new System.Drawing.Point(768, 23);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(179, 26);
+            this.textBox7.Size = new System.Drawing.Size(179, 30);
             this.textBox7.TabIndex = 5;
             // 
             // label5
@@ -112,7 +113,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(532, 27);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 20);
+            this.label5.Size = new System.Drawing.Size(119, 25);
             this.label5.TabIndex = 4;
             this.label5.Text = "Search By:";
             // 
@@ -129,7 +130,7 @@
             "Publisher"});
             this.comboBox2.Location = new System.Drawing.Point(625, 23);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(138, 28);
+            this.comboBox2.Size = new System.Drawing.Size(138, 33);
             this.comboBox2.TabIndex = 3;
             // 
             // button2
@@ -168,12 +169,21 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.label1);
             this.panel6.Controls.Add(this.dataGridView1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(10, 77);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(965, 481);
             this.panel6.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label1.Location = new System.Drawing.Point(338, 187);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(326, 72);
+            this.label1.TabIndex = 1;
             // 
             // dataGridView1
             // 
@@ -187,6 +197,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(965, 481);
             this.dataGridView1.TabIndex = 0;
@@ -212,6 +223,8 @@
             this.ResumeLayout(false);
 
         }
+
+        private System.Windows.Forms.Label label1;
 
         #endregion
 

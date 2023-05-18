@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using BookShopManagement.DataModel;
+using System.Reflection;
 
 namespace BookShopManagement.Forms
 {
@@ -115,7 +116,7 @@ namespace BookShopManagement.Forms
         private void btnPurchase_Click(object sender, EventArgs e)
         {
             moveSidePanel(btnPurchase);
-            UC_Products up = new UC_Products();
+            UC_Products up = new UC_Products(customer);
             AddControlsToPanel(up);
         }
 
