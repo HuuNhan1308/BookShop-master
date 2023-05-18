@@ -124,9 +124,6 @@
     <Compile Include="DataModel\Publisher.cs">
       <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataModel\SaleOff.cs">
-      <DependentUpon>BookStore_Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="DataModel\Shipping.cs">
       <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
@@ -140,6 +137,21 @@
       <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\v_AllProducts.cs">
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\v_AllSumOrderByCus_ID.cs">
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\v_AllSumOrderByOrder_ID.cs">
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\v_Top3Authors.cs">
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\v_Top5Books.cs">
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\v_TopAuthors.cs">
       <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Warehouse.cs">

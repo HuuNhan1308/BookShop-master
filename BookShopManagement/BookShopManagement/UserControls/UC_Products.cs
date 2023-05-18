@@ -8,14 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookShopManagement.Forms;
+using BookShopManagement.DataModel;
+using System.Runtime.Remoting;
+using BookShopManagement.BS_Layer;
 
 namespace BookShopManagement.UserControls
 {
     public partial class UC_Products : UserControl
     {
         private BL_Book BookDB = new BL_Book();
-        private List<Demo_Order> demo_Orders = new List<Demo_Order>();
         private BL_Order OrderDB = new BL_Order();
+        private BL_Book_Order Book_OrderDB = new BL_Book_Order();
+
+
+        private List<Demo_Order> demo_Orders = new List<Demo_Order>();
+        Customer customer;
 
         string PaymentMethod;
         int ShippingMethod;
@@ -25,9 +32,10 @@ namespace BookShopManagement.UserControls
             InitializeComponent();
         }
 
-        public UC_Products()
+        public UC_Products(Customer customer)
         {
             InitializeComponent();
+            this.customer = customer;
         }
 
         private void btnAddNewBooks_Click(object sender, EventArgs e)
@@ -49,6 +57,10 @@ namespace BookShopManagement.UserControls
         private void UC_PurchaseDetails_Load(object sender, EventArgs e)
         {
             viewProducts.DataSource = this.BookDB.GetAllProducts();
+            //update datagrid view
+            this.viewOrder.DataSource = null;
+            this.viewOrder.DataSource = this.demo_Orders;
+
         }
 
         private void viewProducts_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -77,16 +89,20 @@ namespace BookShopManagement.UserControls
             if (!isContain)
                 this.demo_Orders.Add(temp);
 
-            //update datagrid view
-            this.viewOrder.DataSource = null;
-            this.viewOrder.DataSource = this.demo_Orders;
-
+            UC_PurchaseDetails_Load(null, null);
 
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            OrderDB.AddOrder(cusID)
+
+            int Order_ID = OrderDB.AddOrder(customer.ID, DateTime.Now, ShippingMethod, PaymentMethod);
+
+            Book_OrderDB.AddSingleBookOrder(demo_Orders, Order_ID);
+
+            demo_Orders.Clear();
+            UC_PurchaseDetails_Load(null, null);
+
         }
 
         private void PayChecked(object sender, EventArgs e)

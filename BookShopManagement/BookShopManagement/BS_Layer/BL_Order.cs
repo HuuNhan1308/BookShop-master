@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using BookShopManagement.DataModel;
 
 namespace BookShopManagement
@@ -11,9 +12,22 @@ namespace BookShopManagement
     {
         BookStoreEntities db = new BookStoreEntities();
 
-        public void AddOrder(int cusID, DateTime date, int shipID, string paymentMethod, decimal discountShip = 0)
+        public int AddOrder(int cusID, DateTime date, int shipID, string paymentMethod, decimal discountShip = 0)
         {
             db.Pr_AddOrder(cusID, date, shipID, paymentMethod, discountShip);
+
+            //return order ID
+            db.SaveChanges();
+            var lastOrder = db.Orders.OrderByDescending(p => p.ID).FirstOrDefault().ID;
+
+            return lastOrder;
+        }
+
+        public List<Fn_GetOrder_ByCustomer_Result> GetUserBill(int cusID)
+        {
+            Books_Orders myB = new Books_Orders();
+            
+            return db.Fn_GetOrder_ByCustomer(cusID).ToList();
         }
     }
 }

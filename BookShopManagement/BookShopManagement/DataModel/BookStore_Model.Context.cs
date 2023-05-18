@@ -36,12 +36,16 @@ namespace BookShopManagement.DataModel
         public virtual DbSet<Genre> Genres { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Publisher> Publishers { get; set; }
-        public virtual DbSet<SaleOff> SaleOffs { get; set; }
         public virtual DbSet<Shipping> Shippings { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Warehouse> Warehouses { get; set; }
         public virtual DbSet<Warehouse_Books> Warehouse_Books { get; set; }
         public virtual DbSet<v_AllProducts> v_AllProducts { get; set; }
-        public virtual DbSet<Warehouse> Warehouses { get; set; }
+        public virtual DbSet<v_AllSumOrderByCus_ID> v_AllSumOrderByCus_ID { get; set; }
+        public virtual DbSet<v_AllSumOrderByOrder_ID> v_AllSumOrderByOrder_ID { get; set; }
+        public virtual DbSet<v_Top3Authors> v_Top3Authors { get; set; }
+        public virtual DbSet<v_Top5Books> v_Top5Books { get; set; }
+        public virtual DbSet<v_TopAuthors> v_TopAuthors { get; set; }
     
         [DbFunction("BookStoreEntities", "Fn_GetOrder_ByCustomer")]
         public virtual IQueryable<Fn_GetOrder_ByCustomer_Result> Fn_GetOrder_ByCustomer(Nullable<int> cUSTOMER_ID)
@@ -101,6 +105,23 @@ namespace BookShopManagement.DataModel
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Fn_GetUser_Result>("[BookStoreEntities].[Fn_GetUser](@Username, @Password)", usernameParameter, passwordParameter);
         }
     
+        public virtual int add_customer_level(Nullable<int> level, string desc, Nullable<decimal> discountRate)
+        {
+            var levelParameter = level.HasValue ?
+                new ObjectParameter("level", level) :
+                new ObjectParameter("level", typeof(int));
+    
+            var descParameter = desc != null ?
+                new ObjectParameter("desc", desc) :
+                new ObjectParameter("desc", typeof(string));
+    
+            var discountRateParameter = discountRate.HasValue ?
+                new ObjectParameter("discountRate", discountRate) :
+                new ObjectParameter("discountRate", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("add_customer_level", levelParameter, descParameter, discountRateParameter);
+        }
+    
         public virtual int Pr_Add_Author_Publisher(Nullable<int> publisher_id, Nullable<int> author_id, Nullable<System.DateTime> apply_date, Nullable<System.DateTime> severance_date)
         {
             var publisher_idParameter = publisher_id.HasValue ?
@@ -150,6 +171,53 @@ namespace BookShopManagement.DataModel
                 new ObjectParameter("amount", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_Add_books_orders", order_IDParameter, book_IDParameter, amountParameter);
+        }
+    
+        public virtual int Pr_add_customer_level(Nullable<int> level, string desc, Nullable<int> discountRate)
+        {
+            var levelParameter = level.HasValue ?
+                new ObjectParameter("level", level) :
+                new ObjectParameter("level", typeof(int));
+    
+            var descParameter = desc != null ?
+                new ObjectParameter("desc", desc) :
+                new ObjectParameter("desc", typeof(string));
+    
+            var discountRateParameter = discountRate.HasValue ?
+                new ObjectParameter("discountRate", discountRate) :
+                new ObjectParameter("discountRate", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_add_customer_level", levelParameter, descParameter, discountRateParameter);
+        }
+    
+        public virtual int Pr_Add_WareHouse(Nullable<int> seri, Nullable<System.DateTime> date)
+        {
+            var seriParameter = seri.HasValue ?
+                new ObjectParameter("seri", seri) :
+                new ObjectParameter("seri", typeof(int));
+    
+            var dateParameter = date.HasValue ?
+                new ObjectParameter("date", date) :
+                new ObjectParameter("date", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_Add_WareHouse", seriParameter, dateParameter);
+        }
+    
+        public virtual int PR_add_warehouse_book(Nullable<int> seri, Nullable<int> book_ID, Nullable<int> quantity)
+        {
+            var seriParameter = seri.HasValue ?
+                new ObjectParameter("seri", seri) :
+                new ObjectParameter("seri", typeof(int));
+    
+            var book_IDParameter = book_ID.HasValue ?
+                new ObjectParameter("book_ID", book_ID) :
+                new ObjectParameter("book_ID", typeof(int));
+    
+            var quantityParameter = quantity.HasValue ?
+                new ObjectParameter("quantity", quantity) :
+                new ObjectParameter("quantity", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PR_add_warehouse_book", seriParameter, book_IDParameter, quantityParameter);
         }
     
         public virtual int Pr_AddAuthor(string name, Nullable<System.DateTime> date)
@@ -318,6 +386,15 @@ namespace BookShopManagement.DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_Delete_books_order", order_IDParameter, book_IDParameter);
         }
     
+        public virtual int Pr_delete_customer_level(Nullable<int> level)
+        {
+            var levelParameter = level.HasValue ?
+                new ObjectParameter("level", level) :
+                new ObjectParameter("level", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_delete_customer_level", levelParameter);
+        }
+    
         public virtual int Pr_Delete_publisher(Nullable<int> publisher_id)
         {
             var publisher_idParameter = publisher_id.HasValue ?
@@ -327,13 +404,35 @@ namespace BookShopManagement.DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_Delete_publisher", publisher_idParameter);
         }
     
-        public virtual int Pr_DeleteAuthor(Nullable<int> author_id)
+        public virtual int Pr_Delete_Warehouse(Nullable<int> seri)
+        {
+            var seriParameter = seri.HasValue ?
+                new ObjectParameter("seri", seri) :
+                new ObjectParameter("seri", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_Delete_Warehouse", seriParameter);
+        }
+    
+        public virtual int Pr_delete_warehouse_book(Nullable<int> seri, Nullable<int> book_ID)
+        {
+            var seriParameter = seri.HasValue ?
+                new ObjectParameter("seri", seri) :
+                new ObjectParameter("seri", typeof(int));
+    
+            var book_IDParameter = book_ID.HasValue ?
+                new ObjectParameter("book_ID", book_ID) :
+                new ObjectParameter("book_ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_delete_warehouse_book", seriParameter, book_IDParameter);
+        }
+    
+        public virtual int PR_DeleteAuthor(Nullable<int> author_id)
         {
             var author_idParameter = author_id.HasValue ?
                 new ObjectParameter("author_id", author_id) :
                 new ObjectParameter("author_id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_DeleteAuthor", author_idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PR_DeleteAuthor", author_idParameter);
         }
     
         public virtual int Pr_DeleteBook(Nullable<int> iD)
@@ -381,6 +480,15 @@ namespace BookShopManagement.DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_DeleteShipping", iDParameter);
         }
     
+        public virtual int Pr_SetCustomerLevel(Nullable<int> customer_ID)
+        {
+            var customer_IDParameter = customer_ID.HasValue ?
+                new ObjectParameter("customer_ID", customer_ID) :
+                new ObjectParameter("customer_ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_SetCustomerLevel", customer_IDParameter);
+        }
+    
         public virtual int Pr_Update_Author_Publisher(Nullable<int> publisher_id, Nullable<int> author_id, Nullable<System.DateTime> apply_date, Nullable<System.DateTime> severance_date)
         {
             var publisher_idParameter = publisher_id.HasValue ?
@@ -421,6 +529,57 @@ namespace BookShopManagement.DataModel
                 new ObjectParameter("amount", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_Update_books_order", idParameter, order_idParameter, book_idParameter, amountParameter);
+        }
+    
+        public virtual int Pr_update_customer_level(Nullable<int> level, string desc, Nullable<int> discountRate, Nullable<int> oldLevel)
+        {
+            var levelParameter = level.HasValue ?
+                new ObjectParameter("level", level) :
+                new ObjectParameter("level", typeof(int));
+    
+            var descParameter = desc != null ?
+                new ObjectParameter("desc", desc) :
+                new ObjectParameter("desc", typeof(string));
+    
+            var discountRateParameter = discountRate.HasValue ?
+                new ObjectParameter("discountRate", discountRate) :
+                new ObjectParameter("discountRate", typeof(int));
+    
+            var oldLevelParameter = oldLevel.HasValue ?
+                new ObjectParameter("oldLevel", oldLevel) :
+                new ObjectParameter("oldLevel", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_update_customer_level", levelParameter, descParameter, discountRateParameter, oldLevelParameter);
+        }
+    
+        public virtual int Pr_Update_Warehouse(Nullable<int> seri, Nullable<System.DateTime> date)
+        {
+            var seriParameter = seri.HasValue ?
+                new ObjectParameter("seri", seri) :
+                new ObjectParameter("seri", typeof(int));
+    
+            var dateParameter = date.HasValue ?
+                new ObjectParameter("date", date) :
+                new ObjectParameter("date", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_Update_Warehouse", seriParameter, dateParameter);
+        }
+    
+        public virtual int Pr_update_warehouse_book(Nullable<int> seri, Nullable<int> book_ID, Nullable<int> quantity)
+        {
+            var seriParameter = seri.HasValue ?
+                new ObjectParameter("seri", seri) :
+                new ObjectParameter("seri", typeof(int));
+    
+            var book_IDParameter = book_ID.HasValue ?
+                new ObjectParameter("book_ID", book_ID) :
+                new ObjectParameter("book_ID", typeof(int));
+    
+            var quantityParameter = quantity.HasValue ?
+                new ObjectParameter("quantity", quantity) :
+                new ObjectParameter("quantity", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_update_warehouse_book", seriParameter, book_IDParameter, quantityParameter);
         }
     
         public virtual int Pr_UpdateAuthor(Nullable<int> iD, string name, Nullable<System.DateTime> date)
