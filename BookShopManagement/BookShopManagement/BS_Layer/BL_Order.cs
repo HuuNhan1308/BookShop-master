@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,13 +23,15 @@ namespace BookShopManagement
             var lastOrder = db.Orders.OrderByDescending(p => p.ID).FirstOrDefault().ID;
 
             return lastOrder;
+
         }
 
         public List<Fn_GetOrder_ByCustomer_Result> GetUserBill(int cusID)
         {
             Books_Orders myB = new Books_Orders();
-            
             return db.Fn_GetOrder_ByCustomer(cusID).ToList();
         }
     }
+
+    
 }
