@@ -6,6 +6,7 @@
     <Property Name="Date" Type="DateTime" />
     <Property Name="Shipping_method" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Total_cost" Type="Double" />
+    <Property Name="Complete" Type="Boolean" />
   </ComplexType>
   <ComplexType Name="Fn_GetRevenue_ByYearMonth_Result">
     <Property Name="BookName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
@@ -31,331 +32,7 @@
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Level" Type="Int32" />
   </ComplexType>
-  <EntityType Name="Author">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
-    <NavigationProperty Name="Authors_Publishers" Relationship="Self.FK_Authors_Publishers_Authors" FromRole="Authors" ToRole="Authors_Publishers" />
-  </EntityType>
-  <EntityType Name="Authors_Publishers">
-    <Key>
-      <PropertyRef Name="Publisher_ID" />
-      <PropertyRef Name="Author_ID" />
-    </Key>
-    <Property Name="Publisher_ID" Type="Int32" Nullable="false" />
-    <Property Name="Author_ID" Type="Int32" Nullable="false" />
-    <Property Name="Apply_Date" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="Severance_Date" Type="DateTime" Precision="0" />
-    <NavigationProperty Name="Author" Relationship="Self.FK_Authors_Publishers_Authors" FromRole="Authors_Publishers" ToRole="Authors" />
-    <NavigationProperty Name="Publisher" Relationship="Self.FK_Authors_Publishers_Publishers" FromRole="Authors_Publishers" ToRole="Publishers" />
-    <NavigationProperty Name="Books" Relationship="Self.FK_Books_Authors_Publishers" FromRole="Authors_Publishers" ToRole="Books" />
-  </EntityType>
-  <EntityType Name="Book">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Price" Type="Double" Nullable="false" />
-    <Property Name="Author_ID" Type="Int32" Nullable="false" />
-    <Property Name="Publisher_ID" Type="Int32" Nullable="false" />
-    <Property Name="Release_Date" Type="DateTime" Precision="0" />
-    <NavigationProperty Name="Authors_Publishers" Relationship="Self.FK_Books_Authors_Publishers" FromRole="Books" ToRole="Authors_Publishers" />
-    <NavigationProperty Name="Books_Orders" Relationship="Self.FK_Books_Orders_Books" FromRole="Books" ToRole="Books_Orders" />
-    <NavigationProperty Name="Warehouse_Books" Relationship="Self.FK_Warehouse_Books_Books" FromRole="Books" ToRole="Warehouse_Books" />
-    <NavigationProperty Name="Genres" Relationship="Self.Books_Genres" FromRole="Books" ToRole="Genres" />
-  </EntityType>
-  <EntityType Name="Books_Orders">
-    <Key>
-      <PropertyRef Name="Order_ID" />
-      <PropertyRef Name="Book_ID" />
-    </Key>
-    <Property Name="Order_ID" Type="Int32" Nullable="false" />
-    <Property Name="Book_ID" Type="Int32" Nullable="false" />
-    <Property Name="Amount" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Book" Relationship="Self.FK_Books_Orders_Books" FromRole="Books_Orders" ToRole="Books" />
-    <NavigationProperty Name="Order" Relationship="Self.FK_Books_Orders_Orders" FromRole="Books_Orders" ToRole="Orders" />
-  </EntityType>
-  <EntityType Name="CustomerLevel">
-    <Key>
-      <PropertyRef Name="Level" />
-    </Key>
-    <Property Name="Level" Type="Int32" Nullable="false" />
-    <Property Name="Desc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="DiscountRate" Type="Double" Nullable="false" />
-    <NavigationProperty Name="Customers" Relationship="Self.FK_Customers_CustomerLevel" FromRole="CustomerLevel" ToRole="Customers" />
-  </EntityType>
-  <EntityType Name="Customer">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Level" Type="Int32" />
-    <NavigationProperty Name="CustomerLevel" Relationship="Self.FK_Customers_CustomerLevel" FromRole="Customers" ToRole="CustomerLevel" />
-    <NavigationProperty Name="Orders" Relationship="Self.FK_Books_Customers_Customers" FromRole="Customers" ToRole="Orders" />
-  </EntityType>
-  <EntityType Name="Genre">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Books" Relationship="Self.Books_Genres" FromRole="Genres" ToRole="Books" />
-  </EntityType>
-  <EntityType Name="Order">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Customer_ID" Type="Int32" Nullable="false" />
-    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="ShippingMethod_ID" Type="Int32" />
-    <Property Name="Payment_Method" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Discount_Ship" Type="Int32" />
-    <Property Name="Complete" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Books_Orders" Relationship="Self.FK_Books_Orders_Orders" FromRole="Orders" ToRole="Books_Orders" />
-    <NavigationProperty Name="Customer" Relationship="Self.FK_Books_Customers_Customers" FromRole="Orders" ToRole="Customers" />
-    <NavigationProperty Name="Shipping" Relationship="Self.FK_Orders_Shippings" FromRole="Orders" ToRole="Shippings" />
-  </EntityType>
-  <EntityType Name="Publisher">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Authors_Publishers" Relationship="Self.FK_Authors_Publishers_Publishers" FromRole="Publishers" ToRole="Authors_Publishers" />
-  </EntityType>
-  <EntityType Name="SaleOff">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="StartDay" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="EndDay" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="Percent" Type="Double" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Shipping">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Method" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Cost" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Shippings" FromRole="Shippings" ToRole="Orders" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
-  <EntityType Name="Warehouse_Books">
-    <Key>
-      <PropertyRef Name="Seri" />
-      <PropertyRef Name="Book_ID" />
-    </Key>
-    <Property Name="Seri" Type="Int32" Nullable="false" />
-    <Property Name="Book_ID" Type="Int32" Nullable="false" />
-    <Property Name="Quantity" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Book" Relationship="Self.FK_Warehouse_Books_Books" FromRole="Warehouse_Books" ToRole="Books" />
-    <NavigationProperty Name="Warehouse" Relationship="BookStoreModel.FK_Warehouse_Books_Warehouse" FromRole="Warehouse_Books" ToRole="Warehouse" />
-  </EntityType>
-  <EntityType Name="v_AllProducts">
-    <Key>
-      <PropertyRef Name="Tittle" />
-      <PropertyRef Name="Price" />
-      <PropertyRef Name="Author" />
-      <PropertyRef Name="Publisher" />
-    </Key>
-    <Property Name="Tittle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Price" Type="Double" Nullable="false" />
-    <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Publisher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Release_date" Type="DateTime" Precision="0" />
-  </EntityType>
-  <Association Name="FK_Authors_Publishers_Authors">
-    <End Role="Authors" Type="Self.Author" Multiplicity="1" />
-    <End Role="Authors_Publishers" Type="Self.Authors_Publishers" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Authors">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Authors_Publishers">
-        <PropertyRef Name="Author_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Authors_Publishers_Publishers">
-    <End Role="Publishers" Type="Self.Publisher" Multiplicity="1" />
-    <End Role="Authors_Publishers" Type="Self.Authors_Publishers" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Publishers">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Authors_Publishers">
-        <PropertyRef Name="Publisher_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Books_Authors_Publishers">
-    <End Role="Authors_Publishers" Type="Self.Authors_Publishers" Multiplicity="1" />
-    <End Role="Books" Type="Self.Book" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Authors_Publishers">
-        <PropertyRef Name="Publisher_ID" />
-        <PropertyRef Name="Author_ID" />
-      </Principal>
-      <Dependent Role="Books">
-        <PropertyRef Name="Publisher_ID" />
-        <PropertyRef Name="Author_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Books_Orders_Books">
-    <End Role="Books" Type="Self.Book" Multiplicity="1" />
-    <End Role="Books_Orders" Type="Self.Books_Orders" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Books">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Books_Orders">
-        <PropertyRef Name="Book_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Warehouse_Books_Books">
-    <End Role="Books" Type="Self.Book" Multiplicity="1" />
-    <End Role="Warehouse_Books" Type="Self.Warehouse_Books" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Books">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Warehouse_Books">
-        <PropertyRef Name="Book_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Books_Orders_Orders">
-    <End Role="Orders" Type="Self.Order" Multiplicity="1" />
-    <End Role="Books_Orders" Type="Self.Books_Orders" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Orders">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Books_Orders">
-        <PropertyRef Name="Order_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Customers_CustomerLevel">
-    <End Role="CustomerLevel" Type="Self.CustomerLevel" Multiplicity="0..1" />
-    <End Role="Customers" Type="Self.Customer" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CustomerLevel">
-        <PropertyRef Name="Level" />
-      </Principal>
-      <Dependent Role="Customers">
-        <PropertyRef Name="Level" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Books_Customers_Customers">
-    <End Role="Customers" Type="Self.Customer" Multiplicity="1" />
-    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Customers">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Orders">
-        <PropertyRef Name="Customer_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Orders_Shippings">
-    <End Role="Shippings" Type="Self.Shipping" Multiplicity="0..1" />
-    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Shippings">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Orders">
-        <PropertyRef Name="ShippingMethod_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="Books_Genres">
-    <End Role="Books" Type="Self.Book" Multiplicity="*" />
-    <End Role="Genres" Type="Self.Genre" Multiplicity="*" />
-  </Association>
   <EntityContainer Name="BookStoreEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Authors" EntityType="Self.Author" />
-    <EntitySet Name="Authors_Publishers" EntityType="Self.Authors_Publishers" />
-    <EntitySet Name="Books" EntityType="Self.Book" />
-    <EntitySet Name="Books_Orders" EntityType="Self.Books_Orders" />
-    <EntitySet Name="CustomerLevels" EntityType="Self.CustomerLevel" />
-    <EntitySet Name="Customers" EntityType="Self.Customer" />
-    <EntitySet Name="Genres" EntityType="Self.Genre" />
-    <EntitySet Name="Orders" EntityType="Self.Order" />
-    <EntitySet Name="Publishers" EntityType="Self.Publisher" />
-    <EntitySet Name="SaleOffs" EntityType="Self.SaleOff" />
-    <EntitySet Name="Shippings" EntityType="Self.Shipping" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-    <EntitySet Name="Warehouse_Books" EntityType="Self.Warehouse_Books" />
-    <EntitySet Name="v_AllProducts" EntityType="Self.v_AllProducts" />
-    <AssociationSet Name="FK_Authors_Publishers_Authors" Association="Self.FK_Authors_Publishers_Authors">
-      <End Role="Authors" EntitySet="Authors" />
-      <End Role="Authors_Publishers" EntitySet="Authors_Publishers" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Authors_Publishers_Publishers" Association="Self.FK_Authors_Publishers_Publishers">
-      <End Role="Publishers" EntitySet="Publishers" />
-      <End Role="Authors_Publishers" EntitySet="Authors_Publishers" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Books_Authors_Publishers" Association="Self.FK_Books_Authors_Publishers">
-      <End Role="Authors_Publishers" EntitySet="Authors_Publishers" />
-      <End Role="Books" EntitySet="Books" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Books_Orders_Books" Association="Self.FK_Books_Orders_Books">
-      <End Role="Books" EntitySet="Books" />
-      <End Role="Books_Orders" EntitySet="Books_Orders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Warehouse_Books_Books" Association="Self.FK_Warehouse_Books_Books">
-      <End Role="Books" EntitySet="Books" />
-      <End Role="Warehouse_Books" EntitySet="Warehouse_Books" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Books_Orders_Orders" Association="Self.FK_Books_Orders_Orders">
-      <End Role="Orders" EntitySet="Orders" />
-      <End Role="Books_Orders" EntitySet="Books_Orders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Customers_CustomerLevel" Association="Self.FK_Customers_CustomerLevel">
-      <End Role="CustomerLevel" EntitySet="CustomerLevels" />
-      <End Role="Customers" EntitySet="Customers" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Books_Customers_Customers" Association="Self.FK_Books_Customers_Customers">
-      <End Role="Customers" EntitySet="Customers" />
-      <End Role="Orders" EntitySet="Orders" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Orders_Shippings" Association="Self.FK_Orders_Shippings">
-      <End Role="Shippings" EntitySet="Shippings" />
-      <End Role="Orders" EntitySet="Orders" />
-    </AssociationSet>
-    <AssociationSet Name="Books_Genres" Association="Self.Books_Genres">
-      <End Role="Books" EntitySet="Books" />
-      <End Role="Genres" EntitySet="Genres" />
-    </AssociationSet>
     <FunctionImport Name="Fn_GetOrder_ByCustomer" IsComposable="true" ReturnType="Collection(BookStoreModel.Fn_GetOrder_ByCustomer_Result)">
       <Parameter Name="CUSTOMER_ID" Mode="In" Type="Int32" />
     </FunctionImport>
@@ -373,6 +50,11 @@
       <Parameter Name="Username" Mode="In" Type="String" />
       <Parameter Name="Password" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="add_customer_level">
+      <Parameter Name="level" Mode="In" Type="Int32" />
+      <Parameter Name="desc" Mode="In" Type="String" />
+      <Parameter Name="discountRate" Mode="In" Type="Decimal" />
+    </FunctionImport>
     <FunctionImport Name="Pr_Add_Author_Publisher">
       <Parameter Name="publisher_id" Mode="In" Type="Int32" />
       <Parameter Name="author_id" Mode="In" Type="Int32" />
@@ -387,6 +69,20 @@
       <Parameter Name="order_ID" Mode="In" Type="Int32" />
       <Parameter Name="book_ID" Mode="In" Type="Int32" />
       <Parameter Name="amount" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Pr_add_customer_level">
+      <Parameter Name="level" Mode="In" Type="Int32" />
+      <Parameter Name="desc" Mode="In" Type="String" />
+      <Parameter Name="discountRate" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Pr_Add_WareHouse">
+      <Parameter Name="seri" Mode="In" Type="Int32" />
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="PR_add_warehouse_book">
+      <Parameter Name="seri" Mode="In" Type="Int32" />
+      <Parameter Name="book_ID" Mode="In" Type="Int32" />
+      <Parameter Name="quantity" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="Pr_AddAuthor">
       <Parameter Name="name" Mode="In" Type="String" />
@@ -437,10 +133,20 @@
       <Parameter Name="order_ID" Mode="In" Type="Int32" />
       <Parameter Name="book_ID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="Pr_delete_customer_level">
+      <Parameter Name="level" Mode="In" Type="Int32" />
+    </FunctionImport>
     <FunctionImport Name="Pr_Delete_publisher">
       <Parameter Name="publisher_id" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="Pr_DeleteAuthor">
+    <FunctionImport Name="Pr_Delete_Warehouse">
+      <Parameter Name="seri" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Pr_delete_warehouse_book">
+      <Parameter Name="seri" Mode="In" Type="Int32" />
+      <Parameter Name="book_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PR_DeleteAuthor">
       <Parameter Name="author_id" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="Pr_DeleteBook">
@@ -458,6 +164,9 @@
     <FunctionImport Name="Pr_DeleteShipping">
       <Parameter Name="ID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="Pr_SetCustomerLevel">
+      <Parameter Name="customer_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
     <FunctionImport Name="Pr_Update_Author_Publisher">
       <Parameter Name="publisher_id" Mode="In" Type="Int32" />
       <Parameter Name="author_id" Mode="In" Type="Int32" />
@@ -469,6 +178,21 @@
       <Parameter Name="order_id" Mode="In" Type="Int32" />
       <Parameter Name="book_id" Mode="In" Type="Int32" />
       <Parameter Name="amount" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Pr_update_customer_level">
+      <Parameter Name="level" Mode="In" Type="Int32" />
+      <Parameter Name="desc" Mode="In" Type="String" />
+      <Parameter Name="discountRate" Mode="In" Type="Int32" />
+      <Parameter Name="oldLevel" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Pr_Update_Warehouse">
+      <Parameter Name="seri" Mode="In" Type="Int32" />
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="Pr_update_warehouse_book">
+      <Parameter Name="seri" Mode="In" Type="Int32" />
+      <Parameter Name="book_ID" Mode="In" Type="Int32" />
+      <Parameter Name="quantity" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="Pr_UpdateAuthor">
       <Parameter Name="ID" Mode="In" Type="Int32" />
@@ -550,10 +274,68 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="Authors" EntityType="BookStoreModel.Author" />
+    <EntitySet Name="Authors_Publishers" EntityType="BookStoreModel.Authors_Publishers" />
+    <EntitySet Name="Books" EntityType="BookStoreModel.Book" />
+    <EntitySet Name="Books_Orders" EntityType="BookStoreModel.Books_Orders" />
+    <EntitySet Name="CustomerLevels" EntityType="BookStoreModel.CustomerLevel" />
+    <EntitySet Name="Customers" EntityType="BookStoreModel.Customer" />
+    <EntitySet Name="Genres" EntityType="BookStoreModel.Genre" />
+    <EntitySet Name="Orders" EntityType="BookStoreModel.Order" />
+    <EntitySet Name="Publishers" EntityType="BookStoreModel.Publisher" />
+    <EntitySet Name="Shippings" EntityType="BookStoreModel.Shipping" />
+    <EntitySet Name="sysdiagrams" EntityType="BookStoreModel.sysdiagram" />
     <EntitySet Name="Warehouses" EntityType="BookStoreModel.Warehouse" />
+    <EntitySet Name="Warehouse_Books" EntityType="BookStoreModel.Warehouse_Books" />
+    <EntitySet Name="v_AllProducts" EntityType="BookStoreModel.v_AllProducts" />
+    <EntitySet Name="v_AllSumOrderByCus_ID" EntityType="BookStoreModel.v_AllSumOrderByCus_ID" />
+    <EntitySet Name="v_AllSumOrderByOrder_ID" EntityType="BookStoreModel.v_AllSumOrderByOrder_ID" />
+    <EntitySet Name="v_Top3Authors" EntityType="BookStoreModel.v_Top3Authors" />
+    <EntitySet Name="v_Top5Books" EntityType="BookStoreModel.v_Top5Books" />
+    <EntitySet Name="v_TopAuthors" EntityType="BookStoreModel.v_TopAuthors" />
+    <AssociationSet Name="FK_Authors_Publishers_Authors" Association="BookStoreModel.FK_Authors_Publishers_Authors">
+      <End Role="Author" EntitySet="Authors" />
+      <End Role="Authors_Publishers" EntitySet="Authors_Publishers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Authors_Publishers_Publishers" Association="BookStoreModel.FK_Authors_Publishers_Publishers">
+      <End Role="Publisher" EntitySet="Publishers" />
+      <End Role="Authors_Publishers" EntitySet="Authors_Publishers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Books_Authors_Publishers" Association="BookStoreModel.FK_Books_Authors_Publishers">
+      <End Role="Authors_Publishers" EntitySet="Authors_Publishers" />
+      <End Role="Book" EntitySet="Books" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Books_Orders_Books" Association="BookStoreModel.FK_Books_Orders_Books">
+      <End Role="Book" EntitySet="Books" />
+      <End Role="Books_Orders" EntitySet="Books_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Warehouse_Books_Books" Association="BookStoreModel.FK_Warehouse_Books_Books">
+      <End Role="Book" EntitySet="Books" />
+      <End Role="Warehouse_Books" EntitySet="Warehouse_Books" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Books_Orders_Orders" Association="BookStoreModel.FK_Books_Orders_Orders">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="Books_Orders" EntitySet="Books_Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customers_CustomerLevel" Association="BookStoreModel.FK_Customers_CustomerLevel">
+      <End Role="CustomerLevel" EntitySet="CustomerLevels" />
+      <End Role="Customer" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Books_Customers_Customers" Association="BookStoreModel.FK_Books_Customers_Customers">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_Shippings" Association="BookStoreModel.FK_Orders_Shippings">
+      <End Role="Shipping" EntitySet="Shippings" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
     <AssociationSet Name="FK_Warehouse_Books_Warehouse" Association="BookStoreModel.FK_Warehouse_Books_Warehouse">
       <End Role="Warehouse" EntitySet="Warehouses" />
       <End Role="Warehouse_Books" EntitySet="Warehouse_Books" />
+    </AssociationSet>
+    <AssociationSet Name="Books_Genres" Association="BookStoreModel.Books_Genres">
+      <End Role="Book" EntitySet="Books" />
+      <End Role="Genre" EntitySet="Genres" />
     </AssociationSet>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -567,6 +349,129 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Authors_Publishers" Relationship="BookStoreModel.FK_Authors_Publishers_Authors" FromRole="Author" ToRole="Authors_Publishers" />
+  </EntityType>
+  <EntityType Name="Authors_Publishers">
+    <Key>
+      <PropertyRef Name="Publisher_ID" />
+      <PropertyRef Name="Author_ID" />
+    </Key>
+    <Property Name="Publisher_ID" Type="Int32" Nullable="false" />
+    <Property Name="Author_ID" Type="Int32" Nullable="false" />
+    <Property Name="Apply_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Severance_Date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Author" Relationship="BookStoreModel.FK_Authors_Publishers_Authors" FromRole="Authors_Publishers" ToRole="Author" />
+    <NavigationProperty Name="Publisher" Relationship="BookStoreModel.FK_Authors_Publishers_Publishers" FromRole="Authors_Publishers" ToRole="Publisher" />
+    <NavigationProperty Name="Books" Relationship="BookStoreModel.FK_Books_Authors_Publishers" FromRole="Authors_Publishers" ToRole="Book" />
+  </EntityType>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="Author_ID" Type="Int32" Nullable="false" />
+    <Property Name="Publisher_ID" Type="Int32" Nullable="false" />
+    <Property Name="Release_Date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Authors_Publishers" Relationship="BookStoreModel.FK_Books_Authors_Publishers" FromRole="Book" ToRole="Authors_Publishers" />
+    <NavigationProperty Name="Books_Orders" Relationship="BookStoreModel.FK_Books_Orders_Books" FromRole="Book" ToRole="Books_Orders" />
+    <NavigationProperty Name="Warehouse_Books" Relationship="BookStoreModel.FK_Warehouse_Books_Books" FromRole="Book" ToRole="Warehouse_Books" />
+    <NavigationProperty Name="Genres" Relationship="BookStoreModel.Books_Genres" FromRole="Book" ToRole="Genre" />
+  </EntityType>
+  <EntityType Name="Books_Orders">
+    <Key>
+      <PropertyRef Name="Order_ID" />
+      <PropertyRef Name="Book_ID" />
+    </Key>
+    <Property Name="Order_ID" Type="Int32" Nullable="false" />
+    <Property Name="Book_ID" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Book" Relationship="BookStoreModel.FK_Books_Orders_Books" FromRole="Books_Orders" ToRole="Book" />
+    <NavigationProperty Name="Order" Relationship="BookStoreModel.FK_Books_Orders_Orders" FromRole="Books_Orders" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="CustomerLevel">
+    <Key>
+      <PropertyRef Name="Level" />
+    </Key>
+    <Property Name="Level" Type="Int32" Nullable="false" />
+    <Property Name="Desc" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DiscountRate" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Customers" Relationship="BookStoreModel.FK_Customers_CustomerLevel" FromRole="CustomerLevel" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Level" Type="Int32" />
+    <NavigationProperty Name="CustomerLevel" Relationship="BookStoreModel.FK_Customers_CustomerLevel" FromRole="Customer" ToRole="CustomerLevel" />
+    <NavigationProperty Name="Orders" Relationship="BookStoreModel.FK_Books_Customers_Customers" FromRole="Customer" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Genre">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Books" Relationship="BookStoreModel.Books_Genres" FromRole="Genre" ToRole="Book" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ShippingMethod_ID" Type="Int32" />
+    <Property Name="Payment_Method" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Discount_Ship" Type="Int32" />
+    <Property Name="Complete" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Books_Orders" Relationship="BookStoreModel.FK_Books_Orders_Orders" FromRole="Order" ToRole="Books_Orders" />
+    <NavigationProperty Name="Customer" Relationship="BookStoreModel.FK_Books_Customers_Customers" FromRole="Order" ToRole="Customer" />
+    <NavigationProperty Name="Shipping" Relationship="BookStoreModel.FK_Orders_Shippings" FromRole="Order" ToRole="Shipping" />
+  </EntityType>
+  <EntityType Name="Publisher">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Authors_Publishers" Relationship="BookStoreModel.FK_Authors_Publishers_Publishers" FromRole="Publisher" ToRole="Authors_Publishers" />
+  </EntityType>
+  <EntityType Name="Shipping">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Method" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Cost" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="BookStoreModel.FK_Orders_Shippings" FromRole="Shipping" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
   <EntityType Name="Warehouse">
     <Key>
       <PropertyRef Name="Seri" />
@@ -575,8 +480,202 @@
     <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="Warehouse_Books" Relationship="BookStoreModel.FK_Warehouse_Books_Warehouse" FromRole="Warehouse" ToRole="Warehouse_Books" />
   </EntityType>
+  <EntityType Name="Warehouse_Books">
+    <Key>
+      <PropertyRef Name="Seri" />
+      <PropertyRef Name="Book_ID" />
+    </Key>
+    <Property Name="Seri" Type="Int32" Nullable="false" />
+    <Property Name="Book_ID" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Book" Relationship="BookStoreModel.FK_Warehouse_Books_Books" FromRole="Warehouse_Books" ToRole="Book" />
+    <NavigationProperty Name="Warehouse" Relationship="BookStoreModel.FK_Warehouse_Books_Warehouse" FromRole="Warehouse_Books" ToRole="Warehouse" />
+  </EntityType>
+  <EntityType Name="v_AllProducts">
+    <Key>
+      <PropertyRef Name="Tittle" />
+      <PropertyRef Name="Price" />
+      <PropertyRef Name="Author" />
+      <PropertyRef Name="Publisher" />
+    </Key>
+    <Property Name="Tittle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="Author" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Publisher" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Release_date" Type="DateTime" Precision="0" />
+    <Property Name="Rest" Type="Int32" />
+  </EntityType>
+  <EntityType Name="v_AllSumOrderByCus_ID">
+    <Key>
+      <PropertyRef Name="Customer_ID" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+    <Property Name="Total_Cost" Type="Double" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="v_AllSumOrderByOrder_ID">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Customer_ID" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="COST" Type="Double" />
+    <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="v_Top3Authors">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Amount_of_books" Type="Int32" />
+  </EntityType>
+  <EntityType Name="v_Top5Books">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Amount_of_books" Type="Int32" />
+  </EntityType>
+  <EntityType Name="v_TopAuthors">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Amount_of_books" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_Authors_Publishers_Authors">
+    <End Type="BookStoreModel.Author" Role="Author" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="BookStoreModel.Authors_Publishers" Role="Authors_Publishers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Authors_Publishers">
+        <PropertyRef Name="Author_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Authors_Publishers_Publishers">
+    <End Type="BookStoreModel.Publisher" Role="Publisher" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="BookStoreModel.Authors_Publishers" Role="Authors_Publishers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Publisher">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Authors_Publishers">
+        <PropertyRef Name="Publisher_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Books_Authors_Publishers">
+    <End Type="BookStoreModel.Authors_Publishers" Role="Authors_Publishers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="BookStoreModel.Book" Role="Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Authors_Publishers">
+        <PropertyRef Name="Publisher_ID" />
+        <PropertyRef Name="Author_ID" />
+      </Principal>
+      <Dependent Role="Book">
+        <PropertyRef Name="Publisher_ID" />
+        <PropertyRef Name="Author_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Books_Orders_Books">
+    <End Type="BookStoreModel.Book" Role="Book" Multiplicity="1" />
+    <End Type="BookStoreModel.Books_Orders" Role="Books_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Books_Orders">
+        <PropertyRef Name="Book_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Warehouse_Books_Books">
+    <End Type="BookStoreModel.Book" Role="Book" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="BookStoreModel.Warehouse_Books" Role="Warehouse_Books" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Warehouse_Books">
+        <PropertyRef Name="Book_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Books_Orders_Orders">
+    <End Type="BookStoreModel.Order" Role="Order" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="BookStoreModel.Books_Orders" Role="Books_Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Books_Orders">
+        <PropertyRef Name="Order_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customers_CustomerLevel">
+    <End Type="BookStoreModel.CustomerLevel" Role="CustomerLevel" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="BookStoreModel.Customer" Role="Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerLevel">
+        <PropertyRef Name="Level" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="Level" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Books_Customers_Customers">
+    <End Type="BookStoreModel.Customer" Role="Customer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="BookStoreModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_Shippings">
+    <End Type="BookStoreModel.Shipping" Role="Shipping" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="BookStoreModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shipping">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="ShippingMethod_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Warehouse_Books_Warehouse">
-    <End Type="BookStoreModel.Warehouse" Role="Warehouse" Multiplicity="1" />
+    <End Type="BookStoreModel.Warehouse" Role="Warehouse" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Type="BookStoreModel.Warehouse_Books" Role="Warehouse_Books" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Warehouse">
@@ -586,5 +685,9 @@
         <PropertyRef Name="Seri" />
       </Dependent>
     </ReferentialConstraint>
+  </Association>
+  <Association Name="Books_Genres">
+    <End Type="BookStoreModel.Book" Role="Book" Multiplicity="*" />
+    <End Type="BookStoreModel.Genre" Role="Genre" Multiplicity="*" />
   </Association>
 </Schema>

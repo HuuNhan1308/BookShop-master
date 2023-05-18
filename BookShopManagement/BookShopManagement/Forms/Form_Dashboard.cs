@@ -123,7 +123,7 @@ namespace BookShopManagement.Forms
         private void button4_Click(object sender, EventArgs e)
         {
             moveSidePanel(btnExpense);
-            UC_ManageExpense ea = new UC_ManageExpense();
+            UC_ManageExpense ea = new UC_ManageExpense(customer);
             AddControlsToPanel(ea);
         }
 

@@ -94,15 +94,6 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <EntityType Name="SaleOff">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
-    <Property Name="StartDay" Type="date" Nullable="false" />
-    <Property Name="EndDay" Type="date" Nullable="false" />
-    <Property Name="Percent" Type="float" Nullable="false" />
-  </EntityType>
   <EntityType Name="Shippings">
     <Key>
       <PropertyRef Name="ID" />
@@ -151,9 +142,63 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
     <Property Name="Author" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Publisher" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Release date" Type="date" />
+    <Property Name="Rest" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BookStore.dbo.v_AllSumOrderByCus_ID' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="v_AllSumOrderByCus_ID">
+    <Key>
+      <PropertyRef Name="Customer_ID" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Customer_ID" Type="int" Nullable="false" />
+    <Property Name="Total_Cost" Type="float" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BookStore.dbo.v_AllSumOrderByOrder_ID' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="v_AllSumOrderByOrder_ID">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Customer_ID" />
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="COST" Type="float" />
+    <Property Name="Customer_ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BookStore.dbo.v_Top3Authors' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="v_Top3Authors">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Amount of books" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BookStore.dbo.v_Top5Books' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="v_Top5Books">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Amount of books" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="v_TopAuthors">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Amount of books" Type="int" />
   </EntityType>
   <Association Name="FK_Authors_Publishers_Authors">
-    <End Role="Authors" Type="Self.Authors" Multiplicity="1" />
+    <End Role="Authors" Type="Self.Authors" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Authors_Publishers" Type="Self.Authors_Publishers" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Authors">
@@ -165,7 +210,9 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Authors_Publishers_Publishers">
-    <End Role="Publishers" Type="Self.Publishers" Multiplicity="1" />
+    <End Role="Publishers" Type="Self.Publishers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Authors_Publishers" Type="Self.Authors_Publishers" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Publishers">
@@ -177,7 +224,9 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Books_Authors_Publishers">
-    <End Role="Authors_Publishers" Type="Self.Authors_Publishers" Multiplicity="1" />
+    <End Role="Authors_Publishers" Type="Self.Authors_Publishers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Books" Type="Self.Books" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Authors_Publishers">
@@ -191,7 +240,9 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Books_Customers_Customers">
-    <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Customers">
@@ -203,7 +254,9 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Books_Genres_Books">
-    <End Role="Books" Type="Self.Books" Multiplicity="1" />
+    <End Role="Books" Type="Self.Books" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Books_Genres" Type="Self.Books_Genres" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Books">
@@ -215,7 +268,9 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Books_Genres_Genres">
-    <End Role="Genres" Type="Self.Genres" Multiplicity="1" />
+    <End Role="Genres" Type="Self.Genres" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Books_Genres" Type="Self.Books_Genres" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Genres">
@@ -239,7 +294,9 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Books_Orders_Orders">
-    <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Books_Orders" Type="Self.Books_Orders" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Orders">
@@ -251,7 +308,9 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Customers_CustomerLevel">
-    <End Role="CustomerLevel" Type="Self.CustomerLevel" Multiplicity="0..1" />
+    <End Role="CustomerLevel" Type="Self.CustomerLevel" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CustomerLevel">
@@ -263,7 +322,9 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Orders_Shippings">
-    <End Role="Shippings" Type="Self.Shippings" Multiplicity="0..1" />
+    <End Role="Shippings" Type="Self.Shippings" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Shippings">
@@ -275,7 +336,9 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Warehouse_Books_Books">
-    <End Role="Books" Type="Self.Books" Multiplicity="1" />
+    <End Role="Books" Type="Self.Books" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Warehouse_Books" Type="Self.Warehouse_Books" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Books">
@@ -287,7 +350,9 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Warehouse_Books_Warehouse">
-    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1" />
+    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Warehouse_Books" Type="Self.Warehouse_Books" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Warehouse">
@@ -298,6 +363,11 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="add_customer_level" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="level" Type="int" Mode="In" />
+    <Parameter Name="desc" Type="varchar" Mode="In" />
+    <Parameter Name="discountRate" Type="decimal" Mode="In" />
+  </Function>
   <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
   <Function Name="Fn_GetOrder_ByCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="CUSTOMER_ID" Type="int" Mode="In" />
@@ -309,9 +379,13 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
           <Property Name="Date" Type="date" />
           <Property Name="Shipping method" Type="nvarchar" MaxLength="100" />
           <Property Name="Total cost" Type="float" />
+          <Property Name="Complete" Type="bit" />
         </RowType>
       </CollectionType>
     </ReturnType>
+  </Function>
+  <Function Name="Fn_GetRest_BookQuantity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+    <Parameter Name="Book_ID" Type="int" Mode="In" />
   </Function>
   <Function Name="Fn_GetRevenue_ByYearMonth" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="Month" Type="int" Mode="In" />
@@ -370,6 +444,9 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
   <Function Name="Fn_Order_GetCost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
     <Parameter Name="OrderID" Type="float" Mode="In" />
   </Function>
+  <Function Name="Fn_TotalCostOfCus_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
+    <Parameter Name="Cus_ID" Type="int" Mode="In" />
+  </Function>
   <Function Name="Pr_Add_Author_Publisher" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="publisher_id" Type="int" Mode="In" />
     <Parameter Name="author_id" Type="int" Mode="In" />
@@ -384,6 +461,20 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
     <Parameter Name="order_ID" Type="int" Mode="In" />
     <Parameter Name="book_ID" Type="int" Mode="In" />
     <Parameter Name="amount" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Pr_add_customer_level" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="level" Type="int" Mode="In" />
+    <Parameter Name="desc" Type="nvarchar" Mode="In" />
+    <Parameter Name="discountRate" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Pr_Add_WareHouse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="seri" Type="int" Mode="In" />
+    <Parameter Name="date" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="PR_add_warehouse_book" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="seri" Type="int" Mode="In" />
+    <Parameter Name="book_ID" Type="int" Mode="In" />
+    <Parameter Name="quantity" Type="int" Mode="In" />
   </Function>
   <Function Name="Pr_AddAuthor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="name" Type="varchar" Mode="In" />
@@ -434,10 +525,20 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
     <Parameter Name="order_ID" Type="int" Mode="In" />
     <Parameter Name="book_ID" Type="int" Mode="In" />
   </Function>
+  <Function Name="Pr_delete_customer_level" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="level" Type="int" Mode="In" />
+  </Function>
   <Function Name="Pr_Delete_publisher" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="publisher_id" Type="int" Mode="In" />
   </Function>
-  <Function Name="Pr_DeleteAuthor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+  <Function Name="Pr_Delete_Warehouse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="seri" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Pr_delete_warehouse_book" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="seri" Type="int" Mode="In" />
+    <Parameter Name="book_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PR_DeleteAuthor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="author_id" Type="int" Mode="In" />
   </Function>
   <Function Name="Pr_DeleteBook" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -455,6 +556,9 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
   <Function Name="Pr_DeleteShipping" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID" Type="int" Mode="In" />
   </Function>
+  <Function Name="Pr_SetCustomerLevel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="customer_ID" Type="int" Mode="In" />
+  </Function>
   <Function Name="Pr_Update_Author_Publisher" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="publisher_id" Type="int" Mode="In" />
     <Parameter Name="author_id" Type="int" Mode="In" />
@@ -466,6 +570,21 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
     <Parameter Name="order_id" Type="int" Mode="In" />
     <Parameter Name="book_id" Type="int" Mode="In" />
     <Parameter Name="amount" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Pr_update_customer_level" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="level" Type="int" Mode="In" />
+    <Parameter Name="desc" Type="nvarchar" Mode="In" />
+    <Parameter Name="discountRate" Type="int" Mode="In" />
+    <Parameter Name="oldLevel" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Pr_Update_Warehouse" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="seri" Type="int" Mode="In" />
+    <Parameter Name="date" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="Pr_update_warehouse_book" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="seri" Type="int" Mode="In" />
+    <Parameter Name="book_ID" Type="int" Mode="In" />
+    <Parameter Name="quantity" Type="int" Mode="In" />
   </Function>
   <Function Name="Pr_UpdateAuthor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID" Type="int" Mode="In" />
@@ -558,7 +677,6 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
     <EntitySet Name="Genres" EntityType="Self.Genres" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Publishers" EntityType="Self.Publishers" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="SaleOff" EntityType="Self.SaleOff" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Shippings" EntityType="Self.Shippings" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Warehouse" EntityType="Self.Warehouse" Schema="dbo" store:Type="Tables" />
@@ -569,8 +687,42 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
     [v_AllProducts].[Price] AS [Price], 
     [v_AllProducts].[Author] AS [Author], 
     [v_AllProducts].[Publisher] AS [Publisher], 
-    [v_AllProducts].[Release date] AS [Release date]
+    [v_AllProducts].[Release date] AS [Release date], 
+    [v_AllProducts].[Rest] AS [Rest]
     FROM [dbo].[v_AllProducts] AS [v_AllProducts]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_AllSumOrderByCus_ID" EntityType="Self.v_AllSumOrderByCus_ID" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [v_AllSumOrderByCus_ID].[Customer_ID] AS [Customer_ID], 
+    [v_AllSumOrderByCus_ID].[Total_Cost] AS [Total_Cost], 
+    [v_AllSumOrderByCus_ID].[Name] AS [Name]
+    FROM [dbo].[v_AllSumOrderByCus_ID] AS [v_AllSumOrderByCus_ID]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_AllSumOrderByOrder_ID" EntityType="Self.v_AllSumOrderByOrder_ID" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [v_AllSumOrderByOrder_ID].[ID] AS [ID], 
+    [v_AllSumOrderByOrder_ID].[COST] AS [COST], 
+    [v_AllSumOrderByOrder_ID].[Customer_ID] AS [Customer_ID], 
+    [v_AllSumOrderByOrder_ID].[Name] AS [Name]
+    FROM [dbo].[v_AllSumOrderByOrder_ID] AS [v_AllSumOrderByOrder_ID]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_Top3Authors" EntityType="Self.v_Top3Authors" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [v_Top3Authors].[Name] AS [Name], 
+    [v_Top3Authors].[Amount of books] AS [Amount of books]
+    FROM [dbo].[v_Top3Authors] AS [v_Top3Authors]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_Top5Books" EntityType="Self.v_Top5Books" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [v_Top5Books].[Name] AS [Name], 
+    [v_Top5Books].[Amount of books] AS [Amount of books]
+    FROM [dbo].[v_Top5Books] AS [v_Top5Books]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="v_TopAuthors" EntityType="Self.v_TopAuthors" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [v_TopAuthors].[Name] AS [Name], 
+    [v_TopAuthors].[Amount of books] AS [Amount of books]
+    FROM [dbo].[v_TopAuthors] AS [v_TopAuthors]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK_Authors_Publishers_Authors" Association="Self.FK_Authors_Publishers_Authors">
       <End Role="Authors" EntitySet="Authors" />

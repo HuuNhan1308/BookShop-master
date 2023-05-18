@@ -18,5 +18,6 @@ namespace BookShopManagement.DataModel
         public Nullable<System.DateTime> Date { get; set; }
         public string Shipping_method { get; set; }
         public Nullable<double> Total_cost { get; set; }
+        public Nullable<bool> Complete { get; set; }
     }
 }

@@ -12,11 +12,9 @@ namespace BookShopManagement.DataModel
     using System;
     using System.Collections.Generic;
     
-    public partial class SaleOff
+    public partial class v_Top3Authors
     {
-        public int ID { get; set; }
-        public System.DateTime StartDay { get; set; }
-        public System.DateTime EndDay { get; set; }
-        public double Percent { get; set; }
+        public string Name { get; set; }
+        public Nullable<int> Amount_of_books { get; set; }
     }
 }

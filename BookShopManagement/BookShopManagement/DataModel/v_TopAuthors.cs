@@ -12,13 +12,9 @@ namespace BookShopManagement.DataModel
     using System;
     using System.Collections.Generic;
     
-    public partial class v_AllProducts
+    public partial class v_TopAuthors
     {
-        public string Tittle { get; set; }
-        public double Price { get; set; }
-        public string Author { get; set; }
-        public string Publisher { get; set; }
-        public Nullable<System.DateTime> Release_date { get; set; }
-        public Nullable<int> Rest { get; set; }
+        public string Name { get; set; }
+        public Nullable<int> Amount_of_books { get; set; }
     }
 }
