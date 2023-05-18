@@ -41,8 +41,8 @@
             this.Passwordtxt = new System.Windows.Forms.TextBox();
             this.loginBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -94,7 +94,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(60, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 25);
+            this.label2.Size = new System.Drawing.Size(159, 32);
             this.label2.TabIndex = 1;
             this.label2.Text = "HUHU Shop";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -106,7 +106,7 @@
             this.label1.ForeColor = System.Drawing.Color.Navy;
             this.label1.Location = new System.Drawing.Point(336, 342);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 21);
+            this.label1.Size = new System.Drawing.Size(122, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "User Name:";
             // 
@@ -129,7 +129,7 @@
             this.label3.ForeColor = System.Drawing.Color.Navy;
             this.label3.Location = new System.Drawing.Point(513, 297);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(181, 25);
+            this.label3.Size = new System.Drawing.Size(232, 32);
             this.label3.TabIndex = 1;
             this.label3.Text = "Please Login First";
             this.label3.Click += new System.EventHandler(this.label2_Click);
@@ -140,7 +140,7 @@
             this.Usertxt.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Usertxt.Location = new System.Drawing.Point(340, 369);
             this.Usertxt.Name = "Usertxt";
-            this.Usertxt.Size = new System.Drawing.Size(547, 31);
+            this.Usertxt.Size = new System.Drawing.Size(547, 37);
             this.Usertxt.TabIndex = 3;
             // 
             // label4
@@ -150,7 +150,7 @@
             this.label4.ForeColor = System.Drawing.Color.Navy;
             this.label4.Location = new System.Drawing.Point(336, 415);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 21);
+            this.label4.Size = new System.Drawing.Size(108, 23);
             this.label4.TabIndex = 1;
             this.label4.Text = "Password:";
             // 
@@ -160,7 +160,7 @@
             this.Passwordtxt.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Passwordtxt.Location = new System.Drawing.Point(340, 442);
             this.Passwordtxt.Name = "Passwordtxt";
-            this.Passwordtxt.Size = new System.Drawing.Size(547, 31);
+            this.Passwordtxt.Size = new System.Drawing.Size(547, 37);
             this.Passwordtxt.TabIndex = 3;
             this.Passwordtxt.UseSystemPasswordChar = true;
             // 
@@ -186,23 +186,11 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Navy;
-            this.label5.Location = new System.Drawing.Point(514, 487);
+            this.label5.Location = new System.Drawing.Point(515, 492);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 19);
+            this.label5.Size = new System.Drawing.Size(178, 23);
             this.label5.TabIndex = 1;
             this.label5.Text = "Forgot Password?";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Navy;
-            this.label6.Location = new System.Drawing.Point(6, 696);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(372, 17);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Copyrights © 2018. All rights Reserved By C# Ui Academy.";
             // 
             // button3
             // 
@@ -219,11 +207,24 @@
             this.button3.TabIndex = 4;
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Navy;
+            this.label7.Location = new System.Drawing.Point(441, 590);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(328, 23);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Dont have account? Go register!";
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1200, 720);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.Passwordtxt);
@@ -232,7 +233,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -263,8 +263,8 @@
         private System.Windows.Forms.TextBox Passwordtxt;
         private System.Windows.Forms.Button loginBtn;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label7;
     }
 }
 
