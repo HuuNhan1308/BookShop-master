@@ -284,18 +284,21 @@ namespace BookShopManagement.UserControls
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            selectedRow = dataList.SelectedRows[0];
-            if (selectedRow != null)
+            if (dataList.SelectedRows.Count > 0)
             {
-                string u = selectedRow.Cells["UserName"].Value.ToString(); 
-                var id = bookStoreEntities.Customers
-                    .Where(b => b.UserName == u)
-                    .Select(b => b.ID)
-                    .FirstOrDefault();
+                selectedRow = dataList.SelectedRows[0];
+                if (selectedRow != null)
+                {
+                    string u = selectedRow.Cells["UserName"].Value.ToString();
+                    var id = bookStoreEntities.Customers
+                        .Where(b => b.UserName == u)
+                        .Select(b => b.ID)
+                        .FirstOrDefault();
 
-                bookStoreEntities.Pr_DeleteCustomer(id);
-                updateData();
+                    bookStoreEntities.Pr_DeleteCustomer(id);
+                    updateData();
 
+                }
             }
         }
 

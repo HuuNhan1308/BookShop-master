@@ -161,5 +161,33 @@ namespace BookShopManagement.Forms
             UC_Sales sales = new UC_Sales(customer);
             AddControlsToPanel(sales);
         }
+
+        private void AuthorBtn_Click(object sender, EventArgs e)
+        {
+            moveSidePanel(AuthorBtn);
+            UC_ManageAuthor um = new UC_ManageAuthor();
+            AddControlsToPanel(um);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            moveSidePanel(button1);
+            UC_ManagePublisher um = new UC_ManagePublisher();
+            AddControlsToPanel(um);
+        }
+
+        private void Top5_Click(object sender, EventArgs e)
+        {
+            moveSidePanel(Top5);
+            UC_Top5Books um = new UC_Top5Books();
+            AddControlsToPanel(um);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            moveSidePanel(top3);
+            UC_Top3Author um = new UC_Top3Author();
+            AddControlsToPanel(um);
+        }
     }
 }

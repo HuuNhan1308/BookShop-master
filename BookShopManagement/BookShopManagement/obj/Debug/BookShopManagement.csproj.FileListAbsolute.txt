@@ -181,7 +181,6 @@ C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.CopyComplete
 <<<<<<< HEAD
-C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Products.resources
 D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe.config
 D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe
 D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.pdb
@@ -222,3 +221,6 @@ D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\Boo
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.exe
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.pdb
 >>>>>>> b0d3beff2f6d16d3dbf81b74581109eadaed05b4
+D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_AddBook.resources
+D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageAuthor.resources
+D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManagePublisher.resources
