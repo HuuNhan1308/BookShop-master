@@ -224,8 +224,7 @@ namespace BookShopManagement.UserControls
             comboBox1.DataSource = countries;
 
             comboBox1.SelectedIndex = FindStringIndex(customer.Country);
-            textBox1.Text = customer.Name;
-            textBox2.Text = customer.UserName;
+            textBox1.Text = customer.Name; 
             textBox3.Text = customer.Address;
             textBox4.Text = customer.Phone;
             textBox5.Text = customer.Email;

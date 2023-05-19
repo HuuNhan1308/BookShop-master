@@ -56,7 +56,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timerTime = new System.Windows.Forms.Timer(this.components);
             this.panelControls = new System.Windows.Forms.Panel();
-            this.btnTop = new System.Windows.Forms.Button();
+            this.btnTopBook = new System.Windows.Forms.Button();
+            this.topAuthor = new System.Windows.Forms.Button();
             this.panelLeft.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,7 +68,8 @@
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.SaddleBrown;
-            this.panelLeft.Controls.Add(this.btnTop);
+            this.panelLeft.Controls.Add(this.topAuthor);
+            this.panelLeft.Controls.Add(this.btnTopBook);
             this.panelLeft.Controls.Add(this.btnSettings);
             this.panelLeft.Controls.Add(this.btnViewSales);
             this.panelLeft.Controls.Add(this.btnUsers);
@@ -407,24 +409,43 @@
             this.panelControls.Size = new System.Drawing.Size(1069, 834);
             this.panelControls.TabIndex = 2;
             // 
-            // btnTop
+            // btnTopBook
             // 
-            this.btnTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTop.FlatAppearance.BorderSize = 0;
-            this.btnTop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTop.ForeColor = System.Drawing.Color.White;
-            this.btnTop.Image = ((System.Drawing.Image)(resources.GetObject("btnTop.Image")));
-            this.btnTop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTop.Location = new System.Drawing.Point(0, 500);
-            this.btnTop.Name = "btnTop";
-            this.btnTop.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnTop.Size = new System.Drawing.Size(215, 60);
-            this.btnTop.TabIndex = 3;
-            this.btnTop.Text = "     Top";
-            this.btnTop.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTop.UseVisualStyleBackColor = true;
-            this.btnTop.Click += new System.EventHandler(this.button1_Click);
+            this.btnTopBook.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTopBook.FlatAppearance.BorderSize = 0;
+            this.btnTopBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTopBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTopBook.ForeColor = System.Drawing.Color.White;
+            this.btnTopBook.Image = ((System.Drawing.Image)(resources.GetObject("btnTopBook.Image")));
+            this.btnTopBook.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTopBook.Location = new System.Drawing.Point(0, 500);
+            this.btnTopBook.Name = "btnTopBook";
+            this.btnTopBook.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnTopBook.Size = new System.Drawing.Size(215, 60);
+            this.btnTopBook.TabIndex = 3;
+            this.btnTopBook.Text = "     Top Book";
+            this.btnTopBook.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTopBook.UseVisualStyleBackColor = true;
+            this.btnTopBook.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // topAuthor
+            // 
+            this.topAuthor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topAuthor.FlatAppearance.BorderSize = 0;
+            this.topAuthor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.topAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.topAuthor.ForeColor = System.Drawing.Color.White;
+            this.topAuthor.Image = ((System.Drawing.Image)(resources.GetObject("topAuthor.Image")));
+            this.topAuthor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.topAuthor.Location = new System.Drawing.Point(0, 560);
+            this.topAuthor.Name = "topAuthor";
+            this.topAuthor.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.topAuthor.Size = new System.Drawing.Size(215, 60);
+            this.topAuthor.TabIndex = 4;
+            this.topAuthor.Text = "     Top Author";
+            this.topAuthor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.topAuthor.UseVisualStyleBackColor = true;
+            this.topAuthor.Click += new System.EventHandler(this.topAuthor_Click);
             // 
             // Form_Dashboard
             // 
@@ -481,6 +502,7 @@
         private System.Windows.Forms.Button btnViewSales;
         private System.Windows.Forms.Button btnUsers;
         private System.Windows.Forms.Button btnExpense;
-        private System.Windows.Forms.Button btnTop;
+        private System.Windows.Forms.Button btnTopBook;
+        private System.Windows.Forms.Button topAuthor;
     }
 }

@@ -277,6 +277,18 @@
     <Compile Include="UserControls\UC_ViewSales.Designer.cs">
       <DependentUpon>UC_ViewSales.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UC_Top3Author.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UC_Top3Author.Designer.cs">
+      <DependentUpon>UC_Top3Author.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC_Top5Books.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UC_Top5Books.Designer.cs">
+      <DependentUpon>UC_Top5Books.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -343,6 +355,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_ViewSales.resx">
       <DependentUpon>UC_ViewSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UC_Top3Author.resx">
+      <DependentUpon>UC_Top3Author.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UC_Top5Books.resx">
+      <DependentUpon>UC_Top5Books.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="DataModel\BookStore_Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

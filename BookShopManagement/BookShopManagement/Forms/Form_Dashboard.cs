@@ -158,8 +158,16 @@ namespace BookShopManagement.Forms
         private void button1_Click(object sender, EventArgs e)
         {
 
-            moveSidePanel(btnTop);
+            moveSidePanel(btnTopBook);
             UC_Top5Books ps = new UC_Top5Books();
+            AddControlsToPanel(ps);
+        }
+
+        private void topAuthor_Click(object sender, EventArgs e)
+        {
+
+            moveSidePanel(btnTopBook);
+            UC_Top3Author ps = new UC_Top3Author();
             AddControlsToPanel(ps);
         }
     }
