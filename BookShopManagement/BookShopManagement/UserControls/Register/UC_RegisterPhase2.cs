@@ -1,25 +1,26 @@
-﻿using System;
+﻿using BookShopManagement.Function;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BookShopManagement.DataModel;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Data.SqlClient;
 
-namespace BookShopManagement.UserControls
+namespace BookShopManagement.UserControls.Register
 {
-    public partial class UC_ManageUser : UserControl
+    public partial class UC_RegisterPhase2 : UserControl
     {
-        List<string> countries;
-        BookStoreEntities bookStoreEntities = new BookStoreEntities();
-        public UC_ManageUser()
+
+        private List<string> countries;
+        RegisterSession session;
+        public UC_RegisterPhase2(RegisterSession reg)
         {
             InitializeComponent();
+            session = reg;
+            textBox4.KeyPress += phone_KeyPress;
             countries = new List<string>
             {
                 "Afghanistan",
@@ -219,122 +220,44 @@ namespace BookShopManagement.UserControls
                 "Zambia",
                 "Zimbabwe"
             };
-
-            countryComboBox.DataSource = countries;
-
-            updateData();
-             
+            comboBox1.DataSource = countries;
         }
-
-        private void updateData()
+        private void phone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            dataList.Columns.Add("Name", "Name");
-            dataList.Columns.Add("Address", "Address");
-            dataList.Columns.Add("Country", "Country");
-            dataList.Columns.Add("Phone", "Phone");
-            dataList.Columns.Add("Email", "Email");
-            dataList.Columns.Add("UserName", "UserName");
-            dataList.Columns.Add("Password", "Password");
-            dataList.Columns.Add("Level", "Level");
-
-            dataList.AutoGenerateColumns = false;
-
-            dataList.Columns["Name"].DataPropertyName = "Name";
-            dataList.Columns["Address"].DataPropertyName = "Address";
-            dataList.Columns["Country"].DataPropertyName = "Country";
-            dataList.Columns["Phone"].DataPropertyName = "Phone";
-            dataList.Columns["Email"].DataPropertyName = "Email";
-            dataList.Columns["UserName"].DataPropertyName = "UserName";
-            dataList.Columns["Password"].DataPropertyName = "Password";
-            dataList.Columns["Level"].DataPropertyName = "Level";
-
-            foreach (DataGridViewColumn column in dataList.Columns)
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                column.ReadOnly = true;
-            }
-
-            dataList.DataSource = bookStoreEntities.Customers.ToList();
-        }
-         
-        private int FindStringIndex(string searchString)
-        {
-            return countries.FindIndex(s => s.Equals(searchString, StringComparison.OrdinalIgnoreCase));
-        }
-        DataGridViewRow selectedRow;
-        private void editBtn_Click(object sender, EventArgs e)
-        {
-            if (dataList.SelectedRows.Count > 0)
-            {
-                selectedRow = dataList.SelectedRows[0];
-                if (selectedRow != null)
-                {
-                    firstnameTextbox.Text = selectedRow.Cells["Name"].Value.ToString();
-                    addressTextbox.Text = selectedRow.Cells["Address"].Value.ToString();
-                    countryComboBox.SelectedIndex =
-                        FindStringIndex(selectedRow.Cells["Country"].Value.ToString());
-                    phoneTextbox.Text = selectedRow.Cells["Phone"].Value.ToString();
-                    emailTextbox.Text = selectedRow.Cells["Email"].Value.ToString();
-                    usernameBox.Text = selectedRow.Cells["UserName"].Value.ToString();
-                    passwordTextbox.Text = selectedRow.Cells["Password"].Value.ToString();
-                    //string level = selectedRow.Cells["Level"].Value.ToString();
-                }
+                e.Handled = true;
             }
         }
 
-
-        private void deleteBtn_Click(object sender, EventArgs e)
+        private void loginBtn_Click(object sender, EventArgs e)
         {
-            selectedRow = dataList.SelectedRows[0];
-            if (selectedRow != null)
+            if (string.IsNullOrEmpty(textBox1.Text))
             {
-                string u = selectedRow.Cells["UserName"].Value.ToString(); 
-                var id = bookStoreEntities.Customers
-                    .Where(b => b.UserName == u)
-                    .Select(b => b.ID)
-                    .FirstOrDefault();
-
-                bookStoreEntities.Pr_DeleteCustomer(id);
-                updateData();
-
+                MessageBox.Show("Display name cannot be null");
+                return;
             }
-        }
-
-        private void clearBtn_Click(object sender, EventArgs e)
-        {
-            firstnameTextbox.Text = "";
-            addressTextbox.Text = "";
-            countryComboBox.SelectedIndex = 0;
-            phoneTextbox.Text = "";
-            emailTextbox.Text = "";
-            usernameBox.Text = "";
-            passwordTextbox.Text = "";
-            selectedRow = null;
-        }
-
-        private void saveBtn_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(firstnameTextbox.Text)
-                || string.IsNullOrEmpty(addressTextbox.Text)
-                || string.IsNullOrEmpty(countryComboBox.Text)
-                || string.IsNullOrEmpty(phoneTextbox.Text)
-                || string.IsNullOrEmpty(emailTextbox.Text)
-                || string.IsNullOrEmpty(usernameBox.Text)
-                || string.IsNullOrEmpty(passwordTextbox.Text)
-                ) 
+            if (string.IsNullOrEmpty(textBox3.Text))
             {
-                MessageBox.Show("Missing data");
-                return; 
+                MessageBox.Show("Address cannot be null");
+                return;
             }
-            bookStoreEntities.Pr_AddCustomer(
-                firstnameTextbox.Text,
-                addressTextbox.Text, 
-                countryComboBox.Text,
-                phoneTextbox.Text,
-                emailTextbox.Text,
-                usernameBox.Text,
-                passwordTextbox.Text
-                );
-            updateData();
+            if (string.IsNullOrEmpty(textBox4.Text))
+            {
+                MessageBox.Show("Phone number cannot be null");
+                return;
+            } 
+            if (string.IsNullOrEmpty(comboBox1.Text))
+            {
+                MessageBox.Show("Country cannot be null");
+                return;
+            }
+
+            session.phase2(textBox1.Text, textBox3.Text, comboBox1.Text, textBox4.Text);
+            ButtonClicked?.Invoke(this, EventArgs.Empty);
+
         }
+
+        public event EventHandler ButtonClicked;
     }
 }

@@ -240,7 +240,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(60, 99);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 18);
+            this.label3.Size = new System.Drawing.Size(160, 24);
             this.label3.TabIndex = 0;
             this.label3.Text = "From Group Vjp";
             // 
@@ -268,7 +268,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(53, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 18);
+            this.label2.Size = new System.Drawing.Size(123, 24);
             this.label2.TabIndex = 0;
             this.label2.Text = "HUHU Shop";
             // 
@@ -296,10 +296,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Navy;
+            this.label4.ForeColor = System.Drawing.Color.SaddleBrown;
             this.label4.Location = new System.Drawing.Point(18, 18);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(245, 20);
+            this.label4.Size = new System.Drawing.Size(293, 25);
             this.label4.TabIndex = 0;
             this.label4.Text = "HUHU Shop, From Group Vjp";
             // 
@@ -323,7 +323,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Navy;
+            this.panel2.BackColor = System.Drawing.Color.SaddleBrown;
             this.panel2.Controls.Add(this.userRole);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.labelTime);
@@ -342,7 +342,7 @@
             this.userRole.ForeColor = System.Drawing.Color.White;
             this.userRole.Location = new System.Drawing.Point(166, 50);
             this.userRole.Name = "userRole";
-            this.userRole.Size = new System.Drawing.Size(81, 20);
+            this.userRole.Size = new System.Drawing.Size(97, 25);
             this.userRole.TabIndex = 0;
             this.userRole.Text = "userRole";
             // 
@@ -353,7 +353,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(110, 50);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 20);
+            this.label6.Size = new System.Drawing.Size(62, 25);
             this.label6.TabIndex = 0;
             this.label6.Text = "Role:";
             // 
@@ -365,7 +365,7 @@
             this.labelTime.ForeColor = System.Drawing.Color.White;
             this.labelTime.Location = new System.Drawing.Point(960, 34);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(97, 20);
+            this.labelTime.Size = new System.Drawing.Size(122, 25);
             this.labelTime.TabIndex = 0;
             this.labelTime.Text = "HH:MM:SS";
             // 
@@ -376,7 +376,7 @@
             this.userName.ForeColor = System.Drawing.Color.White;
             this.userName.Location = new System.Drawing.Point(165, 19);
             this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(90, 20);
+            this.userName.Size = new System.Drawing.Size(110, 25);
             this.userName.TabIndex = 0;
             this.userName.Text = "userName";
             // 
@@ -387,7 +387,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(69, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 20);
+            this.label1.Size = new System.Drawing.Size(109, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome:";
             // 

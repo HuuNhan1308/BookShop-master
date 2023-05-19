@@ -211,6 +211,7 @@
     <Compile Include="Forms\Form_FinishOrder.Designer.cs">
       <DependentUpon>Form_FinishOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Function\RegisterSession.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControls\UC_AddBook.cs">
@@ -261,10 +262,10 @@
     <Compile Include="UserControls\UC_PurchaseDetails.Designer.cs">
       <DependentUpon>UC_PurchaseDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UC_Register.cs">
+    <Compile Include="UserControls\Register\UC_Register.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UC_Register.Designer.cs">
+    <Compile Include="UserControls\Register\UC_Register.Designer.cs">
       <DependentUpon>UC_Register.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UC_Sales.cs">
@@ -278,6 +279,18 @@
     </Compile>
     <Compile Include="UserControls\UC_ViewSales.Designer.cs">
       <DependentUpon>UC_ViewSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC_Top3Author.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UC_Top3Author.Designer.cs">
+      <DependentUpon>UC_Top3Author.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC_Top5Books.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UC_Top5Books.Designer.cs">
+      <DependentUpon>UC_Top5Books.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -334,7 +347,7 @@
     <EmbeddedResource Include="UserControls\UC_PurchaseDetails.resx">
       <DependentUpon>UC_PurchaseDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UC_Register.resx">
+    <EmbeddedResource Include="UserControls\Register\UC_Register.resx">
       <DependentUpon>UC_Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_Sales.resx">

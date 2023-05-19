@@ -223,14 +223,17 @@ namespace BookShopManagement.UserControls
 
             comboBox1.DataSource = countries;
 
-            comboBox1.SelectedIndex = countries.IndexOf(customer.Country);
-            textBox1.Text = customer.Name;
-            textBox2.Text = customer.UserName;
+            comboBox1.SelectedIndex = FindStringIndex(customer.Country);
+            textBox1.Text = customer.Name; 
             textBox3.Text = customer.Address;
             textBox4.Text = customer.Phone;
             textBox5.Text = customer.Email;
         }
-         
+        private int FindStringIndex(string searchString)
+        {
+            return countries.FindIndex(s => s.Equals(searchString, StringComparison.OrdinalIgnoreCase));
+        }
+
         private void phone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -239,14 +242,33 @@ namespace BookShopManagement.UserControls
             }
         }
 
+        BookStoreEntities bookStoreEntities = new BookStoreEntities();
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            customer.Country = comboBox1.SelectedValue.ToString();
-            customer.Name = textBox1.Text;
-            customer.UserName = textBox2.Text;
-            customer.Address = textBox3.Text;
-            customer.Phone = textBox4.Text;
-            customer.Email = textBox5.Text;
+            string username = customer.UserName;  
+            string name = textBox1.Text;
+            string address = textBox3.Text;
+            string country = comboBox1.Text;
+            string phone = textBox4.Text;
+            string email = textBox5.Text;
+
+            var customerToUpdate = bookStoreEntities.Customers.FirstOrDefault(c => c.UserName == username);
+            if (customerToUpdate != null)
+            {
+                customerToUpdate.Name = name;
+                customerToUpdate.Address = address;
+                customerToUpdate.Country = country;
+                customerToUpdate.Phone = phone;
+                customerToUpdate.Email = email;
+
+                bookStoreEntities.SaveChanges();  
+
+                MessageBox.Show("Update Complete");
+            }
+            else
+            {
+                MessageBox.Show("Customer not found");
+            }
         }
     }
 

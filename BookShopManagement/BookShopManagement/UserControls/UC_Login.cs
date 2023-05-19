@@ -48,11 +48,15 @@ namespace BookShopManagement.UserControls
 
             using (Form_Dashboard fd = new Form_Dashboard(cus))
             {
-                this.Hide();
-                fd.ShowDialog();
+                ButtonClicked?.Invoke(this, EventArgs.Empty);
+                fd.ShowDialog(); 
+
             }
         }
 
+        
+
+        public event EventHandler ButtonClicked;
         private void Passwordtxt_TextChanged(object sender, EventArgs e)
         {
 

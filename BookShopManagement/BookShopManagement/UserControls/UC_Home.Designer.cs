@@ -61,7 +61,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Navy;
+            this.label2.ForeColor = System.Drawing.Color.SaddleBrown;
             this.label2.Location = new System.Drawing.Point(324, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(314, 25);
@@ -205,7 +205,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Navy;
+            this.label1.ForeColor = System.Drawing.Color.SaddleBrown;
             this.label1.Location = new System.Drawing.Point(55, 259);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(115, 19);
@@ -257,7 +257,7 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Navy;
+            this.label9.ForeColor = System.Drawing.Color.SaddleBrown;
             this.label9.Location = new System.Drawing.Point(589, 330);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(235, 19);
@@ -269,7 +269,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Navy;
+            this.label10.ForeColor = System.Drawing.Color.SaddleBrown;
             this.label10.Location = new System.Drawing.Point(626, 526);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(72, 19);
@@ -281,7 +281,7 @@
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Navy;
+            this.label11.ForeColor = System.Drawing.Color.SaddleBrown;
             this.label11.Location = new System.Drawing.Point(840, 525);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(44, 19);
