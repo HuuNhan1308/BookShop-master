@@ -246,15 +246,30 @@ namespace BookShopManagement.UserControls
         BookStoreEntities bookStoreEntities = new BookStoreEntities();
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            bookStoreEntities.Pr_UpdateCustomer(null,
-                textBox1.Text,
-                textBox3.Text,
-                comboBox1.Text, 
-                textBox4.Text,
-                textBox5.Text, 
-                customer.UserName, 
-                customer.Password);
-            MessageBox.Show("Update Complete");
+            string username = customer.UserName;  
+            string name = textBox1.Text;
+            string address = textBox3.Text;
+            string country = comboBox1.Text;
+            string phone = textBox4.Text;
+            string email = textBox5.Text;
+
+            var customerToUpdate = bookStoreEntities.Customers.FirstOrDefault(c => c.UserName == username);
+            if (customerToUpdate != null)
+            {
+                customerToUpdate.Name = name;
+                customerToUpdate.Address = address;
+                customerToUpdate.Country = country;
+                customerToUpdate.Phone = phone;
+                customerToUpdate.Email = email;
+
+                bookStoreEntities.SaveChanges();  
+
+                MessageBox.Show("Update Complete");
+            }
+            else
+            {
+                MessageBox.Show("Customer not found");
+            }
         }
     }
 
