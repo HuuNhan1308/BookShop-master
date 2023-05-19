@@ -56,6 +56,7 @@
     <Property Name="Severance_Date" Type="DateTime" Precision="0" />
     <NavigationProperty Name="Author" Relationship="Self.FK_Authors_Publishers_Authors" FromRole="Authors_Publishers" ToRole="Authors" />
     <NavigationProperty Name="Publisher" Relationship="Self.FK_Authors_Publishers_Publishers" FromRole="Authors_Publishers" ToRole="Publishers" />
+    <NavigationProperty Name="Books" Relationship="Self.FK_Books_Authors_Publishers" FromRole="Authors_Publishers" ToRole="Books" />
   </EntityType>
   <EntityType Name="Book">
     <Key>
@@ -67,6 +68,7 @@
     <Property Name="Author_ID" Type="Int32" Nullable="false" />
     <Property Name="Publisher_ID" Type="Int32" Nullable="false" />
     <Property Name="Release_Date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Authors_Publishers" Relationship="Self.FK_Books_Authors_Publishers" FromRole="Books" ToRole="Authors_Publishers" />
     <NavigationProperty Name="Books_Orders" Relationship="Self.FK_Books_Orders_Books" FromRole="Books" ToRole="Books_Orders" />
     <NavigationProperty Name="Warehouse_Books" Relationship="Self.FK_Warehouse_Books_Books" FromRole="Books" ToRole="Warehouse_Books" />
     <NavigationProperty Name="Genres" Relationship="Self.Books_Genres" FromRole="Books" ToRole="Genres" />
@@ -259,6 +261,22 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Books_Authors_Publishers">
+    <End Role="Authors_Publishers" Type="Self.Authors_Publishers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Books" Type="Self.Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Authors_Publishers">
+        <PropertyRef Name="Publisher_ID" />
+        <PropertyRef Name="Author_ID" />
+      </Principal>
+      <Dependent Role="Books">
+        <PropertyRef Name="Publisher_ID" />
+        <PropertyRef Name="Author_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Books_Orders_Books">
     <End Role="Books" Type="Self.Book" Multiplicity="1" />
     <End Role="Books_Orders" Type="Self.Books_Orders" Multiplicity="*" />
@@ -386,6 +404,10 @@
     <AssociationSet Name="FK_Authors_Publishers_Publishers" Association="Self.FK_Authors_Publishers_Publishers">
       <End Role="Publishers" EntitySet="Publishers" />
       <End Role="Authors_Publishers" EntitySet="Authors_Publishers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Books_Authors_Publishers" Association="Self.FK_Books_Authors_Publishers">
+      <End Role="Authors_Publishers" EntitySet="Authors_Publishers" />
+      <End Role="Books" EntitySet="Books" />
     </AssociationSet>
     <AssociationSet Name="FK_Books_Orders_Books" Association="Self.FK_Books_Orders_Books">
       <End Role="Books" EntitySet="Books" />

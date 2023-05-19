@@ -176,3 +176,7 @@ C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.CopyComplete
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Products.resources
+C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_PersonalSetting.resources
+C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Login.resources
+C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Register.resources
+C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_AddBook.resources

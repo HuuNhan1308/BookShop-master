@@ -138,7 +138,7 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
       <PropertyRef Name="Publisher" />
     </Key>
     <Property Name="Tittle" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
     <Property Name="Author" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Publisher" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Release date" Type="date" />

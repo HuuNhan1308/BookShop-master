@@ -223,6 +223,22 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Books_Authors_Publishers">
+    <End Role="Authors_Publishers" Type="Self.Authors_Publishers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Books" Type="Self.Books" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Authors_Publishers">
+        <PropertyRef Name="Publisher_ID" />
+        <PropertyRef Name="Author_ID" />
+      </Principal>
+      <Dependent Role="Books">
+        <PropertyRef Name="Publisher_ID" />
+        <PropertyRef Name="Author_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Books_Customers_Customers">
     <End Role="Customers" Type="Self.Customers" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -725,6 +741,10 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
     <AssociationSet Name="FK_Authors_Publishers_Publishers" Association="Self.FK_Authors_Publishers_Publishers">
       <End Role="Publishers" EntitySet="Publishers" />
       <End Role="Authors_Publishers" EntitySet="Authors_Publishers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Books_Authors_Publishers" Association="Self.FK_Books_Authors_Publishers">
+      <End Role="Authors_Publishers" EntitySet="Authors_Publishers" />
+      <End Role="Books" EntitySet="Books" />
     </AssociationSet>
     <AssociationSet Name="FK_Books_Customers_Customers" Association="Self.FK_Books_Customers_Customers">
       <End Role="Customers" EntitySet="Customers" />
