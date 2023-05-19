@@ -184,7 +184,7 @@
       <PropertyRef Name="Publisher" />
     </Key>
     <Property Name="Tittle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
     <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Publisher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Release_date" Type="DateTime" Precision="0" />

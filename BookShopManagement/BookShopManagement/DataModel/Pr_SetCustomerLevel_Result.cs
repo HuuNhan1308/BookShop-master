@@ -10,16 +10,11 @@
 namespace BookShopManagement.DataModel
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Authors_Publishers
+    public partial class Pr_SetCustomerLevel_Result
     {
-        public int Publisher_ID { get; set; }
-        public int Author_ID { get; set; }
-        public System.DateTime Apply_Date { get; set; }
-        public Nullable<System.DateTime> Severance_Date { get; set; }
-    
-        public virtual Author Author { get; set; }
-        public virtual Publisher Publisher { get; set; }
+        public int Customer_ID { get; set; }
+        public Nullable<double> Total_Cost { get; set; }
+        public string Name { get; set; }
     }
 }

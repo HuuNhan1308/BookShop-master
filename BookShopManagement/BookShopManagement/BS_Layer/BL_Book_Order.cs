@@ -15,7 +15,8 @@ namespace BookShopManagement.BS_Layer
 
         public void AddSingleBookOrder(List<Demo_Order> userOrderList, int OrderID)
         {
-            Console.WriteLine("Addsingle:" + OrderID);
+            //method add user's books_orders
+
             foreach (Demo_Order singleOrder in userOrderList)
             {
                 Book book = db.Books.Single(x => x.Name == singleOrder.BookName);
@@ -36,6 +37,16 @@ namespace BookShopManagement.BS_Layer
                     Quantities = x.Amount
                 })
                 .ToList();
+        }
+
+        public void EditBookOrder(int OrderID, int BookID, int quantity) 
+        {
+            db.Pr_Update_books_order(OrderID, BookID, quantity);
+        }
+
+        public void DeleteBookOrder(int OrderID, int BookID)
+        {
+            db.Pr_Delete_books_order(OrderID, BookID);
         }
     }
 }

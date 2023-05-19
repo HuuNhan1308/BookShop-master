@@ -155,20 +155,11 @@ namespace BookShopManagement.Forms
             labelTime.Text = dt.ToString("HH:MM:ss");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ManageSaleBtn_Click(object sender, EventArgs e)
         {
-
-            moveSidePanel(btnTopBook);
-            UC_Top5Books ps = new UC_Top5Books();
-            AddControlsToPanel(ps);
-        }
-
-        private void topAuthor_Click(object sender, EventArgs e)
-        {
-
-            moveSidePanel(btnTopBook);
-            UC_Top3Author ps = new UC_Top3Author();
-            AddControlsToPanel(ps);
+            moveSidePanel(ManageSaleBtn);
+            UC_Sales sales = new UC_Sales(customer);
+            AddControlsToPanel(sales);
         }
     }
 }

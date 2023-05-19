@@ -146,6 +146,7 @@ C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement
 C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.CopyComplete
 C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Products.resources
+C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Products.resources
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.AssemblyReference.cache
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.SuggestedBindingRedirects.cache
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Form1.resources
@@ -156,17 +157,21 @@ C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_Dashboard.resources
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_FinishOrder.resources
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Properties.Resources.resources
+C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_AddBook.resources
+C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_PersonalSetting.resources
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Home.resources
+C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Login.resources
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageExpense.resources
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageUser.resources
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Products.resources
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_PurchaseDetails.resources
+C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Register.resources
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Sales.resources
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ViewSales.resources
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.GenerateResource.cache
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.CoreCompileInputs.cache
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.exe
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.pdb
+C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.Register.UC_RegisterPhase2.resources
+C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.Register.UC_RegisterPhase3.resources
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe.config
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.pdb
@@ -175,6 +180,7 @@ C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.xml
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.CopyComplete
+<<<<<<< HEAD
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Products.resources
 D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe.config
 D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe
@@ -212,3 +218,7 @@ D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\Boo
 D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.exe
 D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.pdb
 D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.View.UC_Top3Author.resources
+=======
+C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.exe
+C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.pdb
+>>>>>>> b0d3beff2f6d16d3dbf81b74581109eadaed05b4

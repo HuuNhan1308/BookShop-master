@@ -42,11 +42,22 @@
             this.ViewAllOrders = new System.Windows.Forms.DataGridView();
             this.panel7 = new System.Windows.Forms.Panel();
             this.ViewAllProducts = new System.Windows.Forms.DataGridView();
+            this.txtBookName = new System.Windows.Forms.TextBox();
+            this.numQuantity = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.txtOrderID = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewAllOrders)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewAllProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).BeginInit();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -213,11 +224,117 @@
             this.ViewAllProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ViewAllProducts.Size = new System.Drawing.Size(445, 479);
             this.ViewAllProducts.TabIndex = 0;
+            this.ViewAllProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ViewAllProducts_CellContentClick);
+            // 
+            // txtBookName
+            // 
+            this.txtBookName.Enabled = false;
+            this.txtBookName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBookName.Location = new System.Drawing.Point(711, 596);
+            this.txtBookName.Name = "txtBookName";
+            this.txtBookName.Size = new System.Drawing.Size(263, 29);
+            this.txtBookName.TabIndex = 11;
+            // 
+            // numQuantity
+            // 
+            this.numQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numQuantity.Location = new System.Drawing.Point(711, 641);
+            this.numQuantity.Name = "numQuantity";
+            this.numQuantity.Size = new System.Drawing.Size(120, 29);
+            this.numQuantity.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(593, 602);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 20);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Book name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(593, 646);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 20);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Quantity";
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.deleteBtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.deleteBtn.FlatAppearance.BorderSize = 0;
+            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.ForeColor = System.Drawing.Color.White;
+            this.deleteBtn.Location = new System.Drawing.Point(243, 0);
+            this.deleteBtn.Margin = new System.Windows.Forms.Padding(100, 3, 3, 3);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(202, 89);
+            this.deleteBtn.TabIndex = 15;
+            this.deleteBtn.Text = "Delete Book";
+            this.deleteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // saveBtn
+            // 
+            this.saveBtn.BackColor = System.Drawing.Color.ForestGreen;
+            this.saveBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.saveBtn.FlatAppearance.BorderSize = 0;
+            this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveBtn.ForeColor = System.Drawing.Color.White;
+            this.saveBtn.Location = new System.Drawing.Point(0, 0);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(100, 3, 3, 3);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(202, 89);
+            this.saveBtn.TabIndex = 14;
+            this.saveBtn.Text = "Save changes";
+            this.saveBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.saveBtn.UseVisualStyleBackColor = false;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.deleteBtn);
+            this.panel8.Controls.Add(this.saveBtn);
+            this.panel8.Location = new System.Drawing.Point(597, 691);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(445, 89);
+            this.panel8.TabIndex = 15;
+            // 
+            // txtOrderID
+            // 
+            this.txtOrderID.Enabled = false;
+            this.txtOrderID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOrderID.Location = new System.Drawing.Point(104, 599);
+            this.txtOrderID.Name = "txtOrderID";
+            this.txtOrderID.Size = new System.Drawing.Size(101, 29);
+            this.txtOrderID.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 605);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 20);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Order ID:";
             // 
             // UC_ManageExpense
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panel8);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtOrderID);
+            this.Controls.Add(this.numQuantity);
+            this.Controls.Add(this.txtBookName);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
@@ -235,7 +352,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ViewAllOrders)).EndInit();
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ViewAllProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).EndInit();
+            this.panel8.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -254,5 +374,14 @@
         private System.Windows.Forms.DataGridView ViewAllOrders;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.DataGridView ViewAllProducts;
+        private System.Windows.Forms.TextBox txtBookName;
+        private System.Windows.Forms.NumericUpDown numQuantity;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.TextBox txtOrderID;
+        private System.Windows.Forms.Label label3;
     }
 }

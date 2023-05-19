@@ -57,6 +57,16 @@ namespace BookShopManagement.DataModel
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Fn_GetOrder_ByCustomer_Result>("[BookStoreEntities].[Fn_GetOrder_ByCustomer](@CUSTOMER_ID)", cUSTOMER_IDParameter);
         }
     
+        [DbFunction("BookStoreEntities", "Fn_GetPublishers_ByAuthor")]
+        public virtual IQueryable<Fn_GetPublishers_ByAuthor_Result> Fn_GetPublishers_ByAuthor(Nullable<int> author_ID)
+        {
+            var author_IDParameter = author_ID.HasValue ?
+                new ObjectParameter("Author_ID", author_ID) :
+                new ObjectParameter("Author_ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<Fn_GetPublishers_ByAuthor_Result>("[BookStoreEntities].[Fn_GetPublishers_ByAuthor](@Author_ID)", author_IDParameter);
+        }
+    
         [DbFunction("BookStoreEntities", "Fn_GetRevenue_ByYearMonth")]
         public virtual IQueryable<Fn_GetRevenue_ByYearMonth_Result> Fn_GetRevenue_ByYearMonth(Nullable<int> month, Nullable<int> year)
         {
@@ -233,7 +243,7 @@ namespace BookShopManagement.DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_AddAuthor", nameParameter, dateParameter);
         }
     
-        public virtual int Pr_AddBook(string name, Nullable<double> price, string author_Name, string publisher_Name, Nullable<System.DateTime> release_date)
+        public virtual int Pr_AddBook(string name, Nullable<decimal> price, string author_Name, string publisher_Name, Nullable<System.DateTime> release_date)
         {
             var nameParameter = name != null ?
                 new ObjectParameter("Name", name) :
@@ -241,7 +251,7 @@ namespace BookShopManagement.DataModel
     
             var priceParameter = price.HasValue ?
                 new ObjectParameter("Price", price) :
-                new ObjectParameter("Price", typeof(double));
+                new ObjectParameter("Price", typeof(decimal));
     
             var author_NameParameter = author_Name != null ?
                 new ObjectParameter("Author_Name", author_Name) :
@@ -480,13 +490,13 @@ namespace BookShopManagement.DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_DeleteShipping", iDParameter);
         }
     
-        public virtual int Pr_SetCustomerLevel(Nullable<int> customer_ID)
+        public virtual ObjectResult<Pr_SetCustomerLevel_Result> Pr_SetCustomerLevel(Nullable<int> customer_ID)
         {
             var customer_IDParameter = customer_ID.HasValue ?
                 new ObjectParameter("customer_ID", customer_ID) :
                 new ObjectParameter("customer_ID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_SetCustomerLevel", customer_IDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Pr_SetCustomerLevel_Result>("Pr_SetCustomerLevel", customer_IDParameter);
         }
     
         public virtual int Pr_Update_Author_Publisher(Nullable<int> publisher_id, Nullable<int> author_id, Nullable<System.DateTime> apply_date, Nullable<System.DateTime> severance_date)
@@ -510,12 +520,8 @@ namespace BookShopManagement.DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_Update_Author_Publisher", publisher_idParameter, author_idParameter, apply_dateParameter, severance_dateParameter);
         }
     
-        public virtual int Pr_Update_books_order(Nullable<int> id, Nullable<int> order_id, Nullable<int> book_id, Nullable<int> amount)
+        public virtual int Pr_Update_books_order(Nullable<int> order_id, Nullable<int> book_id, Nullable<int> amount)
         {
-            var idParameter = id.HasValue ?
-                new ObjectParameter("id", id) :
-                new ObjectParameter("id", typeof(int));
-    
             var order_idParameter = order_id.HasValue ?
                 new ObjectParameter("order_id", order_id) :
                 new ObjectParameter("order_id", typeof(int));
@@ -528,7 +534,7 @@ namespace BookShopManagement.DataModel
                 new ObjectParameter("amount", amount) :
                 new ObjectParameter("amount", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_Update_books_order", idParameter, order_idParameter, book_idParameter, amountParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_Update_books_order", order_idParameter, book_idParameter, amountParameter);
         }
     
         public virtual int Pr_update_customer_level(Nullable<int> level, string desc, Nullable<int> discountRate, Nullable<int> oldLevel)
@@ -599,7 +605,7 @@ namespace BookShopManagement.DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_UpdateAuthor", iDParameter, nameParameter, dateParameter);
         }
     
-        public virtual int Pr_UpdateBook(Nullable<int> iD, string name, Nullable<double> price, string author_Name, string publisher_Name, Nullable<System.DateTime> release_date)
+        public virtual int Pr_UpdateBook(Nullable<int> iD, string name, Nullable<decimal> price, string author_Name, string publisher_Name, Nullable<System.DateTime> release_date)
         {
             var iDParameter = iD.HasValue ?
                 new ObjectParameter("ID", iD) :
@@ -611,7 +617,7 @@ namespace BookShopManagement.DataModel
     
             var priceParameter = price.HasValue ?
                 new ObjectParameter("Price", price) :
-                new ObjectParameter("Price", typeof(double));
+                new ObjectParameter("Price", typeof(decimal));
     
             var author_NameParameter = author_Name != null ?
                 new ObjectParameter("Author_Name", author_Name) :
