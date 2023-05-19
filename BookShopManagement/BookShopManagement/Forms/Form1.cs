@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using BookShopManagement.DataModel;
 using BookShopManagement.UserControls;
 using System.Reflection.Emit;
+using BookShopManagement.Function;
+using BookShopManagement.UserControls.Register;
 
 namespace BookShopManagement
 {
@@ -43,24 +45,19 @@ namespace BookShopManagement
             c.Top = panel2.Size.Height / 2 - c.Height / 2;
             panel2.Controls.Clear();
             panel2.Controls.Add(c);
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-            using (UC_Register ur = new UC_Register())
-            {
-                AddControlsToPanel(ur);
-            }
-        }
+        } 
 
         private bool log = true;
+        private RegisterSession registerSession = null;
         private void label7_Click_1(object sender, EventArgs e)
         {
             if (log)
             {
                 log = false;
                 label7.Text = "Have account? Go login!";
-                UC_Register ul = new UC_Register();
+                registerSession = new Function.RegisterSession();
+                UC_Register ul = new UC_Register(registerSession); 
+                ul.ButtonClicked += NextButtonClicked;
                 AddControlsToPanel(ul);
             }
             else
@@ -69,6 +66,27 @@ namespace BookShopManagement
                 label7.Text = "Dont have account? Go register!";
                 UC_Login ul = new UC_Login();
                 AddControlsToPanel(ul);
+            }
+        }
+
+        private void NextButtonClicked(object sender, EventArgs e)
+        {
+            if (registerSession != null)
+            {
+                switch (registerSession.Phase)
+                {
+                    case 1:
+                        registerSession.Phase = 2;
+                        UC_RegisterPhase2 ul2 = new UC_RegisterPhase2(registerSession);
+                        ul2.ButtonClicked += NextButtonClicked;
+                        AddControlsToPanel(ul2);
+                        break;
+                    case 2:
+                        registerSession.Phase = 3;
+                        UC_RegisterPhase3 ul3 = new UC_RegisterPhase3(registerSession);
+                        AddControlsToPanel(ul3);
+                        break;
+                }
             }
         }
     }

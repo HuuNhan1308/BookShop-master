@@ -1,4 +1,4 @@
-﻿using BookShopManagement.DataModel;
+﻿using BookShopManagement.Function;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,20 +6,20 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BookShopManagement.UserControls
+namespace BookShopManagement.UserControls.Register
 {
-    public partial class UC_PersonalSetting : UserControl
+    public partial class UC_RegisterPhase2 : UserControl
     {
+
         private List<string> countries;
-        private Customer customer;
-        public UC_PersonalSetting(Customer customer)
+        RegisterSession session;
+        public UC_RegisterPhase2(RegisterSession reg)
         {
-            this.customer = customer;
-            InitializeComponent(); 
+            InitializeComponent();
+            session = reg;
             textBox4.KeyPress += phone_KeyPress;
             countries = new List<string>
             {
@@ -220,21 +220,8 @@ namespace BookShopManagement.UserControls
                 "Zambia",
                 "Zimbabwe"
             };
-
             comboBox1.DataSource = countries;
-
-            comboBox1.SelectedIndex = FindStringIndex(customer.Country);
-            textBox1.Text = customer.Name;
-            textBox2.Text = customer.UserName;
-            textBox3.Text = customer.Address;
-            textBox4.Text = customer.Phone;
-            textBox5.Text = customer.Email;
         }
-        private int FindStringIndex(string searchString)
-        {
-            return countries.FindIndex(s => s.Equals(searchString, StringComparison.OrdinalIgnoreCase));
-        }
-
         private void phone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -243,19 +230,34 @@ namespace BookShopManagement.UserControls
             }
         }
 
-        BookStoreEntities bookStoreEntities = new BookStoreEntities();
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            bookStoreEntities.Pr_UpdateCustomer(null,
-                textBox1.Text,
-                textBox3.Text,
-                comboBox1.Text, 
-                textBox4.Text,
-                textBox5.Text, 
-                customer.UserName, 
-                customer.Password);
-            MessageBox.Show("Update Complete");
-        }
-    }
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                MessageBox.Show("Display name cannot be null");
+                return;
+            }
+            if (string.IsNullOrEmpty(textBox3.Text))
+            {
+                MessageBox.Show("Address cannot be null");
+                return;
+            }
+            if (string.IsNullOrEmpty(textBox4.Text))
+            {
+                MessageBox.Show("Phone number cannot be null");
+                return;
+            } 
+            if (string.IsNullOrEmpty(comboBox1.Text))
+            {
+                MessageBox.Show("Country cannot be null");
+                return;
+            }
 
+            session.phase2(textBox1.Text, textBox3.Text, comboBox1.Text, textBox4.Text);
+            ButtonClicked?.Invoke(this, EventArgs.Empty);
+
+        }
+
+        public event EventHandler ButtonClicked;
+    }
 }
