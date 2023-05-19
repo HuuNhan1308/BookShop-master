@@ -232,6 +232,18 @@
     <Compile Include="UserControls\UC_AddBook.Designer.cs">
       <DependentUpon>UC_AddBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UC_ManagePublisher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_ManagePublisher.Designer.cs">
+      <DependentUpon>UC_ManagePublisher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_ManageAuthor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_ManageAuthor.Designer.cs">
+      <DependentUpon>UC_ManageAuthor.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UC_PersonalSetting.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -343,6 +355,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_AddBook.resx">
       <DependentUpon>UC_AddBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_ManagePublisher.resx">
+      <DependentUpon>UC_ManagePublisher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_ManageAuthor.resx">
+      <DependentUpon>UC_ManageAuthor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_PersonalSetting.resx">
       <DependentUpon>UC_PersonalSetting.cs</DependentUpon>
