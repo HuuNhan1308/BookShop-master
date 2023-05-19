@@ -11,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using BookShopManagement.DataModel;
 using System.Reflection;
+using BookShopManagement.View;
 
 namespace BookShopManagement.Forms
 {
@@ -48,8 +49,8 @@ namespace BookShopManagement.Forms
         }
 
         private void button9_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
+        {   
+            Application.Exit();
         }
 
         private void Form_Dashboard_Load(object sender, EventArgs e)
@@ -152,6 +153,14 @@ namespace BookShopManagement.Forms
         {
             DateTime dt = DateTime.Now;
             labelTime.Text = dt.ToString("HH:MM:ss");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            moveSidePanel(btnTop);
+            UC_Top5Books ps = new UC_Top5Books();
+            AddControlsToPanel(ps);
         }
     }
 }

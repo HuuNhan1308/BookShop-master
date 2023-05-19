@@ -28,13 +28,19 @@ namespace BookShopManagement
             //panel2.Anchor = AnchorStyles.None;
             UC_Login ul = new UC_Login();
             AddControlsToPanel(ul);
-            
-            
+            ul.ButtonClicked += Close;
+
+
+        }
+
+        private void Close(object sender, EventArgs e)
+        {
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            Application.Exit();
         }
 
         
@@ -58,7 +64,7 @@ namespace BookShopManagement
                 registerSession = new Function.RegisterSession();
                 UC_Register ul = new UC_Register(registerSession); 
                 ul.ButtonClicked += NextButtonClicked;
-                AddControlsToPanel(ul);
+                AddControlsToPanel(ul); 
             }
             else
             {
@@ -66,6 +72,7 @@ namespace BookShopManagement
                 label7.Text = "Dont have account? Go register!";
                 UC_Login ul = new UC_Login();
                 AddControlsToPanel(ul);
+                ul.ButtonClicked += Close;
             }
         }
 
