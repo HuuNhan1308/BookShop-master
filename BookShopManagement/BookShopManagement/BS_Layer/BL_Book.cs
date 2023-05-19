@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.Remoting.Messaging;
 using System.Security.Permissions;
 using System.Security.Policy;
@@ -36,10 +37,32 @@ namespace BookShopManagement
             return db.Books.ToList();
         }
 
+        public Book GetBook_ByID(int BookID)
+        {
+            return (from p in db.Books
+                where p.ID == BookID
+                select p).SingleOrDefault();
+        }
+
         public void AddBook(string BookName, decimal price, string AuthorName,
             string PublisherName, DateTime ReleaseDate)
         {
             db.Pr_AddBook(BookName, price, AuthorName, PublisherName, ReleaseDate);
+            db.SaveChanges();
+        }
+
+        public void EditBook(int BookID, string BookName, decimal price, string AuthorName,
+            string PublisherName, DateTime ReleaseDate)
+        {
+            db.Pr_UpdateBook(BookID, BookName, price, AuthorName, PublisherName, ReleaseDate);
+            db.SaveChanges();
+
+        }
+
+        public void DeleteBook(int BookID)
+        {
+            db.Pr_DeleteBook(BookID);
+            db.SaveChanges();
         }
     }
 }

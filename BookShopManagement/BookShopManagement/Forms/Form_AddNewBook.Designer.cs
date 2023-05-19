@@ -52,7 +52,10 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ReleaseDate = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.QuantitiesNum = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuantitiesNum)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -200,6 +203,13 @@
             this.AuthorChoice.TabIndex = 21;
             this.AuthorChoice.SelectedIndexChanged += new System.EventHandler(this.AuthorChoice_SelectedIndexChanged);
             // 
+            // PublisherChoice
+            // 
+            this.PublisherChoice.Location = new System.Drawing.Point(496, 174);
+            this.PublisherChoice.Name = "PublisherChoice";
+            this.PublisherChoice.Size = new System.Drawing.Size(182, 29);
+            this.PublisherChoice.TabIndex = 25;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -277,11 +287,29 @@
             this.ReleaseDate.Size = new System.Drawing.Size(289, 27);
             this.ReleaseDate.TabIndex = 24;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(401, 220);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 19);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Quantities:";
+            // 
+            // QuantitiesNum
+            // 
+            this.QuantitiesNum.Location = new System.Drawing.Point(496, 217);
+            this.QuantitiesNum.Name = "QuantitiesNum";
+            this.QuantitiesNum.Size = new System.Drawing.Size(67, 27);
+            this.QuantitiesNum.TabIndex = 26;
+            // 
             // Form_AddNewBook
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(814, 523);
+            this.Controls.Add(this.QuantitiesNum);
             this.Controls.Add(this.ReleaseDate);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.richTextBox1);
@@ -294,6 +322,7 @@
             this.Controls.Add(this.Titletxt);
             this.Controls.Add(this.IDtxt);
             this.Controls.Add(this.label11);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label5);
@@ -313,6 +342,7 @@
             this.Text = "Form_AddNewBook";
             this.Load += new System.EventHandler(this.Form_AddNewBook_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuantitiesNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,5 +374,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DateTimePicker ReleaseDate;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown QuantitiesNum;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -19,6 +19,10 @@ namespace BookShopManagement.Forms
         BL_Publisher PublisherDB = new BL_Publisher();
         BL_Authors_Publishers Authors_Publishers_DB= new BL_Authors_Publishers();
 
+        Book EditedBook;
+        Author EditedAuthor;
+        Publisher EditedPublisher;
+
         private bool isEdit = false;
         int BookID;
 
@@ -32,6 +36,8 @@ namespace BookShopManagement.Forms
             InitializeComponent();
             this.BookID = BookID;
             this.isEdit = true;
+            this.QuantitiesNum.Hide();
+            this.label2.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -51,11 +57,22 @@ namespace BookShopManagement.Forms
         {
             if(isEdit)
             {
-                
-            }
+                this.EditedBook = BookDB.GetBook_ByID(BookID);
+                this.EditedAuthor = AuthorDB.GetAuthor_ByID(EditedBook.Author_ID);
+                this.EditedPublisher = PublisherDB.GetPublisher_ByID(EditedBook.Publisher_ID);
 
-            //auto set id 
-            this.BookID = BookDB.GetBooks().Last().ID + 1;
+                //init value
+                this.Titletxt.Text = EditedBook.Name;
+                this.Pricetxt.Text = EditedBook.Price.ToString();
+                this.ReleaseDate.Value = EditedBook.Release_Date.Value;
+                this.AuthorChoice.Text = EditedAuthor.Name;
+                this.PublisherChoice.Text = EditedPublisher.Name;
+            }
+            else
+            {
+                //auto set id 
+                this.BookID = BookDB.GetBooks().Last().ID + 1;
+            }
             this.IDtxt.Text = BookID.ToString();
 
 
@@ -88,16 +105,24 @@ namespace BookShopManagement.Forms
             
             try
             {
-                BookDB.AddBook(Titletxt.Text, Math.Round(decimal.Parse(Pricetxt.Text), 2),
+
+                if (this.isEdit)
+                {
+                    BookDB.EditBook(this.BookID, Titletxt.Text, Math.Round(decimal.Parse(Pricetxt.Text), 2),
                     AuthorChoice.Text, PublisherChoice.Text, ReleaseDate.Value);
-                
+                }
+                else
+                {
+                    BookDB.AddBook(Titletxt.Text, Math.Round(decimal.Parse(Pricetxt.Text), 2),
+                    AuthorChoice.Text, PublisherChoice.Text, ReleaseDate.Value);
+                }
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Input issue!");
             }
 
-            MessageBox.Show("Add successfully");
+            MessageBox.Show("success");
             this.Close();
         }
     }

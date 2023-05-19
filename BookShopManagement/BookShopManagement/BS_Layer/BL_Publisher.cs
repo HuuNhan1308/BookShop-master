@@ -24,5 +24,12 @@ namespace BookShopManagement
                           select p).SingleOrDefault().ID;
             return result;
         }
+
+        public Publisher GetPublisher_ByID(int ID)
+        {
+            return (from p in db.Publishers
+                   where p.ID == ID
+                   select p).SingleOrDefault();
+        }
     }
 }

@@ -117,4 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="resetBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAA7JJREFUSEu9
+        V9tvTEEYb4MgxPWBR6/iSSpENHX2VFwePJA04k2ods4sUreIa1raEESQSNz+AXENIh5IiduDahQRNO3O
+        zFavUkSCSHX9vjnf7p6tbXdXcvySL3vmu/3m+s1sUSGIeLok4plG19Mf8N0P6XKFfuV66jr028qEmsuu
+        +cGRvRMdz9xBorZMUTH8djpC15IfSE6inRhJ0KlmV+qNTm1itE0egCvi85fu6J7ATYwkGl+QLUlAvpOf
+        I2KzIlKf4g7sBkEtiC5gtM/Q/hHwh6gWR+pSSwC4wnikpwGyygf1EkmOwHgUAc8zk5h+dhsWKza3jnWl
+        WQv/R4HYAXRgJ9lBeMzXqfc2IIiKisQojOhSOtD08neMXfJCRKrVEaHjqTxSnx2ROCLUmZSz0DccT7Fz
+        YcSEZRvi05DjXiqfvxx/EzvSrEk64fsabQ44NbCuYGLCwq3x8YjlqVc2dwbxkqq2yVB+IgPW+S0FkP7f
+        iBPFmKlK2i9WaCNK9ZnzYHPpVna0C3+IDYO05VmNXayrfb16wKqcoJ2cJMkuqss6llQ1jYGijw1XrDKF
+        RLEbNWXl0Y7prMiJUk9PRZ77kIyagOVDwVE/8V1nHXGMVqLBvYkvtsr/gUA16qARsjoUJM96eWX7DKq/
+        T4gYHbjM9tAAngN2kDhm1PhoiVH+2B4asPEOW2KsORH7NVboLWwPDThKu5i4/78S4/rcx8Q9KJNcU6U5
+        yPbQAJ7TTPya5v0pN/zzFSKoEBEXKtot3MV6jiPUdqcmNoXtocBZFxsHUrustNasDh98V9PMJpxqM89X
+        CrUJdyYKufkGA72lAmIaqQxaxzxA5ZXK7NBihFyPISBWLayyynZfOYwIvYhdcwK+DzmuilUZV25QT7cQ
+        vRp9g1S92OH7aR3suRNqfSGlFDnogYhcqoHajozNRLuT87+hS8k6EqB4xwYrILyZ7ZWYDxCfIqYNFTg1
+        v/FYdNjNB5SWGGXzBTuR3EVRn8QueQNxPnGUzqx5mcxHJ4dd0oDBH7E0J+jZk3SGtAYfBvkAMZYYVepr
+        Oo+5mHW5YOQRm+P2rSX0+XSQHkTgVYygnF6hHDIsUBy+BGJpY9IsnmNJbywC/4vA1Wg8VtERWwVdclMk
+        pc8+BKXZ63pG4G0Vha4OvvX0bqM4HEt6ZQRjMiRjBulvRbYpJT1GuwcBPUMTDBWMtIZiMGv12JwxtJuh
+        bxoitzP+wuQCTb8j48tpKaigIEEH5BdkACPspuksk2o2u+eBoqI/4pJ1SKIJbHAAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>
