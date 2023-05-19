@@ -21,6 +21,8 @@ namespace BookShopManagement
         public Form1()
         {
             InitializeComponent();
+            panel2.Dock = DockStyle.Fill;
+            panel2.Anchor = AnchorStyles.None;
             //panel2.Anchor = AnchorStyles.None;
             UC_Login ul = new UC_Login();
             AddControlsToPanel(ul);

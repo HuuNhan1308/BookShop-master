@@ -48,7 +48,7 @@
             this.loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginBtn.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginBtn.ForeColor = System.Drawing.Color.White;
-            this.loginBtn.Location = new System.Drawing.Point(129, 410);
+            this.loginBtn.Location = new System.Drawing.Point(329, 490);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(547, 39);
             this.loginBtn.TabIndex = 13;
@@ -60,7 +60,7 @@
             // 
             this.Passwordtxt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Passwordtxt.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Passwordtxt.Location = new System.Drawing.Point(129, 320);
+            this.Passwordtxt.Location = new System.Drawing.Point(329, 400);
             this.Passwordtxt.Name = "Passwordtxt";
             this.Passwordtxt.Size = new System.Drawing.Size(547, 37);
             this.Passwordtxt.TabIndex = 11;
@@ -71,7 +71,7 @@
             // 
             this.Usertxt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Usertxt.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Usertxt.Location = new System.Drawing.Point(129, 247);
+            this.Usertxt.Location = new System.Drawing.Point(329, 327);
             this.Usertxt.Name = "Usertxt";
             this.Usertxt.Size = new System.Drawing.Size(547, 37);
             this.Usertxt.TabIndex = 12;
@@ -81,7 +81,7 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(370, 70);
+            this.pictureBox2.Location = new System.Drawing.Point(556, 152);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(80, 87);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -95,7 +95,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Navy;
-            this.label3.Location = new System.Drawing.Point(302, 175);
+            this.label3.Location = new System.Drawing.Point(476, 254);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(232, 32);
             this.label3.TabIndex = 6;
@@ -107,7 +107,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Navy;
-            this.label4.Location = new System.Drawing.Point(125, 293);
+            this.label4.Location = new System.Drawing.Point(325, 373);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 16);
             this.label4.TabIndex = 7;
@@ -120,7 +120,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Navy;
-            this.label5.Location = new System.Drawing.Point(304, 370);
+            this.label5.Location = new System.Drawing.Point(504, 450);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(178, 23);
             this.label5.TabIndex = 8;
@@ -132,7 +132,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(125, 220);
+            this.label1.Location = new System.Drawing.Point(325, 300);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 16);
             this.label1.TabIndex = 9;
@@ -152,7 +152,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Name = "UC_Login";
-            this.Size = new System.Drawing.Size(800, 560);
+            this.Size = new System.Drawing.Size(1200, 720);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

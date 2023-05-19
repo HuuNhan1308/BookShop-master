@@ -107,9 +107,10 @@
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(0, 55);
+            this.panel2.AutoSize = true;
+            this.panel2.Location = new System.Drawing.Point(0, 58);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1200, 720);
+            this.panel2.Size = new System.Drawing.Size(1200, 579);
             this.panel2.TabIndex = 5;
             // 
             // label7

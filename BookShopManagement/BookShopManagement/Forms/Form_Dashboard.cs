@@ -144,6 +144,8 @@ namespace BookShopManagement.Forms
         private void button7_Click(object sender, EventArgs e)
         {
             moveSidePanel(btnSettings);
+            UC_PersonalSetting ps = new UC_PersonalSetting(customer);
+            AddControlsToPanel (ps);
         }
 
         private void timerTime_Tick(object sender, EventArgs e)
