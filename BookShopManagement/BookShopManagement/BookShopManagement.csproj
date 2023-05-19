@@ -67,107 +67,108 @@
     <Compile Include="BS_Layer\BL_Customer.cs" />
     <Compile Include="BS_Layer\BL_Order.cs" />
     <Compile Include="BS_Layer\BL_Publisher.cs" />
+    <Compile Include="BS_Layer\BL_Shipping.cs" />
     <Compile Include="CustomControls\DragControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DataModel\Author.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+    <Compile Include="DataModel\Authors.cs">
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Authors_Publishers.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Book.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataModel\BookStore_mode.Context.cs">
+    <Compile Include="DataModel\BookStore_Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BookStore_mode.Context.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataModel\BookStore_mode.cs">
+    <Compile Include="DataModel\BookStore_Model.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataModel\BookStore_mode.Designer.cs">
+    <Compile Include="DataModel\BookStore_Model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BookStore_mode.edmx</DependentUpon>
+      <DependentUpon>BookStore_Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Books_Orders.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Customer.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\CustomerLevel.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Fn_GetOrder_ByCustomer_Result.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Fn_GetPublishers_ByAuthor_Result.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Fn_GetRevenue_ByYearMonth_Result.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Fn_GetTop3_BestAuthorOfTheYear_Result.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Fn_GetTop5BestSellerOfTheYear_Result.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Fn_GetUser_Result.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Genre.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Order.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Pr_SetCustomerLevel_Result.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Publisher.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Shipping.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\sp_helpdiagrams_Result.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\sysdiagram.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\v_AllProducts.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\v_AllSumOrderByCus_ID.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\v_AllSumOrderByOrder_ID.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\v_Top3Authors.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\v_Top5Books.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\v_TopAuthors.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Warehouse.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Warehouse_Books.cs">
-      <DependentUpon>BookStore_mode.tt</DependentUpon>
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
@@ -374,13 +375,13 @@
     <EmbeddedResource Include="UserControls\UC_ViewSales.resx">
       <DependentUpon>UC_ViewSales.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="DataModel\BookStore_mode.edmx">
+    <EntityDeploy Include="DataModel\BookStore_Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BookStore_mode.Designer.cs</LastGenOutput>
+      <LastGenOutput>BookStore_Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="App.Config" />
-    <None Include="DataModel\BookStore_mode.edmx.diagram">
-      <DependentUpon>BookStore_mode.edmx</DependentUpon>
+    <None Include="DataModel\BookStore_Model.edmx.diagram">
+      <DependentUpon>BookStore_Model.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -397,15 +398,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataModel\BookStore_mode.Context.tt">
+    <Content Include="DataModel\BookStore_Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BookStore_mode.Context.cs</LastGenOutput>
-      <DependentUpon>BookStore_mode.edmx</DependentUpon>
+      <LastGenOutput>BookStore_Model.Context.cs</LastGenOutput>
+      <DependentUpon>BookStore_Model.edmx</DependentUpon>
     </Content>
-    <Content Include="DataModel\BookStore_mode.tt">
+    <Content Include="DataModel\BookStore_Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BookStore_mode.edmx</DependentUpon>
-      <LastGenOutput>BookStore_mode.cs</LastGenOutput>
+      <DependentUpon>BookStore_Model.edmx</DependentUpon>
+      <LastGenOutput>BookStore_Model.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

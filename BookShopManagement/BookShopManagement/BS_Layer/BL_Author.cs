@@ -1,11 +1,11 @@
-﻿using BookShopManagement.DataModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using BookShopManagement.DataModel;
 
 namespace BookShopManagement.BS_Layer
 {
@@ -13,8 +13,7 @@ namespace BookShopManagement.BS_Layer
     {
 
         private BookStoreEntities db = new BookStoreEntities();
-
-        public List<Author> GetAuthors()
+        public List<Authors> GetAuthors()
         {
             return db.Authors.ToList();
         }
@@ -28,7 +27,7 @@ namespace BookShopManagement.BS_Layer
 
         }
 
-        public Author GetAuthor_ByID(int ID)
+        public Authors GetAuthor_ByID(int ID)
         {
             return (from p in db.Authors
                    where p.ID == ID

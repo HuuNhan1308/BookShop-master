@@ -36,8 +36,8 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnAddNewBooks = new System.Windows.Forms.Button();
+            this.DeleteOrderBtn = new System.Windows.Forms.Button();
+            this.btnPayOrderBtn = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.ViewAllOrders = new System.Windows.Forms.DataGridView();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -51,6 +51,10 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.txtOrderID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.ShipCB = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.PaymentCB = new System.Windows.Forms.ComboBox();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewAllOrders)).BeginInit();
@@ -101,8 +105,8 @@
             this.panel5.BackColor = System.Drawing.Color.SaddleBrown;
             this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.button2);
-            this.panel5.Controls.Add(this.btnAddNewBooks);
+            this.panel5.Controls.Add(this.DeleteOrderBtn);
+            this.panel5.Controls.Add(this.btnPayOrderBtn);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(10, 10);
             this.panel5.Name = "panel5";
@@ -138,41 +142,42 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Manage Expenses";
             // 
-            // button2
+            // DeleteOrderBtn
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(233, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 67);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "   Delete";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.DeleteOrderBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteOrderBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.DeleteOrderBtn.FlatAppearance.BorderSize = 0;
+            this.DeleteOrderBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.DeleteOrderBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteOrderBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteOrderBtn.ForeColor = System.Drawing.Color.White;
+            this.DeleteOrderBtn.Image = ((System.Drawing.Image)(resources.GetObject("DeleteOrderBtn.Image")));
+            this.DeleteOrderBtn.Location = new System.Drawing.Point(233, 0);
+            this.DeleteOrderBtn.Name = "DeleteOrderBtn";
+            this.DeleteOrderBtn.Size = new System.Drawing.Size(155, 67);
+            this.DeleteOrderBtn.TabIndex = 1;
+            this.DeleteOrderBtn.Text = "   Delete";
+            this.DeleteOrderBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.DeleteOrderBtn.UseVisualStyleBackColor = true;
+            this.DeleteOrderBtn.Click += new System.EventHandler(this.DeleteOrderBtn_Click);
             // 
-            // btnAddNewBooks
+            // btnPayOrderBtn
             // 
-            this.btnAddNewBooks.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddNewBooks.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAddNewBooks.FlatAppearance.BorderSize = 0;
-            this.btnAddNewBooks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddNewBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNewBooks.ForeColor = System.Drawing.Color.White;
-            this.btnAddNewBooks.Image = ((System.Drawing.Image)(resources.GetObject("btnAddNewBooks.Image")));
-            this.btnAddNewBooks.Location = new System.Drawing.Point(0, 0);
-            this.btnAddNewBooks.Name = "btnAddNewBooks";
-            this.btnAddNewBooks.Size = new System.Drawing.Size(233, 67);
-            this.btnAddNewBooks.TabIndex = 0;
-            this.btnAddNewBooks.Text = "   Add New Expense";
-            this.btnAddNewBooks.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddNewBooks.UseVisualStyleBackColor = true;
-            this.btnAddNewBooks.Click += new System.EventHandler(this.btnAddNewBooks_Click);
+            this.btnPayOrderBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPayOrderBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPayOrderBtn.FlatAppearance.BorderSize = 0;
+            this.btnPayOrderBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPayOrderBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayOrderBtn.ForeColor = System.Drawing.Color.White;
+            this.btnPayOrderBtn.Image = ((System.Drawing.Image)(resources.GetObject("btnPayOrderBtn.Image")));
+            this.btnPayOrderBtn.Location = new System.Drawing.Point(0, 0);
+            this.btnPayOrderBtn.Name = "btnPayOrderBtn";
+            this.btnPayOrderBtn.Size = new System.Drawing.Size(233, 67);
+            this.btnPayOrderBtn.TabIndex = 0;
+            this.btnPayOrderBtn.Text = "    Pay order";
+            this.btnPayOrderBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPayOrderBtn.UseVisualStyleBackColor = true;
+            this.btnPayOrderBtn.Click += new System.EventHandler(this.btnPayOrderBtn_Click);
             // 
             // panel6
             // 
@@ -199,6 +204,7 @@
             this.ViewAllOrders.Size = new System.Drawing.Size(478, 479);
             this.ViewAllOrders.TabIndex = 0;
             this.ViewAllOrders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ViewAllOrders_CellClick);
+            this.ViewAllOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ViewAllOrders_CellContentClick);
             // 
             // panel7
             // 
@@ -318,18 +324,60 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 605);
+            this.label3.Location = new System.Drawing.Point(24, 602);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 20);
             this.label3.TabIndex = 13;
             this.label3.Text = "Order ID:";
             // 
+            // ShipCB
+            // 
+            this.ShipCB.FormattingEnabled = true;
+            this.ShipCB.Location = new System.Drawing.Point(104, 646);
+            this.ShipCB.Name = "ShipCB";
+            this.ShipCB.Size = new System.Drawing.Size(177, 28);
+            this.ShipCB.TabIndex = 22;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(24, 650);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 20);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Shipping:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(23, 700);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Payment:";
+            // 
+            // PaymentCB
+            // 
+            this.PaymentCB.FormattingEnabled = true;
+            this.PaymentCB.Items.AddRange(new object[] {
+            "Paypal",
+            "Bank",
+            "COD"});
+            this.PaymentCB.Location = new System.Drawing.Point(103, 696);
+            this.PaymentCB.Name = "PaymentCB";
+            this.PaymentCB.Size = new System.Drawing.Size(177, 28);
+            this.PaymentCB.TabIndex = 22;
+            // 
             // UC_ManageExpense
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.PaymentCB);
+            this.Controls.Add(this.ShipCB);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtOrderID);
@@ -367,8 +415,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnAddNewBooks;
+        private System.Windows.Forms.Button DeleteOrderBtn;
+        private System.Windows.Forms.Button btnPayOrderBtn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.DataGridView ViewAllOrders;
@@ -383,5 +431,9 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.TextBox txtOrderID;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox ShipCB;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox PaymentCB;
     }
 }

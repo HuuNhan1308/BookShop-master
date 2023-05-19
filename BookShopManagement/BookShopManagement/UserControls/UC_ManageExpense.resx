@@ -136,7 +136,7 @@
         5n7CFINinf4FqEuhBUW7lV+oXwrvUadzqpWnoKzsH7uGr0GWPidwAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="DeleteOrderBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAThJREFUSEvt
         lzFOAzEQRbeEGu6BqHOAVEg0VIGCNOEEOQFCXCE1HRIQLhDOQEEUCiroEBRcwLxvT5Sso0XW4hUUftKT
@@ -147,7 +147,7 @@
         7BpV9Q0ovGcz62HOCAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnAddNewBooks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnPayOrderBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAxNJREFUSEvl
         lltojnEcxzeaNpMSQnLIhXLnUJuEUrNmhRuSKMqxjF05RLSSsiQMF5Iy5RQXkqsRiXLh0JjlSqZGiDnl

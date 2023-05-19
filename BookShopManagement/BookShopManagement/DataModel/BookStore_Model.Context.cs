@@ -27,7 +27,6 @@ namespace BookShopManagement.DataModel
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Author> Authors { get; set; }
         public virtual DbSet<Authors_Publishers> Authors_Publishers { get; set; }
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Books_Orders> Books_Orders { get; set; }
@@ -46,6 +45,7 @@ namespace BookShopManagement.DataModel
         public virtual DbSet<v_Top3Authors> v_Top3Authors { get; set; }
         public virtual DbSet<v_Top5Books> v_Top5Books { get; set; }
         public virtual DbSet<v_TopAuthors> v_TopAuthors { get; set; }
+        public virtual DbSet<Authors> Authors { get; set; }
     
         [DbFunction("BookStoreEntities", "Fn_GetOrder_ByCustomer")]
         public virtual IQueryable<Fn_GetOrder_ByCustomer_Result> Fn_GetOrder_ByCustomer(Nullable<int> cUSTOMER_ID)
@@ -705,35 +705,6 @@ namespace BookShopManagement.DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_UpdateGenre", genre_idParameter, nameParameter);
         }
     
-        public virtual int Pr_UpdateOrder(Nullable<int> order_id, Nullable<int> customer_id, Nullable<System.DateTime> date, Nullable<int> shipping_id, string payment_method, Nullable<double> discount_ship)
-        {
-            var order_idParameter = order_id.HasValue ?
-                new ObjectParameter("order_id", order_id) :
-                new ObjectParameter("order_id", typeof(int));
-    
-            var customer_idParameter = customer_id.HasValue ?
-                new ObjectParameter("customer_id", customer_id) :
-                new ObjectParameter("customer_id", typeof(int));
-    
-            var dateParameter = date.HasValue ?
-                new ObjectParameter("date", date) :
-                new ObjectParameter("date", typeof(System.DateTime));
-    
-            var shipping_idParameter = shipping_id.HasValue ?
-                new ObjectParameter("shipping_id", shipping_id) :
-                new ObjectParameter("shipping_id", typeof(int));
-    
-            var payment_methodParameter = payment_method != null ?
-                new ObjectParameter("payment_method", payment_method) :
-                new ObjectParameter("payment_method", typeof(string));
-    
-            var discount_shipParameter = discount_ship.HasValue ?
-                new ObjectParameter("discount_ship", discount_ship) :
-                new ObjectParameter("discount_ship", typeof(double));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_UpdateOrder", order_idParameter, customer_idParameter, dateParameter, shipping_idParameter, payment_methodParameter, discount_shipParameter);
-        }
-    
         public virtual int Pr_UpdatePublisher(Nullable<int> publisher_id, string publisher_name)
         {
             var publisher_idParameter = publisher_id.HasValue ?
@@ -762,6 +733,39 @@ namespace BookShopManagement.DataModel
                 new ObjectParameter("Cost", typeof(decimal));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_UpdateShipping", iDParameter, methodParameter, costParameter);
+        }
+    
+        public virtual int Pr_UpdateOrder(Nullable<int> order_id, Nullable<int> customer_id, Nullable<System.DateTime> date, Nullable<int> shipping_id, string payment_method, Nullable<double> discount_ship, Nullable<bool> completed)
+        {
+            var order_idParameter = order_id.HasValue ?
+                new ObjectParameter("order_id", order_id) :
+                new ObjectParameter("order_id", typeof(int));
+    
+            var customer_idParameter = customer_id.HasValue ?
+                new ObjectParameter("customer_id", customer_id) :
+                new ObjectParameter("customer_id", typeof(int));
+    
+            var dateParameter = date.HasValue ?
+                new ObjectParameter("date", date) :
+                new ObjectParameter("date", typeof(System.DateTime));
+    
+            var shipping_idParameter = shipping_id.HasValue ?
+                new ObjectParameter("shipping_id", shipping_id) :
+                new ObjectParameter("shipping_id", typeof(int));
+    
+            var payment_methodParameter = payment_method != null ?
+                new ObjectParameter("payment_method", payment_method) :
+                new ObjectParameter("payment_method", typeof(string));
+    
+            var discount_shipParameter = discount_ship.HasValue ?
+                new ObjectParameter("discount_ship", discount_ship) :
+                new ObjectParameter("discount_ship", typeof(double));
+    
+            var completedParameter = completed.HasValue ?
+                new ObjectParameter("completed", completed) :
+                new ObjectParameter("completed", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_UpdateOrder", order_idParameter, customer_idParameter, dateParameter, shipping_idParameter, payment_methodParameter, discount_shipParameter, completedParameter);
         }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)

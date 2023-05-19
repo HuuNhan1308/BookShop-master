@@ -19,7 +19,7 @@ namespace BookShopManagement.DataModel
         public System.DateTime Apply_Date { get; set; }
         public Nullable<System.DateTime> Severance_Date { get; set; }
     
-        public virtual Author Author { get; set; }
         public virtual Publisher Publisher { get; set; }
+        public virtual Authors Authors { get; set; }
     }
 }

@@ -12,10 +12,10 @@ namespace BookShopManagement.DataModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Author
+    public partial class Authors
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Author()
+        public Authors()
         {
             this.Authors_Publishers = new HashSet<Authors_Publishers>();
         }

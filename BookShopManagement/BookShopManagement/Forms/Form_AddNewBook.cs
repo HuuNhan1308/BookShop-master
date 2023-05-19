@@ -20,7 +20,7 @@ namespace BookShopManagement.Forms
         BL_Authors_Publishers Authors_Publishers_DB= new BL_Authors_Publishers();
 
         Book EditedBook;
-        Author EditedAuthor;
+        Authors EditedAuthor;
         Publisher EditedPublisher;
 
         private bool isEdit = false;
@@ -78,7 +78,7 @@ namespace BookShopManagement.Forms
 
             //add to combobox authors
             AutoCompleteStringCollection data = new AutoCompleteStringCollection();
-            foreach (Author author in AuthorDB.GetAuthors())
+            foreach (Authors author in AuthorDB.GetAuthors())
             {
                 data.Add(author.Name);
                 AuthorChoice.Items.Add(author.Name);
