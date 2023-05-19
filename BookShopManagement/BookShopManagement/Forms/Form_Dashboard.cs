@@ -153,5 +153,12 @@ namespace BookShopManagement.Forms
             DateTime dt = DateTime.Now;
             labelTime.Text = dt.ToString("HH:MM:ss");
         }
+
+        private void ManageSaleBtn_Click(object sender, EventArgs e)
+        {
+            moveSidePanel(ManageSaleBtn);
+            UC_Sales sales = new UC_Sales(customer);
+            AddControlsToPanel(sales);
+        }
     }
 }
