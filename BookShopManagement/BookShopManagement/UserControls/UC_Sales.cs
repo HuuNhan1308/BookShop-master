@@ -18,6 +18,9 @@ namespace BookShopManagement.UserControls
         BL_Book BookDB = new BL_Book();
 
         Customer customer = new Customer();
+
+        int datarow_click;
+
         public UC_Sales()
         {
             InitializeComponent();
@@ -48,6 +51,38 @@ namespace BookShopManagement.UserControls
         private void UC_Sales_Load(object sender, EventArgs e)
         {
             this.dgv_AllProduct.DataSource = BookDB.GetAllProducts();
+        }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dgv_AllProduct.Rows[this.datarow_click];
+
+            string BookName = dgv_AllProduct.SelectedCells[0].OwningRow.Cells["Tittle"].Value.ToString();
+            int BookID = BookDB.GetBookID_ByName(BookName);
+
+            using (Form_AddNewBook fa = new Form_AddNewBook(BookID))
+            {
+                fa.ShowDialog();
+            }
+        }
+
+        private void dgv_AllProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.datarow_click = e.RowIndex;
+        }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            string BookName = dgv_AllProduct.SelectedCells[0].OwningRow.Cells["Tittle"].Value.ToString();
+            int BookID = BookDB.GetBookID_ByName(BookName);
+
+            BookDB.DeleteBook(BookID);
+        }
+
+        private void resetBtn_Click(object sender, EventArgs e)
+        {
+            dgv_AllProduct.DataSource = null;
+            this.UC_Sales_Load(null, null);
         }
     }
 }

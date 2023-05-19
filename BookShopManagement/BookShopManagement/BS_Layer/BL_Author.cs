@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,13 @@ namespace BookShopManagement.BS_Layer
                           select p).SingleOrDefault().ID;
             return result;
 
+        }
+
+        public Author GetAuthor_ByID(int ID)
+        {
+            return (from p in db.Authors
+                   where p.ID == ID
+                   select p).SingleOrDefault();
         }
     }
 }
