@@ -68,10 +68,8 @@
     <Compile Include="BS_Layer\BL_Order.cs" />
     <Compile Include="BS_Layer\BL_Publisher.cs" />
     <Compile Include="BS_Layer\BL_Shipping.cs" />
-    <Compile Include="CustomControls\DragControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DataModel\Authors.cs">
+    <Compile Include="BS_Layer\BL_WareHouse.cs" />
+    <Compile Include="DataModel\Author.cs">
       <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Authors_Publishers.cs">
@@ -153,6 +151,9 @@
       <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\v_AllSumOrderByOrder_ID.cs">
+      <DependentUpon>BookStore_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\v_ListWareHouse.cs">
       <DependentUpon>BookStore_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\v_Top3Authors.cs">

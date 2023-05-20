@@ -56,6 +56,7 @@
     <Property Name="Severance_Date" Type="DateTime" Precision="0" />
     <NavigationProperty Name="Author" Relationship="Self.FK_Authors_Publishers_Authors" FromRole="Authors_Publishers" ToRole="Authors" />
     <NavigationProperty Name="Publisher" Relationship="Self.FK_Authors_Publishers_Publishers" FromRole="Authors_Publishers" ToRole="Publishers" />
+    <NavigationProperty Name="Books" Relationship="BookStoreModel.FK_Books_Authors_Publishers" FromRole="Authors_Publishers" ToRole="Book" />
   </EntityType>
   <EntityType Name="Book">
     <Key>
@@ -70,6 +71,7 @@
     <NavigationProperty Name="Books_Orders" Relationship="Self.FK_Books_Orders_Books" FromRole="Books" ToRole="Books_Orders" />
     <NavigationProperty Name="Warehouse_Books" Relationship="Self.FK_Warehouse_Books_Books" FromRole="Books" ToRole="Warehouse_Books" />
     <NavigationProperty Name="Genres" Relationship="Self.Books_Genres" FromRole="Books" ToRole="Genres" />
+    <NavigationProperty Name="Authors_Publishers" Relationship="BookStoreModel.FK_Books_Authors_Publishers" FromRole="Book" ToRole="Authors_Publishers" />
   </EntityType>
   <EntityType Name="Books_Orders">
     <Key>
@@ -90,6 +92,7 @@
     <Property Name="Desc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="DiscountRate" Type="Double" Nullable="false" />
     <NavigationProperty Name="Customers" Relationship="Self.FK_Customers_CustomerLevel" FromRole="CustomerLevel" ToRole="Customers" />
+    <Property Name="Condition" Type="Double" />
   </EntityType>
   <EntityType Name="Customer">
     <Key>
@@ -129,6 +132,7 @@
     <NavigationProperty Name="Books_Orders" Relationship="Self.FK_Books_Orders_Orders" FromRole="Orders" ToRole="Books_Orders" />
     <NavigationProperty Name="Customer" Relationship="Self.FK_Books_Customers_Customers" FromRole="Orders" ToRole="Customers" />
     <NavigationProperty Name="Shipping" Relationship="Self.FK_Orders_Shippings" FromRole="Orders" ToRole="Shippings" />
+    <Property Name="Total_Cost" Type="Double" />
   </EntityType>
   <EntityType Name="Publisher">
     <Key>
@@ -184,7 +188,7 @@
       <PropertyRef Name="Publisher" />
     </Key>
     <Property Name="Tittle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
     <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Publisher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Release_date" Type="DateTime" Precision="0" />
@@ -209,6 +213,18 @@
     <Property Name="COST" Type="Double" />
     <Property Name="Customer_ID" Type="Int32" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="v_ListWareHouse">
+    <Key>
+      <PropertyRef Name="Seri" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Quantity" />
+    </Key>
+    <Property Name="Seri" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="v_Top3Authors">
     <Key>
@@ -376,6 +392,7 @@
     <EntitySet Name="v_AllProducts" EntityType="Self.v_AllProducts" />
     <EntitySet Name="v_AllSumOrderByCus_ID" EntityType="Self.v_AllSumOrderByCus_ID" />
     <EntitySet Name="v_AllSumOrderByOrder_ID" EntityType="Self.v_AllSumOrderByOrder_ID" />
+    <EntitySet Name="v_ListWareHouse" EntityType="Self.v_ListWareHouse" />
     <EntitySet Name="v_Top3Authors" EntityType="Self.v_Top3Authors" />
     <EntitySet Name="v_Top5Books" EntityType="Self.v_Top5Books" />
     <EntitySet Name="v_TopAuthors" EntityType="Self.v_TopAuthors" />
@@ -622,6 +639,7 @@
       <Parameter Name="shipping_id" Mode="In" Type="Int32" />
       <Parameter Name="payment_method" Mode="In" Type="String" />
       <Parameter Name="discount_ship" Mode="In" Type="Double" />
+      <Parameter Name="completed" Mode="In" Type="Boolean" />
     </FunctionImport>
     <FunctionImport Name="Pr_UpdatePublisher">
       <Parameter Name="publisher_id" Mode="In" Type="Int32" />
@@ -662,6 +680,10 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <AssociationSet Name="FK_Books_Authors_Publishers" Association="BookStoreModel.FK_Books_Authors_Publishers">
+      <End Role="Authors_Publishers" EntitySet="Authors_Publishers" />
+      <End Role="Book" EntitySet="Books" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="Pr_SetCustomerLevel_Result">
     <Property Type="Int32" Name="Customer_ID" Nullable="false" />
@@ -679,4 +701,18 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
+  <Association Name="FK_Books_Authors_Publishers">
+    <End Type="BookStoreModel.Authors_Publishers" Role="Authors_Publishers" Multiplicity="1" />
+    <End Type="BookStoreModel.Book" Role="Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Authors_Publishers">
+        <PropertyRef Name="Publisher_ID" />
+        <PropertyRef Name="Author_ID" />
+      </Principal>
+      <Dependent Role="Book">
+        <PropertyRef Name="Publisher_ID" />
+        <PropertyRef Name="Author_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

@@ -39,7 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.dragControl1 = new DragControlDemo.DragControl();
             this.SuspendLayout();
             // 
             // panel1
@@ -157,7 +156,6 @@
             // 
             // dragControl1
             // 
-            this.dragControl1.SelectControl = this;
             // 
             // Form_AddCategory
             // 
@@ -199,6 +197,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
-        private DragControlDemo.DragControl dragControl1;
     }
 }

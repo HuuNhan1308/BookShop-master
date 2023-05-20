@@ -1,4 +1,5 @@
-﻿namespace BookShopManagement.UserControls
+﻿
+namespace BookShopManagement.UserControls
 {
     partial class UC_Home
     {
@@ -43,7 +44,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuDataViz1 = new Bunifu.DataViz.BunifuDataViz();
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -212,34 +212,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Yearly Report:";
             // 
-            // bunifuDataViz1
-            // 
-            this.bunifuDataViz1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuDataViz1.animationEnabled = false;
-            this.bunifuDataViz1.AxisLineColor = System.Drawing.Color.LightGray;
-            this.bunifuDataViz1.AxisXFontColor = System.Drawing.Color.Gray;
-            this.bunifuDataViz1.AxisXGridColor = System.Drawing.Color.Gray;
-            this.bunifuDataViz1.AxisXGridThickness = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.bunifuDataViz1.AxisYFontColor = System.Drawing.Color.Gray;
-            this.bunifuDataViz1.AxisYGridColor = System.Drawing.Color.Gray;
-            this.bunifuDataViz1.AxisYGridThickness = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.bunifuDataViz1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuDataViz1.Location = new System.Drawing.Point(59, 294);
-            this.bunifuDataViz1.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuDataViz1.Name = "bunifuDataViz1";
-            this.bunifuDataViz1.Size = new System.Drawing.Size(487, 248);
-            this.bunifuDataViz1.TabIndex = 2;
-            this.bunifuDataViz1.Theme = Bunifu.DataViz.BunifuDataViz._theme.theme1;
-            this.bunifuDataViz1.Title = "";
-            // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -293,7 +265,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.bunifuDataViz1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -335,7 +306,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label1;
-        private Bunifu.DataViz.BunifuDataViz bunifuDataViz1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;

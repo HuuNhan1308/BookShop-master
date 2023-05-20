@@ -35,5 +35,6 @@ namespace BookShopManagement.DataModel
         public virtual ICollection<Warehouse_Books> Warehouse_Books { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Genre> Genres { get; set; }
+        public virtual Authors_Publishers Authors_Publishers { get; set; }
     }
 }

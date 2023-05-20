@@ -41,7 +41,6 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dragControl1 = new DragControlDemo.DragControl();
             this.SuspendLayout();
             // 
             // panel2
@@ -177,7 +176,6 @@
             // 
             // dragControl1
             // 
-            this.dragControl1.SelectControl = this;
             // 
             // Form_AddExpense
             // 
@@ -223,6 +221,5 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private DragControlDemo.DragControl dragControl1;
     }
 }

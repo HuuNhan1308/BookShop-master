@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Dashboard));
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.ManageSaleBtn = new System.Windows.Forms.Button();
+            this.top3 = new System.Windows.Forms.Button();
+            this.Top5 = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
-            this.btnViewSales = new System.Windows.Forms.Button();
             this.btnUsers = new System.Windows.Forms.Button();
             this.btnExpense = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
@@ -57,10 +57,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timerTime = new System.Windows.Forms.Timer(this.components);
             this.panelControls = new System.Windows.Forms.Panel();
-            this.AuthorBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Top5 = new System.Windows.Forms.Button();
-            this.top3 = new System.Windows.Forms.Button();
             this.panelLeft.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,11 +69,7 @@
             this.panelLeft.BackColor = System.Drawing.Color.Navy;
             this.panelLeft.Controls.Add(this.top3);
             this.panelLeft.Controls.Add(this.Top5);
-            this.panelLeft.Controls.Add(this.button1);
-            this.panelLeft.Controls.Add(this.AuthorBtn);
-            this.panelLeft.Controls.Add(this.ManageSaleBtn);
             this.panelLeft.Controls.Add(this.btnSettings);
-            this.panelLeft.Controls.Add(this.btnViewSales);
             this.panelLeft.Controls.Add(this.btnUsers);
             this.panelLeft.Controls.Add(this.btnExpense);
             this.panelLeft.Controls.Add(this.btnHome);
@@ -91,24 +83,43 @@
             this.panelLeft.Size = new System.Drawing.Size(215, 974);
             this.panelLeft.TabIndex = 0;
             // 
-            // ManageSaleBtn
+            // top3
             // 
-            this.ManageSaleBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ManageSaleBtn.FlatAppearance.BorderSize = 0;
-            this.ManageSaleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ManageSaleBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ManageSaleBtn.ForeColor = System.Drawing.Color.White;
-            this.ManageSaleBtn.Image = ((System.Drawing.Image)(resources.GetObject("ManageSaleBtn.Image")));
-            this.ManageSaleBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ManageSaleBtn.Location = new System.Drawing.Point(0, 500);
-            this.ManageSaleBtn.Name = "ManageSaleBtn";
-            this.ManageSaleBtn.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.ManageSaleBtn.Size = new System.Drawing.Size(215, 60);
-            this.ManageSaleBtn.TabIndex = 3;
-            this.ManageSaleBtn.Text = "     Manage Sale";
-            this.ManageSaleBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ManageSaleBtn.UseVisualStyleBackColor = true;
-            this.ManageSaleBtn.Click += new System.EventHandler(this.ManageSaleBtn_Click);
+            this.top3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.top3.FlatAppearance.BorderSize = 0;
+            this.top3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.top3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.top3.ForeColor = System.Drawing.Color.White;
+            this.top3.Image = ((System.Drawing.Image)(resources.GetObject("top3.Image")));
+            this.top3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.top3.Location = new System.Drawing.Point(0, 500);
+            this.top3.Name = "top3";
+            this.top3.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.top3.Size = new System.Drawing.Size(215, 60);
+            this.top3.TabIndex = 7;
+            this.top3.Text = "     Top 3 Authors";
+            this.top3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.top3.UseVisualStyleBackColor = true;
+            this.top3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // Top5
+            // 
+            this.Top5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Top5.FlatAppearance.BorderSize = 0;
+            this.Top5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Top5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Top5.ForeColor = System.Drawing.Color.White;
+            this.Top5.Image = ((System.Drawing.Image)(resources.GetObject("Top5.Image")));
+            this.Top5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Top5.Location = new System.Drawing.Point(0, 440);
+            this.Top5.Name = "Top5";
+            this.Top5.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.Top5.Size = new System.Drawing.Size(215, 60);
+            this.Top5.TabIndex = 6;
+            this.Top5.Text = "     Top 5 Books";
+            this.Top5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Top5.UseVisualStyleBackColor = true;
+            this.Top5.Click += new System.EventHandler(this.Top5_Click);
             // 
             // btnSettings
             // 
@@ -119,7 +130,7 @@
             this.btnSettings.ForeColor = System.Drawing.Color.White;
             this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
             this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(0, 440);
+            this.btnSettings.Location = new System.Drawing.Point(0, 380);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.btnSettings.Size = new System.Drawing.Size(215, 60);
@@ -128,25 +139,6 @@
             this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // btnViewSales
-            // 
-            this.btnViewSales.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnViewSales.FlatAppearance.BorderSize = 0;
-            this.btnViewSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewSales.ForeColor = System.Drawing.Color.White;
-            this.btnViewSales.Image = ((System.Drawing.Image)(resources.GetObject("btnViewSales.Image")));
-            this.btnViewSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnViewSales.Location = new System.Drawing.Point(0, 380);
-            this.btnViewSales.Name = "btnViewSales";
-            this.btnViewSales.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnViewSales.Size = new System.Drawing.Size(215, 60);
-            this.btnViewSales.TabIndex = 2;
-            this.btnViewSales.Text = "     View Sales";
-            this.btnViewSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnViewSales.UseVisualStyleBackColor = true;
-            this.btnViewSales.Click += new System.EventHandler(this.btnViewSales_Click);
             // 
             // btnUsers
             // 
@@ -280,7 +272,7 @@
             this.button8.ForeColor = System.Drawing.Color.White;
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(125, 8);
+            this.button8.Location = new System.Drawing.Point(171, 12);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(38, 29);
             this.button8.TabIndex = 2;
@@ -390,7 +382,7 @@
             this.labelTime.AutoSize = true;
             this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTime.ForeColor = System.Drawing.Color.White;
-            this.labelTime.Location = new System.Drawing.Point(1008, 34);
+            this.labelTime.Location = new System.Drawing.Point(942, 28);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(122, 25);
             this.labelTime.TabIndex = 0;
@@ -433,82 +425,6 @@
             this.panelControls.Name = "panelControls";
             this.panelControls.Size = new System.Drawing.Size(1069, 834);
             this.panelControls.TabIndex = 2;
-            // 
-            // AuthorBtn
-            // 
-            this.AuthorBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.AuthorBtn.FlatAppearance.BorderSize = 0;
-            this.AuthorBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AuthorBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AuthorBtn.ForeColor = System.Drawing.Color.White;
-            this.AuthorBtn.Image = ((System.Drawing.Image)(resources.GetObject("AuthorBtn.Image")));
-            this.AuthorBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AuthorBtn.Location = new System.Drawing.Point(0, 560);
-            this.AuthorBtn.Name = "AuthorBtn";
-            this.AuthorBtn.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.AuthorBtn.Size = new System.Drawing.Size(215, 60);
-            this.AuthorBtn.TabIndex = 4;
-            this.AuthorBtn.Text = "     Author";
-            this.AuthorBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AuthorBtn.UseVisualStyleBackColor = true;
-            this.AuthorBtn.Click += new System.EventHandler(this.AuthorBtn_Click);
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 620);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(215, 60);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "     Publisher";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Top5
-            // 
-            this.Top5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Top5.FlatAppearance.BorderSize = 0;
-            this.Top5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Top5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Top5.ForeColor = System.Drawing.Color.White;
-            this.Top5.Image = ((System.Drawing.Image)(resources.GetObject("Top5.Image")));
-            this.Top5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Top5.Location = new System.Drawing.Point(0, 680);
-            this.Top5.Name = "Top5";
-            this.Top5.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.Top5.Size = new System.Drawing.Size(215, 60);
-            this.Top5.TabIndex = 6;
-            this.Top5.Text = "     Top 5 Books";
-            this.Top5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Top5.UseVisualStyleBackColor = true;
-            this.Top5.Click += new System.EventHandler(this.Top5_Click);
-            // 
-            // top3
-            // 
-            this.top3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.top3.FlatAppearance.BorderSize = 0;
-            this.top3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.top3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.top3.ForeColor = System.Drawing.Color.White;
-            this.top3.Image = ((System.Drawing.Image)(resources.GetObject("top3.Image")));
-            this.top3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.top3.Location = new System.Drawing.Point(0, 740);
-            this.top3.Name = "top3";
-            this.top3.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.top3.Size = new System.Drawing.Size(215, 60);
-            this.top3.TabIndex = 7;
-            this.top3.Text = "     Top 3 Authors";
-            this.top3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.top3.UseVisualStyleBackColor = true;
-            this.top3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form_Dashboard
             // 
@@ -562,13 +478,9 @@
         private System.Windows.Forms.Timer timerTime;
         private System.Windows.Forms.Panel panelControls;
         private System.Windows.Forms.Button btnSettings;
-        private System.Windows.Forms.Button btnViewSales;
-        private System.Windows.Forms.Button btnUsers;
-        private System.Windows.Forms.Button btnExpense;
-        private System.Windows.Forms.Button ManageSaleBtn;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button AuthorBtn;
         private System.Windows.Forms.Button top3;
         private System.Windows.Forms.Button Top5;
+        private System.Windows.Forms.Button btnUsers;
+        private System.Windows.Forms.Button btnExpense;
     }
 }

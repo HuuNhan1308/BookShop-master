@@ -27,6 +27,7 @@ namespace BookShopManagement.DataModel
         public string Payment_Method { get; set; }
         public Nullable<int> Discount_Ship { get; set; }
         public bool Complete { get; set; }
+        public Nullable<double> Total_Cost { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Books_Orders> Books_Orders { get; set; }

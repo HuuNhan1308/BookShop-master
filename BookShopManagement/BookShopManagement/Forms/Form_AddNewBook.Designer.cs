@@ -48,7 +48,6 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.dragControl1 = new DragControlDemo.DragControl();
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ReleaseDate = new System.Windows.Forms.DateTimePicker();
@@ -253,7 +252,6 @@
             // 
             // dragControl1
             // 
-            this.dragControl1.SelectControl = this;
             // 
             // button4
             // 
@@ -370,7 +368,6 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button3;
-        private DragControlDemo.DragControl dragControl1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DateTimePicker ReleaseDate;
         private System.Windows.Forms.Label label1;

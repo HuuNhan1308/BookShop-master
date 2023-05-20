@@ -44,6 +44,7 @@
     <EntitySetMapping Name="CustomerLevels">
       <EntityTypeMapping TypeName="BookStoreModel.CustomerLevel">
         <MappingFragment StoreEntitySet="CustomerLevel">
+          <ScalarProperty Name="Condition" ColumnName="Condition" />
           <ScalarProperty Name="Level" ColumnName="Level" />
           <ScalarProperty Name="Desc" ColumnName="Desc" />
           <ScalarProperty Name="DiscountRate" ColumnName="DiscountRate" />
@@ -76,6 +77,7 @@
     <EntitySetMapping Name="Orders">
       <EntityTypeMapping TypeName="BookStoreModel.Order">
         <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Total_Cost" ColumnName="Total Cost" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
           <ScalarProperty Name="Date" ColumnName="Date" />
@@ -159,6 +161,16 @@
           <ScalarProperty Name="COST" ColumnName="COST" />
           <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
           <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="v_ListWareHouse">
+      <EntityTypeMapping TypeName="BookStoreModel.v_ListWareHouse">
+        <MappingFragment StoreEntitySet="v_ListWareHouse">
+          <ScalarProperty Name="Seri" ColumnName="Seri" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

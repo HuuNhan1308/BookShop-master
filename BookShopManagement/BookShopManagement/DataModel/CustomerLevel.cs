@@ -23,6 +23,7 @@ namespace BookShopManagement.DataModel
         public int Level { get; set; }
         public string Desc { get; set; }
         public double DiscountRate { get; set; }
+        public Nullable<double> Condition { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Customer> Customers { get; set; }

@@ -1,73 +1,10 @@
-c:\users\salaar husyn\documents\visual studio 2015\Projects\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe.config
-c:\users\salaar husyn\documents\visual studio 2015\Projects\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe
-c:\users\salaar husyn\documents\visual studio 2015\Projects\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.pdb
-c:\users\salaar husyn\documents\visual studio 2015\Projects\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csprojResolveAssemblyReference.cache
-c:\users\salaar husyn\documents\visual studio 2015\Projects\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Form1.resources
-c:\users\salaar husyn\documents\visual studio 2015\Projects\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Properties.Resources.resources
-c:\users\salaar husyn\documents\visual studio 2015\Projects\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.GenerateResource.Cache
-c:\users\salaar husyn\documents\visual studio 2015\Projects\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.exe
-c:\users\salaar husyn\documents\visual studio 2015\Projects\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.pdb
-E:\Roots Projects\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe.config
-E:\Roots Projects\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.exe
-E:\Roots Projects\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.pdb
-E:\Roots Projects\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe
-E:\Roots Projects\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.pdb
-E:\Roots Projects\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csprojResolveAssemblyReference.cache
-E:\Roots Projects\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Form1.resources
-E:\Roots Projects\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_Dashboard.resources
-E:\Roots Projects\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Properties.Resources.resources
-E:\Roots Projects\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.GenerateResource.Cache
-E:\YoutubeStuff\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe.config
-E:\YoutubeStuff\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.exe
-E:\YoutubeStuff\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.pdb
-E:\YoutubeStuff\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe
-E:\YoutubeStuff\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.pdb
-E:\YoutubeStuff\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csprojResolveAssemblyReference.cache
-E:\YoutubeStuff\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Form1.resources
-E:\YoutubeStuff\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_Dashboard.resources
-E:\YoutubeStuff\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Properties.Resources.resources
-E:\YoutubeStuff\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.GenerateResource.Cache
-E:\YoutubeStuff\BookShopManagement\BookShopManagement\bin\Debug\BunifuDataViz 1.0.1.dll
-E:\YoutubeStuff\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Home.resources
-E:\YoutubeStuff\BookShopManagement\BookShopManagement\bin\Debug\Bunifu_UI_v1.52.dll
-F:\YouTube Stuff\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe.config
-F:\YouTube Stuff\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.exe
-F:\YouTube Stuff\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.pdb
-F:\YouTube Stuff\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe
-F:\YouTube Stuff\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.pdb
-F:\YouTube Stuff\BookShopManagement\BookShopManagement\bin\Debug\BunifuDataViz 1.0.1.dll
-F:\YouTube Stuff\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csprojResolveAssemblyReference.cache
-F:\YouTube Stuff\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Form1.resources
-F:\YouTube Stuff\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_Dashboard.resources
-F:\YouTube Stuff\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Properties.Resources.resources
-F:\YouTube Stuff\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Home.resources
-F:\YouTube Stuff\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Sales.resources
-F:\YouTube Stuff\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.GenerateResource.Cache
-F:\YouTube Stuff\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_FinishOrder.resources
-E:\YouTube\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe.config
-E:\YouTube\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.exe
-E:\YouTube\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.pdb
-E:\YouTube\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe
-E:\YouTube\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.pdb
-E:\YouTube\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csprojResolveAssemblyReference.cache
-E:\YouTube\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Form1.resources
-E:\YouTube\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddNewBook.resources
-E:\YouTube\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_Dashboard.resources
-E:\YouTube\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_FinishOrder.resources
-E:\YouTube\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Properties.Resources.resources
-E:\YouTube\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Home.resources
-E:\YouTube\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_PurchaseDetails.resources
-E:\YouTube\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Sales.resources
-E:\YouTube\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.GenerateResource.Cache
-E:\YouTube\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddCategory.resources
-E:\YouTube\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddStock.resources
-E:\YouTube\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddExpense.resources
-E:\YouTube\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageExpense.resources
-E:\YouTube\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageUser.resources
-E:\YouTube\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ViewSales.resources
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe.config
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.pdb
+C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.dll
+C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.xml
+C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.AssemblyReference.cache
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.SuggestedBindingRedirects.cache
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Form1.resources
@@ -78,10 +15,19 @@ C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_Dashboard.resources
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_FinishOrder.resources
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Properties.Resources.resources
+C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.Register.UC_RegisterPhase2.resources
+C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.Register.UC_RegisterPhase3.resources
+C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_AddBook.resources
+C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManagePublisher.resources
+C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageAuthor.resources
+C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_PersonalSetting.resources
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Home.resources
+C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Login.resources
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageExpense.resources
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageUser.resources
+C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Products.resources
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_PurchaseDetails.resources
+C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Register.resources
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Sales.resources
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ViewSales.resources
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.GenerateResource.cache
@@ -89,138 +35,40 @@ C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.CopyComplete
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.exe
 C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.pdb
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe.config
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.pdb
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.AssemblyReference.cache
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.SuggestedBindingRedirects.cache
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Form1.resources
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddCategory.resources
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddExpense.resources
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddNewBook.resources
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddStock.resources
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_Dashboard.resources
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_FinishOrder.resources
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Properties.Resources.resources
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Home.resources
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageExpense.resources
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageUser.resources
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_PurchaseDetails.resources
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Sales.resources
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ViewSales.resources
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.GenerateResource.cache
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.CoreCompileInputs.cache
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.CopyComplete
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.exe
-D:\CodingProjects\Rider\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.pdb
-C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.dll
-C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.xml
-C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.AssemblyReference.cache
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.SuggestedBindingRedirects.cache
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Form1.resources
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddCategory.resources
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddExpense.resources
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddNewBook.resources
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddStock.resources
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_Dashboard.resources
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_FinishOrder.resources
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Properties.Resources.resources
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Home.resources
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageExpense.resources
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageUser.resources
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_PurchaseDetails.resources
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Sales.resources
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ViewSales.resources
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.GenerateResource.cache
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.CoreCompileInputs.cache
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.exe
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.pdb
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe.config
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.pdb
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.dll
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.xml
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.CopyComplete
-C:\Users\HoHo Nhan\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Products.resources
-C:\Users\84928\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Products.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.AssemblyReference.cache
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.SuggestedBindingRedirects.cache
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Form1.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddCategory.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddExpense.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddNewBook.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddStock.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_Dashboard.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_FinishOrder.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Properties.Resources.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_AddBook.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_PersonalSetting.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Home.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Login.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageExpense.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageUser.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Products.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_PurchaseDetails.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Register.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Sales.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ViewSales.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.GenerateResource.cache
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.CoreCompileInputs.cache
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.Register.UC_RegisterPhase2.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.Register.UC_RegisterPhase3.resources
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe.config
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.pdb
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.dll
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.xml
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.CopyComplete
-<<<<<<< HEAD
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe.config
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.pdb
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.dll
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.dll
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.xml
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.xml
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.AssemblyReference.cache
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.SuggestedBindingRedirects.cache
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Form1.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddCategory.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddExpense.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddNewBook.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddStock.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_Dashboard.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_FinishOrder.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Properties.Resources.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.Register.UC_RegisterPhase2.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.Register.UC_RegisterPhase3.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_PersonalSetting.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Home.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Login.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageExpense.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageUser.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Products.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_PurchaseDetails.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Register.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Sales.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ViewSales.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.View.UC_Top5Books.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.GenerateResource.cache
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.CoreCompileInputs.cache
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.CopyComplete
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.exe
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.pdb
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.View.UC_Top3Author.resources
-=======
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.exe
-C:\Users\DELL\Desktop\BookShop-master\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.pdb
->>>>>>> b0d3beff2f6d16d3dbf81b74581109eadaed05b4
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_AddBook.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageAuthor.resources
-D:\CodingProjects\VS\reclone\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManagePublisher.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe.config
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.exe
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\bin\Debug\BookShopManagement.pdb
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.dll
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.dll
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.xml
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\bin\Debug\EntityFramework.SqlServer.xml
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.AssemblyReference.cache
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.SuggestedBindingRedirects.cache
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Form1.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddCategory.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddExpense.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddNewBook.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_AddStock.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_Dashboard.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Forms.Form_FinishOrder.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.Properties.Resources.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.Register.UC_RegisterPhase2.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.Register.UC_RegisterPhase3.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_AddBook.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManagePublisher.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageAuthor.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_PersonalSetting.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Home.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Login.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageExpense.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ManageUser.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Products.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_PurchaseDetails.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Register.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_Sales.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.UserControls.UC_ViewSales.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.GenerateResource.cache
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.CoreCompileInputs.cache
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.CopyComplete
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.exe
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.pdb

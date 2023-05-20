@@ -46,7 +46,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.dragControl1 = new DragControlDemo.DragControl();
             this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -216,7 +215,6 @@
             // 
             // dragControl1
             // 
-            this.dragControl1.SelectControl = this;
             // 
             // button4
             // 
@@ -287,7 +285,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
-        private DragControlDemo.DragControl dragControl1;
         private System.Windows.Forms.Button button4;
     }
 }

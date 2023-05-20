@@ -47,7 +47,6 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dragControl1 = new DragControlDemo.DragControl();
             this.SuspendLayout();
             // 
             // panel2
@@ -236,7 +235,6 @@
             // 
             // dragControl1
             // 
-            this.dragControl1.SelectControl = this;
             // 
             // Form_AddStock
             // 
@@ -294,6 +292,5 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
-        private DragControlDemo.DragControl dragControl1;
     }
 }

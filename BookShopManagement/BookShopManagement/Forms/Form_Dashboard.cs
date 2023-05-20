@@ -21,7 +21,7 @@ namespace BookShopManagement.Forms
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool AllocConsole();
 
-       //-------------------
+        //-------------------
 
         int PanelWidth;
         bool isCollapsed;
@@ -49,7 +49,7 @@ namespace BookShopManagement.Forms
         }
 
         private void button9_Click(object sender, EventArgs e)
-        {   
+        {
             Application.Exit();
         }
 
@@ -134,46 +134,19 @@ namespace BookShopManagement.Forms
             UC_ManageUser um = new UC_ManageUser();
             AddControlsToPanel(um);
         }
-
-        private void btnViewSales_Click(object sender, EventArgs e)
-        {
-            moveSidePanel(btnViewSales);
-            UC_ViewSales vs = new UC_ViewSales();
-            AddControlsToPanel(vs);
-        }
+         
 
         private void button7_Click(object sender, EventArgs e)
         {
             moveSidePanel(btnSettings);
             UC_PersonalSetting ps = new UC_PersonalSetting(customer);
-            AddControlsToPanel (ps);
+            AddControlsToPanel(ps);
         }
 
         private void timerTime_Tick(object sender, EventArgs e)
         {
             DateTime dt = DateTime.Now;
             labelTime.Text = dt.ToString("HH:MM:ss");
-        }
-
-        private void ManageSaleBtn_Click(object sender, EventArgs e)
-        {
-            moveSidePanel(ManageSaleBtn);
-            UC_Sales sales = new UC_Sales(customer);
-            AddControlsToPanel(sales);
-        }
-
-        private void AuthorBtn_Click(object sender, EventArgs e)
-        {
-            moveSidePanel(AuthorBtn);
-            UC_ManageAuthor um = new UC_ManageAuthor();
-            AddControlsToPanel(um);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            moveSidePanel(button1);
-            UC_ManagePublisher um = new UC_ManagePublisher();
-            AddControlsToPanel(um);
         }
 
         private void Top5_Click(object sender, EventArgs e)

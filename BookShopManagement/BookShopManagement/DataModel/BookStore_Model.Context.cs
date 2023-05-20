@@ -27,6 +27,7 @@ namespace BookShopManagement.DataModel
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Author> Authors { get; set; }
         public virtual DbSet<Authors_Publishers> Authors_Publishers { get; set; }
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Books_Orders> Books_Orders { get; set; }
@@ -42,10 +43,10 @@ namespace BookShopManagement.DataModel
         public virtual DbSet<v_AllProducts> v_AllProducts { get; set; }
         public virtual DbSet<v_AllSumOrderByCus_ID> v_AllSumOrderByCus_ID { get; set; }
         public virtual DbSet<v_AllSumOrderByOrder_ID> v_AllSumOrderByOrder_ID { get; set; }
+        public virtual DbSet<v_ListWareHouse> v_ListWareHouse { get; set; }
         public virtual DbSet<v_Top3Authors> v_Top3Authors { get; set; }
         public virtual DbSet<v_Top5Books> v_Top5Books { get; set; }
         public virtual DbSet<v_TopAuthors> v_TopAuthors { get; set; }
-        public virtual DbSet<Authors> Authors { get; set; }
     
         [DbFunction("BookStoreEntities", "Fn_GetOrder_ByCustomer")]
         public virtual IQueryable<Fn_GetOrder_ByCustomer_Result> Fn_GetOrder_ByCustomer(Nullable<int> cUSTOMER_ID)
@@ -705,36 +706,6 @@ namespace BookShopManagement.DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_UpdateGenre", genre_idParameter, nameParameter);
         }
     
-        public virtual int Pr_UpdatePublisher(Nullable<int> publisher_id, string publisher_name)
-        {
-            var publisher_idParameter = publisher_id.HasValue ?
-                new ObjectParameter("publisher_id", publisher_id) :
-                new ObjectParameter("publisher_id", typeof(int));
-    
-            var publisher_nameParameter = publisher_name != null ?
-                new ObjectParameter("publisher_name", publisher_name) :
-                new ObjectParameter("publisher_name", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_UpdatePublisher", publisher_idParameter, publisher_nameParameter);
-        }
-    
-        public virtual int Pr_UpdateShipping(Nullable<int> iD, string method, Nullable<decimal> cost)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            var methodParameter = method != null ?
-                new ObjectParameter("Method", method) :
-                new ObjectParameter("Method", typeof(string));
-    
-            var costParameter = cost.HasValue ?
-                new ObjectParameter("Cost", cost) :
-                new ObjectParameter("Cost", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_UpdateShipping", iDParameter, methodParameter, costParameter);
-        }
-    
         public virtual int Pr_UpdateOrder(Nullable<int> order_id, Nullable<int> customer_id, Nullable<System.DateTime> date, Nullable<int> shipping_id, string payment_method, Nullable<double> discount_ship, Nullable<bool> completed)
         {
             var order_idParameter = order_id.HasValue ?
@@ -766,6 +737,36 @@ namespace BookShopManagement.DataModel
                 new ObjectParameter("completed", typeof(bool));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_UpdateOrder", order_idParameter, customer_idParameter, dateParameter, shipping_idParameter, payment_methodParameter, discount_shipParameter, completedParameter);
+        }
+    
+        public virtual int Pr_UpdatePublisher(Nullable<int> publisher_id, string publisher_name)
+        {
+            var publisher_idParameter = publisher_id.HasValue ?
+                new ObjectParameter("publisher_id", publisher_id) :
+                new ObjectParameter("publisher_id", typeof(int));
+    
+            var publisher_nameParameter = publisher_name != null ?
+                new ObjectParameter("publisher_name", publisher_name) :
+                new ObjectParameter("publisher_name", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_UpdatePublisher", publisher_idParameter, publisher_nameParameter);
+        }
+    
+        public virtual int Pr_UpdateShipping(Nullable<int> iD, string method, Nullable<decimal> cost)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            var methodParameter = method != null ?
+                new ObjectParameter("Method", method) :
+                new ObjectParameter("Method", typeof(string));
+    
+            var costParameter = cost.HasValue ?
+                new ObjectParameter("Cost", cost) :
+                new ObjectParameter("Cost", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Pr_UpdateShipping", iDParameter, methodParameter, costParameter);
         }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)

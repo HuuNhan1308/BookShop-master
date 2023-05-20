@@ -12,19 +12,11 @@ namespace BookShopManagement.DataModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Authors
+    public partial class v_ListWareHouse
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Authors()
-        {
-            this.Authors_Publishers = new HashSet<Authors_Publishers>();
-        }
-    
-        public int ID { get; set; }
-        public string Name { get; set; }
+        public int Seri { get; set; }
         public System.DateTime Date { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Authors_Publishers> Authors_Publishers { get; set; }
+        public string Name { get; set; }
+        public int Quantity { get; set; }
     }
 }

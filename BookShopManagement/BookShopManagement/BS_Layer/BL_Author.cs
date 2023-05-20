@@ -13,7 +13,7 @@ namespace BookShopManagement.BS_Layer
     {
 
         private BookStoreEntities db = new BookStoreEntities();
-        public List<Authors> GetAuthors()
+        public List<Author> GetAuthors()
         {
             return db.Authors.ToList();
         }
@@ -27,7 +27,7 @@ namespace BookShopManagement.BS_Layer
 
         }
 
-        public Authors GetAuthor_ByID(int ID)
+        public Author GetAuthor_ByID(int ID)
         {
             return (from p in db.Authors
                    where p.ID == ID

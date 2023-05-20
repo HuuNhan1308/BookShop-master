@@ -53,6 +53,7 @@
     <Property Name="Level" Type="int" Nullable="false" />
     <Property Name="Desc" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="DiscountRate" Type="float" Nullable="false" />
+    <Property Name="Condition" Type="float" />
   </EntityType>
   <EntityType Name="Customers">
     <Key>
@@ -86,6 +87,7 @@
     <Property Name="Payment_Method" Type="nvarchar" MaxLength="50" />
     <Property Name="Discount_Ship" Type="int" />
     <Property Name="Complete" Type="bit" Nullable="false" />
+    <Property Name="Total Cost" Type="float" />
   </EntityType>
   <EntityType Name="Publishers">
     <Key>
@@ -138,7 +140,7 @@ warning 6002: The table/view 'BookStore.dbo.v_AllProducts' does not have a prima
       <PropertyRef Name="Publisher" />
     </Key>
     <Property Name="Tittle" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
     <Property Name="Author" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Publisher" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Release date" Type="date" />
@@ -167,6 +169,20 @@ warning 6002: The table/view 'BookStore.dbo.v_AllSumOrderByOrder_ID' does not ha
     <Property Name="COST" Type="float" />
     <Property Name="Customer_ID" Type="int" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BookStore.dbo.v_ListWareHouse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="v_ListWareHouse">
+    <Key>
+      <PropertyRef Name="Seri" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Quantity" />
+    </Key>
+    <Property Name="Seri" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'BookStore.dbo.v_Top3Authors' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -220,6 +236,20 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
       </Principal>
       <Dependent Role="Authors_Publishers">
         <PropertyRef Name="Publisher_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Books_Authors_Publishers">
+    <End Role="Authors_Publishers" Type="Self.Authors_Publishers" Multiplicity="1" />
+    <End Role="Books" Type="Self.Books" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Authors_Publishers">
+        <PropertyRef Name="Publisher_ID" />
+        <PropertyRef Name="Author_ID" />
+      </Principal>
+      <Dependent Role="Books">
+        <PropertyRef Name="Publisher_ID" />
+        <PropertyRef Name="Author_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -353,6 +383,12 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
     <Parameter Name="discountRate" Type="decimal" Mode="In" />
   </Function>
   <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="Fn_GetCost_ByOrderID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
+    <Parameter Name="OrderID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Fn_GetCost_IncludeShip_ByOrderID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
+    <Parameter Name="OrderID" Type="float" Mode="In" />
+  </Function>
   <Function Name="Fn_GetOrder_ByCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="CUSTOMER_ID" Type="int" Mode="In" />
     <ReturnType>
@@ -435,9 +471,6 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
         </RowType>
       </CollectionType>
     </ReturnType>
-  </Function>
-  <Function Name="Fn_Order_GetCost" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
-    <Parameter Name="OrderID" Type="float" Mode="In" />
   </Function>
   <Function Name="Fn_TotalCostOfCus_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
     <Parameter Name="Cus_ID" Type="int" Mode="In" />
@@ -620,6 +653,7 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
     <Parameter Name="shipping_id" Type="int" Mode="In" />
     <Parameter Name="payment_method" Type="varchar" Mode="In" />
     <Parameter Name="discount_ship" Type="float" Mode="In" />
+    <Parameter Name="completed" Type="bit" Mode="In" />
   </Function>
   <Function Name="Pr_UpdatePublisher" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="publisher_id" Type="int" Mode="In" />
@@ -700,6 +734,14 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
     [v_AllSumOrderByOrder_ID].[Name] AS [Name]
     FROM [dbo].[v_AllSumOrderByOrder_ID] AS [v_AllSumOrderByOrder_ID]</DefiningQuery>
     </EntitySet>
+    <EntitySet Name="v_ListWareHouse" EntityType="Self.v_ListWareHouse" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [v_ListWareHouse].[Seri] AS [Seri], 
+    [v_ListWareHouse].[Date] AS [Date], 
+    [v_ListWareHouse].[Name] AS [Name], 
+    [v_ListWareHouse].[Quantity] AS [Quantity]
+    FROM [dbo].[v_ListWareHouse] AS [v_ListWareHouse]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="v_Top3Authors" EntityType="Self.v_Top3Authors" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [v_Top3Authors].[Name] AS [Name], 
@@ -725,6 +767,10 @@ warning 6002: The table/view 'BookStore.dbo.v_TopAuthors' does not have a primar
     <AssociationSet Name="FK_Authors_Publishers_Publishers" Association="Self.FK_Authors_Publishers_Publishers">
       <End Role="Publishers" EntitySet="Publishers" />
       <End Role="Authors_Publishers" EntitySet="Authors_Publishers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Books_Authors_Publishers" Association="Self.FK_Books_Authors_Publishers">
+      <End Role="Authors_Publishers" EntitySet="Authors_Publishers" />
+      <End Role="Books" EntitySet="Books" />
     </AssociationSet>
     <AssociationSet Name="FK_Books_Customers_Customers" Association="Self.FK_Books_Customers_Customers">
       <End Role="Customers" EntitySet="Customers" />
