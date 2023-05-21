@@ -33,5 +33,25 @@ namespace BookShopManagement.BS_Layer
                    where p.ID == ID
                    select p).SingleOrDefault();
         }
+
+        public List<Fn_GetTop3_BestAuthorOfTheYear_Result> Get_BestAuthor_ByYear(string year)
+        {
+            return db.Fn_GetTop3_BestAuthorOfTheYear(year.ToString()).ToList();
+        }
+
+        public void AddAuthor(string name, DateTime birthday)
+        {
+            db.Pr_AddAuthor(name, birthday);
+        }
+
+        public void DeleteAuthor(int AuthorID)
+        {
+            db.PR_DeleteAuthor(AuthorID);
+        }
+
+        public void EditAuthor(int AuthorId, string name, DateTime date)
+        {
+            db.Pr_UpdateAuthor(AuthorId, name, date);
+        }
     }
 }

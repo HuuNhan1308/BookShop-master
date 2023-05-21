@@ -64,5 +64,15 @@ namespace BookShopManagement
             db.Pr_DeleteBook(BookID);
             db.SaveChanges();
         }
+
+        public List<v_Top5Books> Get_Top5Books()
+        {
+            return db.v_Top5Books.ToList();
+        }
+
+        public List<Fn_GetTop5BestSellerOfTheYear_Result> Get_Top5Books_ByYear(string year)
+        {
+            return db.Fn_GetTop5BestSellerOfTheYear(year).ToList();
+        }
     }
 }

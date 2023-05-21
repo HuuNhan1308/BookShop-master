@@ -72,5 +72,5 @@ D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopMa
 D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.csproj.CopyComplete
 D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.exe
 D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.pdb
-D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.View.UC_Top3Author.resources
 D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.View.UC_Top5Books.resources
+D:\CodingProjects\VS\Store Customer\Store Customer\BookShopManagement\BookShopManagement\obj\Debug\BookShopManagement.View.RefreshBtn.resources

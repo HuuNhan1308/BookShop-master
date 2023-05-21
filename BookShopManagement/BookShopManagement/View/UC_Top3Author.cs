@@ -1,51 +1,46 @@
-﻿using BookShopManagement.DataModel;
+﻿using BookShopManagement.BS_Layer;
+using BookShopManagement.DataModel;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BookShopManagement.View
 {
-    public partial class UC_Top3Author : UserControl
+    public partial class RefreshBtn : UserControl
     {
-        private BookStoreEntities db = new BookStoreEntities();
-
-        public UC_Top3Author()
+        BookStoreEntities db = new BookStoreEntities();
+        BL_Author AuthorDB = new BL_Author();
+        public RefreshBtn()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         private void UC_Top3Author_Load(object sender, EventArgs e)
         {
-            LoadTop3Authors();
+            ViewTopAuthors.DataSource = null;
+            ViewTopAuthors.DataSource = db.v_Top3Authors.ToList();
         }
 
-        private void LoadTop3Authors()
+        private void ChangeViewYear(object sender, EventArgs e)
         {
-            var authors = GetTop3Authors();
-            BindAuthorsToDataGridView(authors);
+            RadioButton button = sender as RadioButton;
+
+            if (!button.Checked) return;
+
+            ViewTopAuthors.DataSource = null;
+            ViewTopAuthors.DataSource = AuthorDB.Get_BestAuthor_ByYear(button.Text.ToString());
+
         }
 
-        private List<v_Top3Authors> GetTop3Authors()
+        private void button1_Click(object sender, EventArgs e)
         {
-            return db.v_Top3Authors.ToList();
-        }
-
-        private void BindAuthorsToDataGridView(List<v_Top3Authors> authors)
-        {
-            dataGridView1.DataSource = null;
-            dataGridView1.AutoGenerateColumns = false;
-
-            dataGridView1.Columns.Add("Name", "Author Name");
-            dataGridView1.Columns.Add("Amount", "Amount");
-
-            dataGridView1.DataSource = authors;
-
-            dataGridView1.Columns["Name"].DataPropertyName = "Name";
-            dataGridView1.Columns["Amount"].DataPropertyName = "Amount";
-
-            dataGridView1.Columns["Name"].ReadOnly = true;
-            dataGridView1.Columns["Amount"].ReadOnly = true;
+            this.UC_Top3Author_Load(null, null);
         }
     }
 }

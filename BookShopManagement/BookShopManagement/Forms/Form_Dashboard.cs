@@ -159,7 +159,7 @@ namespace BookShopManagement.Forms
         private void button3_Click(object sender, EventArgs e)
         {
             moveSidePanel(top3);
-            UC_Top3Author um = new UC_Top3Author();
+            RefreshBtn um = new RefreshBtn();
             AddControlsToPanel(um);
         }
     }
