@@ -8,19 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookShopManagement.DataModel;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Data.SqlClient;
 
 namespace BookShopManagement.UserControls
 {
     public partial class UC_ManageUser : UserControl
     {
-        List<string> countries;
-        BookStoreEntities bookStoreEntities = new BookStoreEntities();
+        private BL_Customer customer = new BL_Customer();
+        private List<string> countries;
+        private BookStoreEntities bookStoreEntities = new BookStoreEntities();
+
         public UC_ManageUser()
         {
             InitializeComponent();
-            countries = new List<string>
+        }
+
+        private void UC_ManageUser_Load(object sender, EventArgs e)
+        {
+            countries = GetCountries();
+            countryComboBox.DataSource = countries;
+            updateData();
+        }
+
+        private List<string> GetCountries()
+        {
+            return new List<string>
             {
                 "Afghanistan",
                 "Albania",
@@ -219,59 +230,51 @@ namespace BookShopManagement.UserControls
                 "Zambia",
                 "Zimbabwe"
             };
-
-            countryComboBox.DataSource = countries;
-
-            updateData();
-             
         }
 
         private void updateData()
         {
-            dataList.Columns.Add("Name", "Name");
-            dataList.Columns.Add("Address", "Address");
-            dataList.Columns.Add("Country", "Country");
-            dataList.Columns.Add("Phone", "Phone");
-            dataList.Columns.Add("Email", "Email");
-            dataList.Columns.Add("UserName", "UserName");
-            dataList.Columns.Add("Password", "Password");
-            dataList.Columns.Add("Level", "Level");
-
+            dataList.Columns.Clear();
             dataList.AutoGenerateColumns = false;
 
-            dataList.Columns["Name"].DataPropertyName = "Name";
-            dataList.Columns["Address"].DataPropertyName = "Address";
-            dataList.Columns["Country"].DataPropertyName = "Country";
-            dataList.Columns["Phone"].DataPropertyName = "Phone";
-            dataList.Columns["Email"].DataPropertyName = "Email";
-            dataList.Columns["UserName"].DataPropertyName = "UserName";
-            dataList.Columns["Password"].DataPropertyName = "Password";
-            dataList.Columns["Level"].DataPropertyName = "Level";
-
-            foreach (DataGridViewColumn column in dataList.Columns)
-            {
-                column.ReadOnly = true;
-            }
+            AddDataColumn("Name", "Name");
+            AddDataColumn("Address", "Address");
+            AddDataColumn("Country", "Country");
+            AddDataColumn("Phone", "Phone");
+            AddDataColumn("Email", "Email");
+            AddDataColumn("UserName", "UserName");
+            AddDataColumn("Password", "Password");
+            AddDataColumn("Level", "Level");
 
             dataList.DataSource = bookStoreEntities.Customers.ToList();
         }
-         
+
+        private void AddDataColumn(string columnName, string headerText)
+        {
+            var column = new DataGridViewTextBoxColumn();
+            column.Name = columnName;
+            column.DataPropertyName = columnName;
+            column.HeaderText = headerText;
+            column.ReadOnly = true;
+
+            dataList.Columns.Add(column);
+        }
+
         private int FindStringIndex(string searchString)
         {
             return countries.FindIndex(s => s.Equals(searchString, StringComparison.OrdinalIgnoreCase));
         }
-        DataGridViewRow selectedRow;
+
         private void editBtn_Click(object sender, EventArgs e)
         {
             if (dataList.SelectedRows.Count > 0)
             {
-                selectedRow = dataList.SelectedRows[0];
+                DataGridViewRow selectedRow = dataList.SelectedRows[0];
                 if (selectedRow != null)
                 {
                     firstnameTextbox.Text = selectedRow.Cells["Name"].Value.ToString();
                     addressTextbox.Text = selectedRow.Cells["Address"].Value.ToString();
-                    countryComboBox.SelectedIndex =
-                        FindStringIndex(selectedRow.Cells["Country"].Value.ToString());
+                    countryComboBox.SelectedIndex = FindStringIndex(selectedRow.Cells["Country"].Value.ToString());
                     phoneTextbox.Text = selectedRow.Cells["Phone"].Value.ToString();
                     emailTextbox.Text = selectedRow.Cells["Email"].Value.ToString();
                     usernameBox.Text = selectedRow.Cells["UserName"].Value.ToString();
@@ -281,23 +284,18 @@ namespace BookShopManagement.UserControls
             }
         }
 
-
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             if (dataList.SelectedRows.Count > 0)
             {
-                selectedRow = dataList.SelectedRows[0];
+                DataGridViewRow selectedRow = dataList.SelectedRows[0];
                 if (selectedRow != null)
                 {
                     string u = selectedRow.Cells["UserName"].Value.ToString();
-                    var id = bookStoreEntities.Customers
-                        .Where(b => b.UserName == u)
-                        .Select(b => b.ID)
-                        .FirstOrDefault();
+                    int id = customer.getIDfromUsername(u);
 
                     bookStoreEntities.Pr_DeleteCustomer(id);
                     updateData();
-
                 }
             }
         }
@@ -311,7 +309,6 @@ namespace BookShopManagement.UserControls
             emailTextbox.Text = "";
             usernameBox.Text = "";
             passwordTextbox.Text = "";
-            selectedRow = null;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -322,21 +319,22 @@ namespace BookShopManagement.UserControls
                 || string.IsNullOrEmpty(phoneTextbox.Text)
                 || string.IsNullOrEmpty(emailTextbox.Text)
                 || string.IsNullOrEmpty(usernameBox.Text)
-                || string.IsNullOrEmpty(passwordTextbox.Text)
-                ) 
+                || string.IsNullOrEmpty(passwordTextbox.Text))
             {
                 MessageBox.Show("Missing data");
-                return; 
+                return;
             }
+
             bookStoreEntities.Pr_AddCustomer(
                 firstnameTextbox.Text,
-                addressTextbox.Text, 
+                addressTextbox.Text,
                 countryComboBox.Text,
                 phoneTextbox.Text,
                 emailTextbox.Text,
                 usernameBox.Text,
                 passwordTextbox.Text
-                );
+            );
+
             updateData();
         }
     }

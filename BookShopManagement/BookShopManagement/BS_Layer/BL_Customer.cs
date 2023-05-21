@@ -21,5 +21,13 @@ namespace BookShopManagement
             return result[0];
         }
 
+        public int getIDfromUsername(string u)
+        {
+            var id = db.Customers
+                        .Where(b => b.UserName == u)
+                        .Select(b => b.ID)
+                        .FirstOrDefault();
+            return id;
+        }
     }
 }

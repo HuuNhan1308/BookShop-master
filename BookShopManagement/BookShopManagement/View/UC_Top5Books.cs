@@ -1,4 +1,5 @@
-﻿using BookShopManagement.DataModel;
+﻿using BookShopManagement.BS_Layer;
+using BookShopManagement.DataModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,107 @@ namespace BookShopManagement.View
 {
     public partial class UC_Top5Books : UserControl
     {
+        private BookStoreEntities _db;
+        BL_Book BookDB = new BL_Book();
+        BL_Author AuthorDB = new BL_Author();
+        BL_Publisher PublisherDB = new BL_Publisher();
+
+        public UC_Top5Books()
+        {
+            InitializeComponent();
+            _db = new BookStoreEntities();
+        }
+
+        private void UC_Top5Books_Load(object sender, EventArgs e)
+        {
+            LoadTop5Books();
+        }
+
+        private void LoadTop5Books()
+        {
+            var bookInfo = GetBookInfo();
+
+            BindBookInfoToDataGridView(bookInfo);
+        }
+
+        private List<BookInfo> GetBookInfo()
+        {
+            var bookInfo = new List<BookInfo>();
+
+            foreach (v_Top5Books book in _db.v_Top5Books)
+            {
+                DateTime? releaseDate = GetReleaseDate(book.Name);
+                string releaseDateString = releaseDate.HasValue ? releaseDate.Value.ToString("yyyy-MM-dd") : string.Empty;
+
+                var authorName = GetAuthorName(book.Name);
+                var publisherName = GetPublisherName(book.Name);
+
+                BookInfo bookInfoItem = new BookInfo(
+                    book.Name,
+                    "(unknown)",
+                    authorName,
+                    publisherName,
+                    releaseDateString);
+
+                bookInfo.Add(bookInfoItem);
+            }
+
+            return bookInfo;
+        }
+
+        private DateTime? GetReleaseDate(string bookName)
+        {
+            return BookDB.GetBook_ByID(BookDB.GetBookID_ByName(bookName)).Release_Date;
+        }
+
+        private string GetAuthorName(string bookName)
+        {
+            var authorId = _db.Books
+                .Where(b => b.Name == bookName)
+                .Select(b => b.Author_ID)
+                .FirstOrDefault();
+
+            return AuthorDB.GetAuthor_ByID(authorId).Name;
+        }
+
+        private string GetPublisherName(string bookName)
+        {
+            var publisherId = _db.Books
+                .Where(b => b.Name == bookName)
+                .Select(b => b.Publisher_ID)
+                .FirstOrDefault();
+
+            return PublisherDB.GetPublisher_ByID(publisherId).Name;
+        }
+
+        private void BindBookInfoToDataGridView(List<BookInfo> bookInfo)
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.AutoGenerateColumns = false;
+
+            dataGridView1.Columns.Add("Name", "Name");
+            dataGridView1.Columns.Add("Genre", "Genre");
+            dataGridView1.Columns.Add("Author", "Author");
+            dataGridView1.Columns.Add("Publisher", "Publisher");
+            dataGridView1.Columns.Add("ReleaseDate", "Release Date");
+
+            dataGridView1.DataSource = bookInfo;
+
+            dataGridView1.Columns["Name"].DataPropertyName = "Name";
+            dataGridView1.Columns["Genre"].DataPropertyName = "Genre";
+            dataGridView1.Columns["Author"].DataPropertyName = "Author";
+            dataGridView1.Columns["Publisher"].DataPropertyName = "Publisher";
+            dataGridView1.Columns["ReleaseDate"].DataPropertyName = "ReleaseDate";
+
+            dataGridView1.Columns["Name"].ReadOnly = true;
+            dataGridView1.Columns["Genre"].ReadOnly = true;
+            dataGridView1.Columns["Author"].ReadOnly = true;
+            dataGridView1.Columns["Publisher"].ReadOnly = true;
+            dataGridView1.Columns["ReleaseDate"].ReadOnly = true;
+
+            dataGridView1.Columns["ReleaseDate"].DefaultCellStyle.Format = "yyyy-MM-dd";
+        }
+
         public class BookInfo
         {
             public string Name { get; set; }
@@ -44,88 +146,5 @@ namespace BookShopManagement.View
                 return DateTime.Parse(dateString);
             }
         }
-
-        private int currentIndex = 0;
-        private List<BookInfo> bookInfo;
-        private Timer timer = new Timer();
-        private BookStoreEntities _bookStoreEntities = new BookStoreEntities();
-
-        public UC_Top5Books()
-        {
-            InitializeComponent();
-
-            bookInfo = new List<BookInfo>(); 
-            foreach (v_Top5Books book in _bookStoreEntities.v_Top5Books)
-            {
-                // Get Release Date
-                DateTime? releaseDate = _bookStoreEntities.Books
-                    .Where(b => b.Name == book.Name)
-                    .Select(b => b.Release_Date)
-                    .FirstOrDefault();
-
-                string releaseDateString = releaseDate.HasValue ? releaseDate.Value.ToString("yyyy-MM-dd") : string.Empty;
-
-
-                // Get Author Name from Books table using Author ID
-                var authorId = _bookStoreEntities.Books
-                    .Where(b => b.Name == book.Name)
-                    .Select(b => b.Author_ID)
-                    .FirstOrDefault();
-
-                string authorName = _bookStoreEntities.Authors
-                    .Where(a => a.ID == authorId)
-                    .Select(a => a.Name)
-                    .FirstOrDefault();
-
-                // Get Publisher Name from Books table using Publisher ID
-                var publisherId = _bookStoreEntities.Books
-                    .Where(b => b.Name == book.Name)
-                    .Select(b => b.Publisher_ID)
-                    .FirstOrDefault();
-
-                string publisherName = _bookStoreEntities.Publishers
-                    .Where(p => p.ID == publisherId)
-                    .Select(p => p.Name)
-                    .FirstOrDefault();
-
-
-                BookInfo bookInfoItem = new BookInfo(
-                    book.Name,
-                    "(unknown)",
-                    authorName,
-                    publisherName,
-                    releaseDateString);
-
-                bookInfo.Add(bookInfoItem);
-            }
-
-            dataGridView1.AutoGenerateColumns = false; 
-
-            dataGridView1.ReadOnly = true;
-
-
-            dataGridView1.Columns.Add("Name", "Name");
-            dataGridView1.Columns.Add("Genre", "Genre");
-            dataGridView1.Columns.Add("Author", "Author");
-            dataGridView1.Columns.Add("Publisher", "Publisher");
-            dataGridView1.Columns.Add("ReleaseDate", "Release Date");
-             
-            dataGridView1.DataSource = bookInfo;
-
-            dataGridView1.Columns["Name"].DataPropertyName = "Name";
-            dataGridView1.Columns["Genre"].DataPropertyName = "Genre";
-            dataGridView1.Columns["Author"].DataPropertyName = "Author";
-            dataGridView1.Columns["Publisher"].DataPropertyName = "Publisher";
-            dataGridView1.Columns["ReleaseDate"].DataPropertyName = "ReleaseDate";
-
-            dataGridView1.Columns["Name"].ReadOnly = true;
-            dataGridView1.Columns["Genre"].ReadOnly = true;
-            dataGridView1.Columns["Author"].ReadOnly = true;
-            dataGridView1.Columns["Publisher"].ReadOnly = true;
-            dataGridView1.Columns["ReleaseDate"].ReadOnly = true;
-
-            dataGridView1.Columns["ReleaseDate"].DefaultCellStyle.Format = "yyyy-MM-dd";
-        }
-
     }
 }

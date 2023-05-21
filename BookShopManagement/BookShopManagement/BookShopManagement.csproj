@@ -394,6 +394,12 @@
     <EmbeddedResource Include="UserControls\UC_ViewSales.resx">
       <DependentUpon>UC_ViewSales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\UC_Top3Author.resx">
+      <DependentUpon>UC_Top3Author.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UC_Top5Books.resx">
+      <DependentUpon>UC_Top5Books.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="DataModel\BookStore_Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BookStore_Model.Designer.cs</LastGenOutput>

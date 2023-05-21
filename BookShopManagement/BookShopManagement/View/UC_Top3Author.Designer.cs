@@ -63,6 +63,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "UC_Top3Author";
             this.Size = new System.Drawing.Size(900, 600);
+            this.Load += new System.EventHandler(this.UC_Top3Author_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

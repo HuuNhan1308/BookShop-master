@@ -302,6 +302,7 @@
             this.ForeColor = System.Drawing.Color.SaddleBrown;
             this.Name = "UC_ManageUser";
             this.Size = new System.Drawing.Size(985, 580);
+            this.Load += new System.EventHandler(this.UC_ManageUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
